@@ -1,0 +1,17 @@
+@import "./../welcome-quiz-screen.common.scss";
+.welcome-quiz__intro-container {
+  overflow-y: scroll;
+}
+
+.welcome-quiz__option {
+  font-size: 16px;
+  height: 40px;
+}
+
+.welcome-quiz__options-container {
+  padding: 0 26px;
+}
+
+.dummy-margin-bottom {
+  margin-bottom: 80px;
+}

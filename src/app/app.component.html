@@ -1,0 +1,237 @@
+<ion-app *ngIf="storeService.appInitializationComplete | async">
+  <ion-menu side="start" menuId="sideMenu" type="overlay" class="primary-menu">
+    <ion-header class="primary-menu__profile" mode="ios">
+      <ion-toolbar
+        color="primary-contrast"
+        *ngIf="storeService.loggedInUser | async; else loggedOut"
+        fxLayout="row"
+      >
+        <ion-menu-toggle autoHide="false">
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="gotoPage('pages/profile', 'profile')"
+          >
+            <ion-avatar slot="start">
+              <img
+                *ngIf="
+                  (storeService.loggedInUser | async)?.avatarUrl;
+                  else defaultAvatar
+                "
+                (click)="onProfilePictureClick()"
+                [src]="(storeService.loggedInUser | async)?.avatarUrl"
+                alt="avatar_url"
+              />
+            </ion-avatar>
+            <ng-template #defaultAvatar>
+              <img
+                [src]="assetService.defaultAvatarIcon"
+                alt="default avatar icon"
+              />
+            </ng-template>
+            <ion-label fxLayout="row wrap" fxFlex="100">
+              <div fxFlex="100" fxLayoutAlign="space-between center">
+                <h2>{{ (storeService.loggedInUser | async)?.fullName }}</h2>
+              </div>
+              <p>{{ (storeService.loggedInUser | async)?.email }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-toolbar>
+      <ng-template #loggedOut>
+        <ion-toolbar color="primary-contrast">
+          <ion-menu-toggle autoHide="false">
+            <ion-item
+              (click)="gotoPage('app/auth/login', 'login')"
+              class="primary-menu__item"
+              lines="none"
+            >
+              <ion-avatar slot="start">
+                <ion-img [src]="assetService.defaultAvatarIcon"></ion-img>
+              </ion-avatar>
+
+              <ion-label fxLayout="row wrap" fxFlex="100">
+                <div fxFlex="100" fxLayoutAlign="space-between center">
+                  <h2>Log in to GreenDay</h2>
+                </div>
+                <p>For a better experience</p>
+              </ion-label>
+              <ion-icon
+                color="light"
+                class="primary-menu__profile-close"
+                name="close"
+              ></ion-icon>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-toolbar>
+      </ng-template>
+    </ion-header>
+    <ion-content class="primary-menu__items-container">
+      <ion-list>
+        <ion-menu-toggle autoHide="false">
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="gotoPage('pages/likes', 'likes')"
+          >
+            <ion-icon
+              slot="start"
+              color="light"
+              class="eggs-icon"
+              [src]="
+                storeService.json.pageConfig.value.icons.heartIconFilledWhite
+              "
+            ></ion-icon>
+            <ion-label>
+              <h2>
+                {{
+                  storeService.json.pageConfig.value.componentData
+                    .sideMenuComponentData.likedItemsMenuItemText
+                }}
+              </h2>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="false">
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="gotoPage('app/tabs/cart', 'cart')"
+          >
+            <ion-icon slot="start" color="light" name="cart"></ion-icon>
+            <ion-label>
+              <h2>My Cart</h2>
+            </ion-label>
+            <ion-badge *ngIf="cartItemCount > 0" slot="end" color="primary">{{
+              cartItemCount
+            }}</ion-badge>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle
+          *ngIf="storeService.loggedInUser | async"
+          autoHide="false"
+        >
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="gotoPage('pages/order', 'order')"
+          >
+            <ion-icon
+              slot="start"
+              color="light"
+              name="checkbox-outline"
+            ></ion-icon>
+            <ion-label>
+              <h2>My Orders</h2>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="false">
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="gotoPage('pages/contact-us', 'contactus')"
+          >
+            <ion-icon slot="start" color="light" name="mail"></ion-icon>
+            <ion-label>
+              <h2>Contact Us</h2>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="false">
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="goToApplicationStore()"
+          >
+            <ion-icon
+              slot="start"
+              color="light"
+              name="star-half-outline"
+            ></ion-icon>
+            <ion-label>
+              <h2>
+                {{
+                  storeService.json.pageConfig.value.componentData
+                    .sideMenuComponentData.rateAppText
+                }}
+              </h2>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="false">
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="shareApp()"
+          >
+            <ion-icon slot="start" color="light" name="share"></ion-icon>
+            <ion-label>
+              <h2>
+                {{
+                  storeService.json.pageConfig.value.componentData
+                    .sideMenuComponentData.shareAppText
+                }}
+              </h2>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="false">
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="gotoPage('pages/help', 'help')"
+          >
+            <ion-icon slot="start" color="light" name="help-circle"></ion-icon>
+            <ion-label>
+              <h2>Help</h2>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="false">
+          <ion-item
+            class="primary-menu__item"
+            lines="none"
+            (click)="gotoPage('pages/privacy-policy', 'privacy-policy')"
+          >
+            <ion-icon
+              slot="start"
+              color="light"
+              name="information-circle"
+            ></ion-icon>
+            <ion-label>
+              <h2>Privacy Policy</h2>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle
+          *ngIf="storeService.loggedInUser | async"
+          autoHide="false"
+        >
+          <ion-item class="primary-menu__item" lines="none" (click)="logout()">
+            <ion-icon slot="start" color="light" name="power"></ion-icon>
+            <ion-label>
+              <h2>Logout</h2>
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar color="transparent">
+        <div
+          fxLayout="row wrap"
+          fxFlex="100"
+          fxLayoutAlign="start center"
+          class="app-version-container"
+        >
+          <span fxFlex="100"> Version: {{ currentAppVersion }}<br /> </span>
+          <span>
+            <strong>{{ deviceUUID }}</strong>
+          </span>
+        </div>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+  <ion-router-outlet main="true"></ion-router-outlet>
+</ion-app>

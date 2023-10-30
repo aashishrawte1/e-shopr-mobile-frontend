@@ -1,0 +1,45 @@
+<div
+  class="progress-bar"
+  fxLayout="row"
+  fxLayoutAlign="end center"
+  fxLayoutGap="10px"
+>
+  <div
+    *ngIf="progressBarHint"
+    class="progress-bar__progress-bar-hint"
+    fxLayout="row"
+    fxLayoutAlign="start center"
+  >
+    {{ progressBarHint }}
+  </div>
+  <div
+    class="progress-bar__ring-container"
+    [ngStyle]="{ width: circleSize + 'px', height: circleSize + 'px' }"
+  >
+    <div
+      class="progress-bar__image-container"
+      [style.width]="circleSize / 2 + 'px'"
+      [style.height]="circleSize / 2 + 'px'"
+    >
+      <img class="progress-bar__image" [src]="imageSrc" />
+    </div>
+    <svg
+      class="progress-bar__ring"
+      [attr.width]="circleSize"
+      [attr.height]="circleSize"
+    >
+      <circle
+        class="progress-bar__circle"
+        [style.stroke]="progressBarColor"
+        [attr.stroke-width]="circleStrokeWidth"
+        stroke-dasharray="125.664,125.664"
+        fill="transparent"
+        stroke-dashoffset="125.664"
+        [attr.r]="circleRadius"
+        [attr.cx]="circleSize / 2"
+        [attr.cy]="circleSize / 2"
+        #circle
+      />
+    </svg>
+  </div>
+</div>

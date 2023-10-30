@@ -1,0 +1,54 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" [color]="'primary'">
+        <ion-icon name="arrow-back"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="likes">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <section fxLayout="column">
+    <div class="pageTopIndicator"></div>
+    <div class="page-info">
+      <h1 class="page-info__header">
+        {{pageConfig?.likesPageSection.headerText}}
+      </h1>
+    </div>
+    <ng-container>
+      <div class="likes__content" *ngIf="likedItems?.length">
+        <user-portal-product-tile
+          layoutType="rowLayout"
+          class="has-no-item__item"
+          *ngFor="let like of likedItems"
+          [product]="like"
+          [showPrice]="true"
+          (click)="onProductItemClick(like)"
+        >
+        </user-portal-product-tile>
+      </div>
+    </ng-container>
+
+    <div class="has-no-item" fxLayout="row wrap" *ngIf="!likedItems?.length">
+      <div fxFlex="100" class="has-no-item__img-container">
+        <img
+          class="has-no-item__image"
+          [src]="storeService.json.pageConfig.value.icons.turtleColorfulSVGIcon"
+          alt="turtle icon"
+        />
+      </div>
+      <div class="has-no-item__title" fxFlex="100">
+        {{pageConfig?.likesPageSection.noItemsLikedSection.titleText}}
+      </div>
+
+      <div fxFlex="100" class="has-no-item__shop-btn">
+        <ion-button fill="outline" class="has-no-item__btn" (click)="shopNow()"
+          >{{pageConfig?.likesPageSection.noItemsLikedSection.shopNowButtonText}}</ion-button
+        >
+      </div>
+    </div>
+  </section>
+</ion-content>

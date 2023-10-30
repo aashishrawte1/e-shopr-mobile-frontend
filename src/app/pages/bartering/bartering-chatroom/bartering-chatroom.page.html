@@ -1,0 +1,98 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="roomInfo">
+      <ng-container *ngIf="roomInfo.barteringLevel === 2">
+        <div fxLayout="column" fxLayoutAlign="end">
+          <span class="bartering__chat-other-username">
+            {{roomInfo.partiesInvolved[1].memberName}}
+          </span>
+          <span class="bartering__last-online-time">
+            Online {{roomInfo.lastMessageTime}}
+          </span>
+        </div>
+      </ng-container>
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="roomInfo" class="header__toolbar">
+    <ng-container *ngIf="roomInfo.barteringLevel === 2">
+      <div fxLayout="column" fxLayoutGap="3px" fxLayoutAlign="center start">
+        <div
+          class="bartering__chat-product-info-row"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="10px"
+        >
+          <div>
+            <img
+              class="bartering__room-image"
+              [src]="roomInfo.partiesInvolved[0].productImage"
+            />
+          </div>
+          <div>{{roomInfo.partiesInvolved[0].productTitle}} (You)</div>
+        </div>
+        <div
+          class="bartering__swap-text"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="10px"
+        >
+          Swap With
+        </div>
+        <div
+          class="bartering__chat-product-info-row"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="10px"
+        >
+          <div>
+            <img
+              class="bartering__room-image"
+              [src]="roomInfo.partiesInvolved[1].productImage"
+            />
+          </div>
+          <div>{{roomInfo.partiesInvolved[1].productTitle}}</div>
+        </div>
+      </div>
+    </ng-container>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="chat" #chatContainer>
+  <div class="pageTopIndicator"></div>
+  <section>
+    <div class="chat__messages-container" fxLayout="row wrap">
+      <div
+        *ngFor="let message of messages | async"
+        fxFlex="100"
+        [fxLayoutAlign]="message.author?.uid === (storeService.loggedInUser | async).uid ? 'end center': 'start center'"
+      >
+        <div
+          fxFlex="80"
+          fxLayout="column"
+          [fxLayoutAlign]="message.author?.uid === (storeService.loggedInUser | async).uid ? 'start end': 'start start'"
+          [ngClass]="'chat__' + (message.author?.uid === (storeService.loggedInUser | async).uid ? 'sent' : 'reply')"
+        >
+          <span
+            class="chat__message chat-message"
+            [innerHTML]="message.message"
+          ></span>
+          <span
+            [fxFlexAlign]="message.author?.uid === (storeService.loggedInUser | async).uid ? 'end': 'start'"
+            class="chat__time"
+            >{{message.displayTime}}</span
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>
+<ion-footer class="chat-footer">
+  <user-portal-add-comment
+    (comment)="onComment($event)"
+  ></user-portal-add-comment>
+</ion-footer>

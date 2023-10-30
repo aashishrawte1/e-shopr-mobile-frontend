@@ -1,0 +1,15 @@
+.custom-progress-outer-div {
+  width: 100%;
+  background-color: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+.custom-progress-inner-div {
+  min-height: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 20px;
+}

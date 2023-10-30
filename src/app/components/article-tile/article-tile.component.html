@@ -1,0 +1,108 @@
+<div class="tile article-tile" *ngIf="item" (click)="openArticle()">
+  <div class="box-layout" *ngIf="layoutType === 'boxLayout'">
+    <ion-card mode="ios" class="box-layout__container-card">
+      <div>
+        <div
+          class="box-layout__media-container"
+          fxLayout="row"
+          fxLayoutAlign="center"
+          [ngStyle]="{ height: mediaContainerHeight + 'px' }"
+        >
+          <!-- An image that eventually gets lazy loaded by JavaScript -->
+          <img
+            class="lozad box-layout__image"
+            [src]="asset.placeholderImage"
+            [attr.srcset]="item.images[0]"
+            alt="placeholder image"
+          />
+          <noscript>
+            <img class="lozad" src="{{ item.images[0] }}" alt="article image" />
+          </noscript>
+        </div>
+
+        <ion-card-header class="box-layout__card-header">
+          <ion-chip>
+            <ion-avatar>
+              <ion-img
+                *ngIf="(item?.favicon)[0]; else defaultAvatar"
+                [src]="item.favicon[0]"
+              ></ion-img>
+            </ion-avatar>
+            <ng-template #defaultAvatar>
+              <ion-img [src]="asset.defaultAvatarIcon"></ion-img>
+            </ng-template>
+            <ion-label
+              *ngIf="item?.siteName; else defaultSiteName"
+              [ngStyle]="{ 'font-size': fontSize - 3 + 'px' }"
+              >{{ item.siteName }}</ion-label
+            >
+            <ng-template #defaultSiteName>
+              <ion-label
+                [ngStyle]="{
+                  'font-size': fontSize + 'px',
+                  height: fontSize * 2 + fontSize / 2 + 'px'
+                }"
+                >{{ item.mediaType }}</ion-label
+              >
+            </ng-template>
+          </ion-chip>
+          <ion-card-title
+            [ngStyle]="{ 'font-size': fontSize + 'px' }"
+            class="box-layout__title"
+            >{{ item.title }}</ion-card-title
+          >
+        </ion-card-header>
+        <ion-card-content class="box-layout__content">
+          <div
+            *ngIf="showDescription"
+            [ngStyle]="{ 'font-size': fontSize + 'px' }"
+          >
+            {{ item.description }}
+          </div>
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
+
+  <div class="row-layout" *ngIf="layoutType === 'rowLayout'">
+    <div
+      class="row-layout__container"
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+      fxLayoutGap="10px"
+    >
+      <div class="row-layout__media-container" fxFlex="50">
+        <img
+          class="lozad row-layout__image"
+          [src]="asset.placeholderImage"
+          [attr.srcset]="item.images[0]"
+          alt="placeholder image"
+        />
+        <!-- An image that is shown if JavaScript is turned off -->
+        <noscript>
+          <img class="lozad" src="{{ item.images[0] }}" alt="article image" />
+        </noscript>
+      </div>
+      <div class="row-layout__details" fxFlex="50">
+        <p class="row-layout__title">{{ item.title.substring(0, 60) }}</p>
+        <ion-chip class="row-layout__site-info">
+          <ion-avatar>
+            <ion-img
+              *ngIf="(item?.favicon)[0]; else defaultAvatar"
+              [src]="item.favicon[0]"
+            ></ion-img>
+          </ion-avatar>
+          <ng-template #defaultAvatar>
+            <ion-img [src]="asset.defaultAvatarIcon"></ion-img>
+          </ng-template>
+          <ion-label *ngIf="item?.siteName; else defaultSiteName">{{
+            item.siteName
+          }}</ion-label>
+          <ng-template #defaultSiteName>
+            <ion-label>{{ item.mediaType }}</ion-label>
+          </ng-template>
+        </ion-chip>
+      </div>
+    </div>
+  </div>
+</div>

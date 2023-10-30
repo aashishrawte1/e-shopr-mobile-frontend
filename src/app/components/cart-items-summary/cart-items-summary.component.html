@@ -1,0 +1,125 @@
+<div
+  class="shopping-cart__merchant-store-items"
+  *ngFor="let merchantId of keys(shoppingCart); let idx = index"
+  fxLayout="row wrap"
+  fxLayoutAlign="space-around start"
+>
+  <div
+    fxFlex="100"
+    class="shopping-cart__merchant-store-info"
+    fxLayout="row"
+    fxLayoutAlign="start center"
+    (click)="
+      goToMarketPageWithMerchantSelected({
+        cartItem: shoppingCart[merchantId][keys(shoppingCart[merchantId])[0]]
+      })
+    "
+  >
+    <strong>{{
+      shoppingCart[merchantId][keys(shoppingCart[merchantId])[0]].ownerName
+    }}</strong>
+  </div>
+
+  <div
+    fxFlex="100"
+    *ngFor="let itemKey of keys(shoppingCart[merchantId])"
+    class="shopping-cart__item"
+    fxLayout="row wrap"
+  >
+    <div
+      fxFlex="10"
+      class="shopping-cart__item-image"
+      (click)="goToDetailPage(shoppingCart[merchantId][itemKey])"
+    >
+      <img src="{{ shoppingCart[merchantId][itemKey].media[0].link }}" alt="" />
+    </div>
+
+    <div fxFlex="60" fxLayout="row wrap" class="shopping-cart__description">
+      <div fxFlex="100" fxLayout="column" fxLayoutAlign="start start">
+        <div class="shopping-cart__item-title">
+          {{ shoppingCart[merchantId][itemKey].title }}
+        </div>
+      </div>
+      <div class="shopping-cart__description-price">
+        Price : {{ storeService.appCurrencyFormat
+        }}{{
+          shoppingCart[merchantId][itemKey].price *
+            shoppingCart[merchantId][itemKey].count | number: '1.2-2'
+        }}
+      </div>
+    </div>
+
+    <div
+      fxFlex
+      class="shopping-cart__quantity"
+      fxLayout="row"
+      fxLayoutAlign="end start"
+    >
+      <div
+        fxFlexAlign="start end"
+        *ngIf="!options?.allowCountEdit; else itemCountManager"
+        class="shopping-cart__item-count-read-only"
+      >
+        x{{ shoppingCart[merchantId][itemKey].count }}
+      </div>
+
+      <ng-template #itemCountManager>
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <ion-icon
+            (click)="decrease(merchantId, shoppingCart[merchantId][itemKey])"
+            color="primary"
+            name="remove-circle-outline"
+          ></ion-icon>
+          <ion-label
+            class="shopping-cart__item-count"
+            type="text"
+            name="name"
+            >{{ shoppingCart[merchantId][itemKey].count }}</ion-label
+          >
+
+          <ion-icon
+            color="primary"
+            (click)="increase(merchantId, shoppingCart[merchantId][itemKey])"
+            name="add-circle-outline"
+          ></ion-icon>
+        </div>
+      </ng-template>
+    </div>
+
+    <div
+      fxFlex="100"
+      *ngIf="options?.showNoteToSellerInput && options.editableNote"
+    >
+      <ion-item lines="none" class="shopping-cart__note-to-seller">
+        <ion-label position="floating">Note to seller</ion-label>
+
+        <ion-textarea
+          [disabled]="!options?.editableNote"
+          placeholder="(Optional) Write a note to the seller..."
+          [value]="shoppingCart[merchantId][itemKey].noteToSeller"
+          class="shopping-cart__placeholder"
+          (ionChange)="
+            onNoteToSellerChange(
+              $event.target,
+              merchantId,
+              shoppingCart[merchantId][itemKey]
+            )
+          "
+        ></ion-textarea>
+      </ion-item>
+    </div>
+  </div>
+
+  <div
+    fxFlex="100"
+    *ngIf="options?.showShippingCost"
+    class="shopping-cart__shipping-info"
+    fxLayoutAlign="space-between center"
+  >
+    <div>Shipping:</div>
+    <div>
+      {{ storeService.appCurrencyFormat
+      }}{{ costMap[merchantId]?.shipping | number: '1.2-2' }}
+    </div>
+  </div>
+</div>

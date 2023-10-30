@@ -1,0 +1,12 @@
+<div *ngIf="videoId" fxFlex="100">
+  <div class="video-viewer" fxFlex="">
+    <youtube-player
+      [videoId]="videoId"
+      class="video-viewer__media-video"
+      suggestedQuality="highres"
+      [height]="600"
+      [width]="600"
+    >
+    </youtube-player>
+  </div>
+</div>

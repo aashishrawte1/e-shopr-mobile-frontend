@@ -1,0 +1,592 @@
+{
+  "constants": {
+    "marketNumberOfTagsToShow": 50,
+    "marketNumberOfMerchantsToShow": 80,
+    "marketPopularProductsTagText": "Trending",
+    "marketPopularProductsAssociatedTags": ["Trending"],
+    "marketJustForYouProductsAssociatedTags": ["justforyou"],
+    "marketJustForYouTagText": "just for you",
+    "marketNumberOfItemsToFetchAtOnce": 40,
+    "homeNumberOfTagsToShow": 40,
+    "homeTrendingProductStartIndex": 50,
+    "homeNumberOfPopularProductsToShow": 100,
+    "homeNumberOfProductsToShowInTodaysForageSection": 200,
+    "homeNumberOfMerchantsToShow": 20,
+    "homeNumberOfPopularArticlesToShow": 40,
+    "productDetailDescriptionCharCountInLessShowMode": 300,
+    "productdetailNumberOfProductsToPullForMerchant": 50,
+    "productTileNumberOfCharsInTitle": 40,
+    "productTitleNumberOfCharsInDescription": 160,
+    "shoppingCartRecommendedProductsCount": 40,
+    "termsAndConditionLink": "https://www.greendayapp.com/privacy"
+  },
+  "componentData": {
+    "chatPage": {
+      "header": "GreenDay Concierge",
+      "registrationWelcomeMessage": "Hi {{FIRST_NAME}}, <br> My name is Uzair. Just wanted to reach out to let you know that this space is constantly monitored by me, so if you'd like to get in touch directly, just ping me here. I'll ensure that I get back to you as soon as possible.",
+      "productQueryMessage": "Do you have a question on {{PRODUCT_TITLE}}?"
+    },
+    "checkoutPage": {
+      "shoppingCart": {
+        "header": "Checkout Order",
+        "priceInfo": {
+          "subTotal": "Subtotal :",
+          "totalShippingFees": "Total shipping fees :",
+          "discount": "Discount :",
+          "totalPayment": "Total payment (inclusive shipping) :"
+        },
+        "gems": "gems",
+        "coupon": {
+          "couponIsInvalid": "Invalid coupon code.",
+          "couponValue": "Voucher code is applied.",
+          "couponButton": "Apply"
+        },
+        "itemsContainerHeaderText": "ITEMS IN CART",
+        "shippingDetails": {
+          "header": "DELIVER TO",
+          "contactForm": {
+            "labelEmail": "Email",
+            "emailRequiredError": "Please enter your email.",
+            "emailValidationError": "Please enter valid email.",
+            "labelName": "Your name",
+            "nameRequiredError": "Please enter your name.",
+            "namePatternError": "Please enter only letters or spaces.",
+            "labelCountryCode": "Country Code",
+            "countryCodeRequiredError": "Please enter country code.",
+            "labelNumber": "Number",
+            "numberRequiredError": "Please enter your phone number.",
+            "labelShippingNote": "Note: We only ship to Singapore at the moment.",
+            "labelAddress": "Address",
+            "addressRequiredError": "Please enter your shipping address.",
+            "labelZip": "Postal Code",
+            "zipRequiredError": "Please enter your Postal Code."
+          },
+          "paymentInfo": {
+            "header": "PAYMENT INFORMATION",
+            "noPaymentNeeded": "(Not required)",
+            "cardDetailsInfo": "Credit/ Debit card details"
+          },
+          "footerButton": "Complete payment"
+        }
+      },
+      "popupMessage": {
+        "loadingInformation": "Loading information. Please wait...",
+        "pleaseWait": "Please wait...",
+        "updatingShipping": "Updating Shipping Address...",
+        "makingPayment": "Making payment...",
+        "cardNotAuthenticate": "Your card was not authenticated, please try again",
+        "text": "Okay",
+        "verifyVoucher": "Verifying coupon...",
+        "discountValueGreater": "DISCOUNT_VALUE_GREATER_THAN_AVAILABLE_BALANCE",
+        "onlyOneDiscount": "ONLY_ONE_TYPE_OF_DISCOUNT_ALLOWED",
+        "outOfStock": "OUT_OF_STOCK_ERROR",
+        "saveOrder": "Saving your order..."
+      }
+    },
+    "communityPage": {
+      "header": "Community"
+    },
+    "contactUsPage": {
+      "contactSection": {
+        "header": "Contact Us",
+        "contactForm": {
+          "labelEmail": "Email",
+          "emailRequiredError": "Please enter your email.",
+          "emailValidationError": "Please enter valid email.",
+          "labelName": "Your name",
+          "nameRequiredError": "Please enter your name.",
+          "namePatternError": "Please enter only letters or spaces.",
+          "labelCountryCode": "Country Code",
+          "labelNumber": "Phone Number",
+          "countryCodeRequiredError": "Country code or phone is missing.",
+          "labelMessage": "Message",
+          "messageRequiredError": "Please provide some info so we can help you better.",
+          "contactFormButton": "Send Message"
+        }
+      },
+      "defaultValue": {
+        "contactMessageMinLength": 50,
+        "contactMessageMaxLength": 256,
+        "countryCodeMinLength": 2,
+        "numberMinLength": 8
+      }
+    },
+    "creditPage": {},
+    "errorPage": {
+      "header": "404",
+      "subHeading": "Looks like the page you were looking for is no longer here."
+    },
+    "helpPage": {
+      "helpPageSection": {
+        "header": "Help",
+        "question1": "What is GreenDay?",
+        "answer1": "GreenDay is a mobile platform that encourages users to pursue sustainable lifestyles by offering a marketplace with sustainable products and services. It also features a community where like-minded individuals can share sustainability tips and content.",
+        "question2": "What is the Green Concierge?",
+        "answer2": "It’s an avenue for users to get a personal response from GreenDay regarding any queries or concerns that they might have and have us follow up with them in the future.",
+        "question3": "How does the gem rewards work?",
+        "answer3": "You can earn gems by viewing the product description page of a product for a specified time period indicated by a progress bar. Gems can be exchanged for discount for any orders within the app but cannot be used together with a coupon. Currently, gems cannot be exchanged for cashback. You can view your gems balance and find out other ways of earning gems on your profile page by clicking on your name on the side menu.",
+        "question4": "How will my purchased products be delivered?",
+        "answer4": "Deliveries will be taken care of by the merchants of the products.The prices displayed in the app include the delivery fee required.",
+        "question5": "I have concerns that the products I purchased are not sustainable, what should I do?",
+        "answer5": "The GreenDay team tries its best to curate a marketplace of eco-friendly products from responsible merchants. Please email us"
+      }
+    },
+    "homePage": {
+      "marketSection": {
+        "header": "Marketplace",
+        "viewMoreText": "View more",
+        "popularSection": {
+          "header": "Popular"
+        },
+        "merchantSection": {
+          "header": "Our Merchants"
+        },
+        "categorySection": {
+          "header": "Categories"
+        },
+        "footerNote": "Scroll down for more products"
+      },
+      "communitySection": {
+        "header": "Read",
+        "viewMoreText": ""
+      },
+      "playGroundSection": {
+        "header": "Play"
+      },
+      "todayForage": {
+        "header": "Today's Forage",
+        "footerNote": "View More..."
+      },
+      "turtlePicks": {
+        "header": "Most Liked",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/icons/heart.svg"
+      }
+    },
+    "loginPage": {
+      "loginPageSection": {
+        "header": "Log in",
+        "loginForm": {
+          "labelEmail": "Email",
+          "emailRequiredError": "Email field is blank.",
+          "emailPatternError": "Please enter valid email.",
+          "labelPassword": "Password",
+          "passwordRequiredError": "Password field is blank.",
+          "forgotPassword": "Forgot Password?",
+          "button": {
+            "loginWithEmail": "Login"
+          },
+          "loginFormFooter": "Don't have an account?",
+          "createAccount": "Create One"
+        },
+        "socialLoginButtonText": {
+          "facebook": "Continue with Facebook",
+          "google": "Continue with Google",
+          "apple": "Continue with Apple"
+        }
+      }
+    },
+    "marketPage": {
+      "headerText": "Marketplace",
+      "categoryText": "categories",
+      "merchantText": "merchant",
+      "sorting": [
+        {
+          "selectionText": "Best Match",
+          "selectionValue": "best-match",
+          "selectionIndicatorText": "Best Match"
+        },
+        {
+          "selectionText": "Price : Low - High",
+          "selectionValue": "price-low-high",
+          "selectionIndicatorText": "Price↓"
+        },
+        {
+          "selectionText": "Price : High - Low",
+          "selectionValue": "price-high-low",
+          "selectionIndicatorText": "Price↑"
+        }
+      ]
+    },
+    "merchantStorePage": {},
+    "mixedContentPage": {},
+    "notificationPage": {},
+    "ordersPage": {
+      "orderPageSection": {
+        "header": "My Orders",
+        "orderInfo": {
+          "orderReference": "ORDER REFERENCE :",
+          "orderedAt": "Placed on :",
+          "paymentMode": "Payment mode :"
+        },
+        "productInfo": {
+          "totalShippingCost": "Total shipping cost :",
+          "subTotal": "Subtotal :",
+          "discount": "Discount :",
+          "totalPayment": "Total cost (inclusive shipping) :"
+        },
+        "noOrderPlacedSection": {
+          "title": "We do not see any previous order from you. <br />How about the items below?",
+          "shopNowButton": "Shop Now",
+          "separatorText": "You May Also Like"
+        }
+      }
+    },
+    "likesPage": {
+      "likesPageSection": {
+        "headerText": "My Likes",
+        "noItemsLikedSection": {
+          "titleText": "No likes have been given to any products yet",
+          "shopNowButtonText": "Find interesting products"
+        }
+      }
+    },
+    "playgroundPage": {
+      "header": "Spin the Wheel",
+      "spinTheWheel": {
+        "wheelSegments": [
+          {
+            "text": "Go Vegan",
+            "fillStyle": "#fed715",
+            "textFillStyle": "black",
+            "data": {
+              "tags": {
+                "vegan": true
+              },
+              "table": {
+                "products": true
+              },
+              "action": "filterByTags"
+            }
+          },
+          {
+            "text": "Defend against \n covid 19",
+            "fillStyle": "#60b626",
+            "data": {
+              "tags": {
+                "covid19": true
+              },
+              "table": {
+                "link": true,
+                "products": true
+              },
+              "action": "filterByTags"
+            }
+          },
+          {
+            "text": "Random reads",
+            "fillStyle": "#fed715",
+            "textFillStyle": "black",
+            "data": {
+              "tags": {},
+              "table": {},
+              "action": "read"
+            }
+          },
+          {
+            "text": "Random \n merchant",
+            "fillStyle": "#60b626",
+            "data": {
+              "tags": {},
+              "table": {},
+              "action": "merchant"
+            }
+          },
+          {
+            "text": "Crazy video",
+            "fillStyle": "#fed715",
+            "textFillStyle": "black",
+            "data": {
+              "tags": {},
+              "table": {},
+              "action": "video"
+            }
+          },
+          {
+            "text": "Sustainable \n fashion 101",
+            "fillStyle": "#60b626",
+            "data": {
+              "tags": {
+                "fashion": true
+              },
+              "table": {
+                "products": true
+              },
+              "action": "filterByTags"
+            }
+          },
+          {
+            "text": "Random \n products",
+            "fillStyle": "#fed715",
+            "textFillStyle": "black",
+            "data": {
+              "tags": {},
+              "table": {
+                "products": true
+              },
+              "action": "filterByTags"
+            }
+          },
+          {
+            "text": "Eco-optimize \n your home",
+            "fillStyle": "#60b626",
+            "data": {
+              "tags": {
+                "home": true
+              },
+              "table": {
+                "products": true
+              },
+              "action": "filterByTags"
+            }
+          }
+        ]
+      },
+      "playGroundSectionItems": [
+        {
+          "action": "fullScreenImage",
+          "text": "",
+          "itemTileImageUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/playground/indore-planting-contest.jpeg",
+          "data": {
+            "fullScreenImageUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/playground/indore-planting-contest-result.jpeg"
+          }
+        },
+        {
+          "text": "",
+          "redirectTo": "/playground/spin-the-wheel",
+          "itemTileImageUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/playground/spin-the-wheel.png",
+          "action": "goToPage"
+        },
+        {
+          "text": "",
+          "itemTileImageUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/playground/youtube-video.png",
+          "data": {
+            "videoUrl": "https://www.youtube.com/watch?v=Xq5aJJZwB5s"
+          },
+          "action": "video"
+        },
+        {
+          "text": "",
+          "itemTileImageUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/playground/beeswax_video.png",
+          "data": {
+            "videoUrl": "https://www.youtube.com/watch?v=YAyKeGzfhWM"
+          },
+          "action": "video"
+        },
+        {
+          "text": "",
+          "itemTileImageUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/playground/orgayana_video.png",
+          "action": "video",
+          "data": {
+            "videoUrl": "https://www.youtube.com/watch?v=B9C1jMJBkuE"
+          }
+        },
+        {
+          "action": "goToPage",
+          "text": "",
+          "itemTileImageUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/partners/passion_wave/pa_wave_home_page_tile.jpg",
+          "redirectTo": "/pages/ad-hoc-pages/passion-wave-leader-board-pwoc",
+          "data": {
+            "chartEmbedLink": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT50K4SrgfYvfDejikeHn61EiCPgOyPFI0-YjQiXCUAufXzrWLL2x9WipwNUB8GgnlWFL2nxGn7KHth/pubchart?oid=1706322448&format=interactive"
+          }
+        }
+      ]
+    },
+    "privacyPolicyPage": {
+      "header": "Privacy Policy",
+      "privacyPolicyInfo": " <br /> GreenDay Pte. Ltd. built the GreenDay app as a commercial app. This SERVICE is provided by GreenDay Pte. Ltd. and is intended for use as is. This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service. If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The Personal Information that We collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy. The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at [App Name], unless otherwise defined in this Privacy Policy. </p> <p> <strong> INFORMATION COLLECTION AND USE </strong><br /> For a better experience while using our Service, We may require you to provide us with certain personally identifiable information, including but not limited to username, email, shipping address, password, phone. The information that We request is will be retained by us and used as described in this privacy policy. We also collect your payment detail information but this data is not retained in our system. The app does use third party services that may collect information used to identify you. </p> <p> <strong> LOG DATA </strong><br /> We want to inform you that whenever you use our Service, in case of an error in the app We collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your devices’s Internet Protocol (“IP”) address, device name, operating system version, configuration of the app when utilising our Service, the time and date of your use of the Service, and other statistics. </p> <p> <strong> COOKIES </strong><br /> Cookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your devices’s internal memory. Check if this is true for your app, if unsure, just assume that you do use cookies and modify this next line This Services does not uses these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collection information and to improve their services. You have the option to either accept or refuse these cookies, and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service. </p> <p> <strong> SERVICE PROVIDERS </strong><br /> We may employ third-party companies and individuals due to the following reasons: To facilitate our Service; To provide the Service on our behalf; To perform Service-related services; or To assist us in analyzing how our Service is used. We want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose. </p> <p> <strong> SECURITY </strong><br /> We value your trust in providing us your Personal Information, thus We are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and We cannot guarantee its absolute security. </p> <p> <strong> LINKS TO OTHER SITES </strong><br /> This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, I strongly advise you to review the Privacy Policy of these websites. We have no control over, and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services. </p> <p> <strong> CHILDREN’S PRIVACY </strong><br /> This Services do not address anyone under the age of 13. We do not knowingly collect personal identifiable information from children under 13. In the case We discover that a child under 13 has provided us with personal information, We immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that We will be able to do necessary actions. </p> <p> <strong> DATA REMOVAL </strong><br /> Users can send an email to <a>admin@greendayapp.com</a> to remove their account (and all information pertaining to the user) and we will follow up within 72 hours. </p> <p> <strong> CHANGES TO THIS PRIVACY POLICY </strong><br /> We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page. </p> <p> <strong> CONTACT US </strong><br /> If you have any questions or suggestions about our Privacy Policy, do not hesitate to <a (click)='goToPage('app/tabs/contact-us')''>contact us</a>."
+    },
+    "productDetailPage": {
+      "progressBar": {
+        "barFillColor": "var(--ion-color-primary)",
+        "duration": "10000",
+        "requiredTriggerCount": 2,
+        "triggerConditions": [
+          {
+            "id": "scroll_start",
+            "type": "event",
+            "triggerHint": "Start scrolling to earn gems"
+          },
+          {
+            "id": "element_in_view",
+            "type": "element_in_view",
+            "triggerHint": "Continue scrolling to complete",
+            "config": {
+              "elementSelector": ".product-detail-page__product-recommendations .item-description-section__title"
+            }
+          }
+        ]
+      },
+      "likeOptions": {
+        "hintForLikeText": "Add to My Likes",
+        "hintForUnLikeText": "Remove from My Likes",
+        "toastOptions": {
+          "onProductLikeClickMessage": "Item added to My Likes",
+          "onProductUnLikeClickMessage": "Item removed from My Likes!",
+          "showToastActionButton": true,
+          "toastButtonText": "Go",
+          "toastShowDuration": 2000
+        }
+      },
+      "productDetailSection": {
+        "loginPrompt": {
+          "gemsText": "Log in to get gems",
+          "loginBtn": "Log in"
+        },
+        "showMore": "Show more...",
+        "showLess": "Show less...",
+        "separatorText": "You May Also Like",
+        "footer": {
+          "greenConciergeText": "Chat",
+          "shoppingCartText": "Cart",
+          "footerBtnCart": "Add to Cart",
+          "footerBtnBuy": "Buy Now"
+        }
+      },
+      "productShareSection": {
+        "shareMessageText": "Here's {{productTitle}} from GreenDay, SEA's #1 Eco Friendly MarketPlace. \n\nCheck out why it is better than the mainstream version!",
+        "appDownloadLinkPromptText": "View it in GreenDay app.",
+        "messageWhenUserNotLoggedInText": "You can get {{gemsCount}} gems if you share while logged in."
+      }
+    },
+    "profilePage": {
+      "profilePageSection": {
+        "header": "My Profile",
+        "profileDetail": {
+          "labelName": "Name",
+          "labelEmail": "Email",
+          "saveButton": "Save",
+          "emailPatternError": "Please enter valid email.",
+          "loginRequiredErrorMessage": "Please log in again before changing your email",
+          "emailInUsedErrorMessage": "Email is used in another account. Please use another email",
+          "emailUpdateSuccessful": "Email Updated"
+        },
+        "coinWallet": {
+          "header": "Wallet",
+          "gems": "gems",
+          "howToEarnCoin": "How to earn gems",
+          "earnCoinMission": "Browse products in marketplace (1000 gems/product)",
+          "earnCoinMissionBtn": "Go",
+          "claimDailyReward": "Claim daily reward (1,000 gems)",
+          "claimDailyRewardBtn": "Claim",
+          "shareWithFriends": "Share GreenDay with friends (10,000 gems)",
+          "shareWithFriendsBtn": "Share",
+          "refersAndWin": "Referred by your friend? ",
+          "refersAndWinBtn": "Enter <br/> Code"
+        }
+      }
+    },
+    "registrationPage": {
+      "registrationPageSection": {
+        "header": "Sign up",
+        "registerForm": {
+          "labelEmail": "Email",
+          "emailRequiredError": "Email field is blank.",
+          "emailPatternError": "Please enter valid email.",
+          "labelPassword": "Password",
+          "passwordRequiredError": "Password field is blank.",
+          "button": {
+            "loginWithEmail": "Create Account"
+          }
+        },
+        "haveAccountText": "Already have an account?",
+        "haveAccountLoginButtonText": "Login",
+        "socialLoginButtonText": {
+          "facebook": "Continue with Facebook",
+          "google": "Continue with Google",
+          "apple": "Continue with Apple",
+          "skip": "Skip"
+        }
+      }
+    },
+    "shoppingCartPage": {
+      "shoppingCartPageSection": {
+        "header": "Your Cart",
+        "priceInfo": {
+          "subtotal": "Subtotal:",
+          "checkoutButton": "Checkout"
+        },
+        "hasNoItem": {
+          "title": "Your cart is empty.<br />Browse from our amazing collection now!",
+          "hasNoItemBtn": "Discover now",
+          "separator": "You May Also Like"
+        }
+      }
+    },
+    "tabsPage": {
+      "tabsIconHomeText": "Home",
+      "tabsIconMarketplaceText": "Marketplace",
+      "tabsIconCommunityText": "News",
+      "barteringIconBottomText": "Trade",
+      "tabsIconCartText": "Cart",
+      "tabsIconChat": "Chat"
+    },
+    "activeDowntimeComponent": {
+      "header": "We&rsquo;ll be back soon!",
+      "message": "<p> Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href='mailto:admin@greendayapp.com'>contact us</a>, otherwise we&rsquo;ll be back online shortly! </p> <p>&mdash; GreenDay Team</p>"
+    },
+    "addCommentComponent": {},
+    "articleTileComponent": {},
+    "articleViewerComponent": {},
+    "cartItemsSummaryComponent": {},
+    "codePushBundleDownloaderComponent": {},
+    "customModalComponent": {},
+    "customPopupComponent": {},
+    "customProgressBarComponent": {},
+    "fullScreenImageViewerComponent": {},
+    "imagePlaceholderComponent": {},
+    "merchantTileComponent": {},
+    "productTileComponent": {},
+    "tagTileComponent": {},
+    "tileSkeletonComponent": {},
+    "userProfileComponent": {},
+    "videoViewerComponent": {},
+    "productSearchFilterData": {
+      "emptyResultText": "No products found for matching search term",
+      "makeAnotherSearchButtonText": "Make another search"
+    },
+    "sideMenuComponentData": {
+      "shareAppText": "Share The App",
+      "rateAppText": "Rate The App",
+      "likedItemsMenuItemText": "My Likes"
+    }
+  },
+  "appShareReferralData": {
+    "dialogTitle": "Refer and earn",
+    "text": "Hi 👋! Have I told you about GreenDay? It is the only eco friendly marketplace where you can earn free rewards just by browsing products. Crazy right? Sign up with my referral code & claim your welcome bonus of {{gemCount}} gems.\n\nShopping for eco friendly stuff has never been so rewarding & addictive! \n\nReferral Code: {{referralCode}}\n\nDownload:",
+    "url": "{{appDownloadLink}}"
+  },
+  "appShareText": {
+    "dialogTitle": "Share the love...",
+    "text": "GreenDay app is all about eco-friendly products, education for a better future.",
+    "url": "{{appDownloadLink}}"
+  },
+  "userReviewPromptData": {
+    "appRateDialogData": {
+      "cancelButtonLabel": "Never show again",
+      "laterButtonLabel": "Later",
+      "rateButtonLabel": "Rate us 5 "
+    },
+    "canShowPrompt": true,
+    "minNumberOfAppOpensBeforeCanShowPrompt": 4
+  },
+  "coinActionsConfig": {
+    "coinsEarnedToast": {
+      "actionButtonText": "check",
+      "message": "💎 You just earned {{coinCount}} Gems! "
+    }
+  },
+  "icons": {
+    "heartIconFilled": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/icons/heart/like-heart-filled.svg",
+    "heartIconFilledWhite": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/icons/heart/like-heart-white.svg",
+    "heartIconOutline": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/icons/heart/like-heart-unfilled.svg",
+    "searchBirdImage": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/bird.svg",
+    "trendingSelectedImage": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/trending-outline.svg",
+    "trendingUnSelectedImage": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/trending-filled.svg",
+    "justForYouSelectedImage": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/heart-outline.svg",
+    "justForYouUnSelectedImage": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/heart-filled.svg",
+    "shareIcon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/icons/share.svg",
+    "turtleColorfulSVGIcon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/icons/turtles/turtle-colorful-icon.svg",
+    "filterProductIcon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/icons/filter.svg",
+    "barteringAddProductIconType1": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/bartering_icons/addition-button-no-fill-type1.svg"
+  }
+}

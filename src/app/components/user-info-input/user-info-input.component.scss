@@ -1,0 +1,15 @@
+.registration-modal__input-container {
+  border-bottom: 1px solid var(--ion-color-step-200);
+  margin-bottom: 10px;
+}
+
+section,
+form {
+  height: 100%;
+}
+
+.registration-modal__submit-button {
+  position: fixed;
+  bottom: 10px;
+  margin: 0 10% 0 7%;
+}

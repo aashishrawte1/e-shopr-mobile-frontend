@@ -1,0 +1,47 @@
+<div class="popup">
+  <div class="popup__container" *ngIf="dialogType === 'payment-successful'">
+    <div class="popup__info">
+      <img
+        [src]="asset.paymentSuccessfulPopup"
+        class="popup__container-image"
+      />
+      <h4 class="popup__title">Your payment is successful</h4>
+      <h5 class="popup__description">
+        Congratulations! An email confirmation will be sent to you shortly. You
+        are one step closer to your journey.
+      </h5>
+      <ion-button class="popup__btn" shape="round" (click)="dismissPopup()">
+        Return
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="popup__container" *ngIf="dialogType === 'game-promise'">
+    <div class="popup__info">
+      <img
+        [src]="asset.paymentSuccessfulPopup"
+        class="popup__container-image"
+      />
+      <h4 class="popup__title">PROMOCODE</h4>
+      <h5 class="popup__description">Use the above promo code to enjoy</h5>
+      <ion-button class="popup__btn" shape="round" (click)="dismissPopup()">
+        Continue
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="popup__container" *ngIf="dialogType === 'in-app-announcement'">
+    <div class="popup__info">
+      <img
+        class="popup__container-image"
+        [src]="asset.inAppAnnouncementPopup"
+      />
+      <h5 class="popup__description">
+        {{ data.inAppAnnouncement.message }}
+      </h5>
+      <ion-button class="popup__btn" (click)="dismissPopup()">
+        {{ data.inAppAnnouncement.nextButtonText }}
+      </ion-button>
+    </div>
+  </div>
+</div>

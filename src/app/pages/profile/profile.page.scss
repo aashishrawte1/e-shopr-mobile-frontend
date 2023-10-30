@@ -1,0 +1,157 @@
+.header {
+  ion-toolbar {
+    --border-width: 0;
+    --background: transparent;
+  }
+}
+
+.profile {
+  height: 100%;
+  text-align: center;
+  position: relative;
+  margin-top: 1vh;
+
+  &__img-container {
+    margin-top: 0%;
+  }
+  &__coins {
+    color: var(--ion-color-primary);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    &-image {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__detail-value {
+    text-align: center;
+  }
+
+  &__detail-item {
+    padding: 0;
+  }
+
+  &__image {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__btn {
+    margin-top: 30px;
+    width: 58vw;
+  }
+
+  &__articles-container {
+    margin-top: 50px;
+  }
+}
+
+.page-info__header {
+  text-align: left;
+}
+
+.profile__wallet-container {
+  margin-top: 30px;
+}
+
+.profile__coin-mission-description {
+  font-size: 14px;
+  padding-left: 10px;
+  color: var(--ion-color-danger-contrast);
+}
+.profile__how-to-earn-coin {
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.profile__read-more {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+  text-decoration: underline;
+  text-align: left;
+}
+
+.profile__coin-count {
+  font-size: 15px;
+}
+
+.profile__discount-count {
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.profile__coin-mission-container {
+  height: 60px;
+  padding: 15px;
+  border-radius: 50px;
+  text-align: left;
+}
+.profile__coin-mission-container:nth-of-type(odd) {
+  background: var(--ion-color-primary);
+}
+
+.profile__coin-mission-container:nth-of-type(even) {
+  background: var(--ion-color-primary);
+}
+
+.profile__coin-action-button {
+  height: 30px;
+
+  --border-radius: 50px;
+}
+.clear_space {
+  margin-top: 10px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--ion-color-grey);
+  width: 100%;
+}
+.mission_btn_text {
+  color: var(--ion-color-secondary-contrast);
+}
+.profile__country-selection-section-header {
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.country-name {
+  padding: 9px;
+}
+.profile__form__user_agreement {
+  color: var(--ion-color-black);
+  font-size: 10px;
+}
+
+.profile__country-selection {
+  text-align: left;
+}
+
+.email_update_successful {
+  color: var(--ion-color-primary);
+}
+
+.phoneProfile {
+  width: 75%;
+}
+
+.ccode {
+  width: 30%;
+}
+
+.pphone {
+  width: 70%;
+}

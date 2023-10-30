@@ -1,0 +1,5 @@
+<Directory /var/www/apple-app-site-association>
+  <Files apple-app-site-association>
+    Header set Content-type "application/json"
+  </Files>
+</Directory>

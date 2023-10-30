@@ -1,0 +1,40 @@
+ion-header.header ion-toolbar.header__toolbar {
+  --border-width: 0;
+  --background: white;
+}
+
+ion-header.header.header--auth ion-toolbar.header__toolbar {
+  --background: none;
+}
+
+.header__avatar {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+
+.header__img {
+  font-size: 7em;
+  margin-top: 8px;
+}
+
+.header .menu-icon {
+  margin: 0;
+  padding: 0;
+  margin-left: 0;
+}
+
+.header .menu-icon ion-icon {
+  font-size: 25px;
+}
+
+.header .menu-icon img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+.top-header__gem-icon {
+  width: 20px;
+  height: 20px;
+}

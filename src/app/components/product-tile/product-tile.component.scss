@@ -1,0 +1,131 @@
+.row-layout {
+  margin-top: 5px;
+}
+.row-layout__media-container {
+  height: 100%;
+}
+.row-layout__image {
+  object-fit: cover;
+  border-radius: 8px;
+  height: 130px;
+  width: 100%;
+}
+
+.row-layout__title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  max-height: 65px;
+}
+
+.row-layout__merchant-info {
+  background: white;
+  margin-left: -5px;
+  margin-top: 0;
+}
+.row-layout__merchant-name {
+  font-size: 12px;
+}
+
+.row-layout__price {
+  font-size: 15px;
+  overflow: hidden;
+  margin-top: 10px;
+  word-spacing: 3px;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+}
+
+.row-layout__price-discount {
+  color: #1c1d1c6b;
+  font-weight: 500;
+  margin-left: 10px;
+  text-decoration: line-through;
+}
+
+.box-layout {
+  text-align: left;
+  margin: 0;
+  padding: 0 0;
+  box-shadow: none;
+  overflow: overlay;
+}
+.box-layout__container-card {
+  text-align: left;
+  margin: 0;
+  padding: 0 0;
+  position: relative;
+  box-shadow: none;
+  overflow: overlay;
+}
+
+.box-layout__media-container {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: 170px;
+  max-width: 100%;
+}
+
+.box-layout__image {
+  border-radius: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.box-layout__tags {
+  font-size: 9px;
+  overflow: hidden;
+  margin-top: 5px;
+  word-spacing: 3px;
+}
+
+.box-layout__description {
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.box-layout__price {
+  font-size: 15px;
+  overflow: hidden;
+  margin-top: 10px;
+  word-spacing: 3px;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+  .box-layout__price-discount {
+    color: #1c1d1c6b;
+    font-weight: 500;
+    margin-left: 10px;
+    text-decoration: line-through;
+  }
+}
+
+.box-layout__title {
+  margin-top: 2px;
+  padding-left: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.box-layout__card-header,
+.box-layout__content {
+  padding: 9px 0 10px 0;
+}
+.box-layout__avatar-img {
+  width: 22px;
+  height: 23px;
+}
+.box-layout__card-header {
+  font-size: 16px;
+}
+.box-layout__card-header ion-card-subtitle {
+  font-weight: bold;
+}
+.box-layout__card-header ion-chip {
+  padding-left: 8px;
+  margin: 0;
+  background: white;
+}

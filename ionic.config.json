@@ -1,0 +1,9 @@
+{
+  "name": "GreenDay: Live sustainably",
+  "type": "angular",
+  "defaultProject": "frontend-grn",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  }
+}

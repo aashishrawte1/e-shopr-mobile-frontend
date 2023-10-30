@@ -1,0 +1,736 @@
+[
+  {
+    "text": "Categories",
+    "list": [
+      {
+        "text": "Home & Deco",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/home_and_deco.svg",
+        "list": [
+          {
+            "text": "All",
+            "associatedTags": ["homedeco"]
+          },
+          {
+            "text": "Laundry",
+            "associatedTags": ["laundry"]
+          },
+          {
+            "text": "Bathroom",
+            "associatedTags": [
+              "cleaning",
+              "bathroom",
+              "multisurface",
+              "disinfectant",
+              "bathtowels",
+              "bathlinens",
+              "bathrugs",
+              "showercurtains",
+              "towerbars",
+              "bathhardware",
+              "toiletpaperholders",
+              "bathhardwareother",
+              "bathroomfurniture",
+              "bathsaltsandothers",
+              "bathaccessories",
+              "soapandlotiondispensers",
+              "toothbrushholders",
+              "bathroomwastebaskets",
+              "bathaccessoriesother",
+              "bathroommirrorsandlighting"
+            ]
+          },
+          {
+            "text": "Bedroom",
+            "associatedTags": [
+              "pillows",
+              "bedding",
+              "bedroom",
+              "bedseetsandpillowcases",
+              "blankets",
+              "quilts",
+              "beddingaccessoriesother",
+              "mattresses",
+              "bedroomfurniture"
+            ]
+          },
+          {
+            "text": "Animal Accessories",
+            "associatedTags": [
+              "petsbedsandspoons",
+              "animalsandpetsaccessories",
+              "petsaestheticsandhygiene",
+              "petstravelandwalk",
+              "animalsandpetsaccessoriesother"
+            ]
+          },
+          {
+            "text": "Pet Foods",
+            "associatedTags": ["petsfood"]
+          },
+          {
+            "text": "Decorations",
+            "associatedTags": [
+              "rugs",
+              "decoration",
+              "tablelamps",
+              "lighting",
+              "floorlamps",
+              "lightingother",
+              "framesandphotoalbums",
+              "walldecor",
+              "wallart",
+              "otherart",
+              "candles",
+              "candleholder",
+              "aromatherapy",
+              "antiquesandcollections",
+              "decorationother"
+            ]
+          },
+          {
+            "text": "Furniture",
+            "associatedTags": [
+              "cribs",
+              "babiesnursery",
+              "furniture",
+              "sofasandloveseats",
+              "chairs",
+              "benches",
+              "nightstands",
+              "bookshelvesandbookcases",
+              "stools",
+              "coffeetables",
+              "tables",
+              "diningtables",
+              "accentandendtables",
+              "consoletables",
+              "foldingtables",
+              "cabinetsandchests",
+              "furnitureother",
+              "tablesandchairsforchildren"
+            ]
+          },
+          {
+            "text": "Games & Toys",
+            "associatedTags": [
+              "toys",
+              "gamestoys",
+              "hobbies",
+              "drawingpaintingandcrafts",
+              "plazaandoutdoorgames",
+              "toysforbabies"
+            ]
+          },
+          {
+            "text": "Garden",
+            "associatedTags": [
+              "flowerpotsandplanters",
+              "exteriordecoration",
+              "garden",
+              "verticalgardens",
+              "gardenother",
+              "gardentools",
+              "growingaccessories",
+              "irrigation",
+              "umbrellasandshades",
+              "grillsoutdoorcooking",
+              "outdoorfurniture",
+              "composters",
+              "compost",
+              "plantssowingandcultivation",
+              "accesoriescompost",
+              "plants",
+              "sowingandcultivation"
+            ]
+          },
+          {
+            "text": "Kitchen",
+            "associatedTags": [
+              "infusors",
+              "coffeeandteaaccessories",
+              "kitchen",
+              "teaset",
+              "coffeemakers",
+              "coffeeteaaccessoriesother",
+              "potsandpans",
+              "cookingandbaking",
+              "kitchenpotholders",
+              "cookwaresets",
+              "bakewaresets",
+              "cookingandbakingother",
+              "kitchenaprons",
+              "kitchenother",
+              "pastryutensils",
+              "mortars",
+              "preparationutensils",
+              "kitchenrollers",
+              "nutcracker",
+              "sieves",
+              "preparationutensilsother",
+              "shoppingbags",
+              "shoppingitems",
+              "shoppingitemsother",
+              "bottles",
+              "storageandorganization",
+              "wastebaskets",
+              "disposable",
+              "detergentdispensers",
+              "kitchenorganizers",
+              "condimentholder",
+              "thermalcontainers",
+              "dishdryer",
+              "mealbag",
+              "storageandorganizationother",
+              "kitchenkit",
+              "cups",
+              "tablewareandservingitems",
+              "straws",
+              "platters",
+              "basesandsupports",
+              "trays",
+              "bowls",
+              "chopsticks",
+              "utensils",
+              "glassware",
+              "cutleryandknives",
+              "tablewareandservingitemsother",
+              "tablecloths",
+              "tablelinen",
+              "placemats",
+              "coasters",
+              "napkins",
+              "other",
+              "foodcovers",
+              "waterfiltration",
+              "teatowels",
+              "tumbler",
+              "cleaning"
+            ]
+          },
+          {
+            "text": "Gifts",
+            "associatedTags": ["gifts"]
+          },
+          {
+            "text": "Babies & Children ",
+            "associatedTags": [
+              "babycarriage",
+              "babieschildren",
+              "diaperanddiaperproducts"
+            ]
+          },
+          {
+            "text": "Home & Deco Other",
+            "associatedTags": ["homedecoother"]
+          }
+        ]
+      },
+      {
+        "text": "Bundles",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/svg-bundle.svg",
+        "list": [
+          {
+            "text": "All",
+            "associatedTags": ["greendaybundle"]
+          }
+        ]
+      },
+      {
+        "text": "Fashion",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/fashion.svg",
+        "list": [
+          {
+            "text": "All",
+            "associatedTags": ["fashion"]
+          },
+          {
+            "text": "Kids accsesories",
+            "associatedTags": [
+              "boysaccessories",
+              "kidsaccsesories",
+              "girlsaccessories",
+              "unisexaccessories"
+            ]
+          },
+          {
+            "text": "Kids clothes",
+            "associatedTags": [
+              "boysclothing",
+              "kidsclothes",
+              "swimwear",
+              "girlsclothing",
+              "unisexkidsclothing"
+            ]
+          },
+          {
+            "text": "Kids shoes",
+            "associatedTags": [
+              "boysshoes",
+              "kidsshoes",
+              "girlsshoes",
+              "unisexshoes"
+            ]
+          },
+          {
+            "text": "Mens accsesories",
+            "associatedTags": [
+              "mensaccessoriesother",
+              "mensaccsesories",
+              "mensbags",
+              "mensbelts",
+              "menshats",
+              "menssunglassesaccessories",
+              "mensties",
+              "menswallets"
+            ]
+          },
+          {
+            "text": "Mens clothes",
+            "associatedTags": [
+              "mensactivewear",
+              "mensclothes",
+              "mensswimwear",
+              "mensclothesother",
+              "menscoatsjackets",
+              "menspants",
+              "mensshirts",
+              "mensshorts",
+              "mensunderwear"
+            ]
+          },
+          {
+            "text": "Mens shoes",
+            "associatedTags": [
+              "mensboots",
+              "mensshoes",
+              "menscasualshoes",
+              "mensdressshoes",
+              "menssandals",
+              "mensshoesother",
+              "mensslippers",
+              "menssneakers"
+            ]
+          },
+          {
+            "text": "Womens accesories",
+            "associatedTags": [
+              "womensaccessoriesother",
+              "womensaccesories",
+              "womensbagsandhandbags",
+              "womensbelts",
+              "womenshairaccessories",
+              "womenshats",
+              "womensscarveswraps",
+              "womenssunglassesaccessories",
+              "womenswallets",
+              "jewellery"
+            ]
+          },
+          {
+            "text": "Womens clothes",
+            "associatedTags": [
+              "coatsjacketsvests",
+              "womensclothes",
+              "womensactivewear",
+              "womensdresses",
+              "womensintimatessleepwear",
+              "womenssweaters",
+              "womenstops",
+              "womensswimwear",
+              "womenspants",
+              "womensbottoms",
+              "womensshorts",
+              "womensjeans",
+              "womensskirts",
+              "womensbottomsother",
+              "womensclothesother"
+            ]
+          },
+          {
+            "text": "Womens shoes",
+            "associatedTags": [
+              "womensboots",
+              "womensshoes",
+              "womenscomfortshoes",
+              "womensflats",
+              "womensheels",
+              "womenssandals",
+              "womensshoesother",
+              "womenssneakers"
+            ]
+          },
+          {
+            "text": "Unisex fashion",
+            "associatedTags": [
+              "unisexshoes",
+              "unisexfashion",
+              "unisexclothing",
+              "unisexaccessories"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Health & Beauty",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/health_and_beauty.svg",
+        "list": [
+          {
+            "text": "All",
+            "associatedTags": ["healthbeautycare"]
+          },
+          {
+            "text": "Essential oils",
+            "associatedTags": ["essentialoils", "essentialoilsdiffuser"]
+          },
+          {
+            "text": "Barbershop",
+            "associatedTags": ["barbershop"]
+          },
+          {
+            "text": "Beauty treatments",
+            "associatedTags": ["beautytreatments"]
+          },
+          {
+            "text": "Hair care",
+            "associatedTags": [
+              "hairtreatments",
+              "haircare",
+              "kits",
+              "shampoosandconditioners"
+            ]
+          },
+          {
+            "text": "Hair removal",
+            "associatedTags": ["hairremoval"]
+          },
+          {
+            "text": "Make up",
+            "associatedTags": [
+              "makeuptools",
+              "makeup",
+              "makeuplips",
+              "makeupeyes",
+              "makeupremovers",
+              "makeupother"
+            ]
+          },
+          {
+            "text": "Manicure & pedicure",
+            "associatedTags": [
+              "enamels",
+              "manicurepedicure",
+              "handsmoisturizing",
+              "treatmentsforhandsandfeet",
+              "treatmentsforhandsandfeetother",
+              "cuticle",
+              "nailcare"
+            ]
+          },
+          {
+            "text": "Personal hygiene",
+            "associatedTags": [
+              "perfume",
+              "personalhygiene",
+              "deodorants",
+              "razors",
+              "menstrualcups",
+              "femininehygiene",
+              "sanitarypads",
+              "femininewipes",
+              "breastprotectors",
+              "dailyprotectors",
+              "femininehygieneother",
+              "toothbrushes",
+              "oralcare",
+              "toothpastes",
+              "oralcarekits",
+              "oralcareother",
+              "comb",
+              "personalhygieneother",
+              "soapbar",
+              "soaps",
+              "liquidsoap",
+              "soapother"
+            ]
+          },
+          {
+            "text": "Skin care",
+            "associatedTags": [
+              "bodymoisturising",
+              "bodycare",
+              "skincare",
+              "bodyexfoliating",
+              "bodyfirming",
+              "anticellulite",
+              "antistretch",
+              "bodynourishing",
+              "oilforbody",
+              "bodysponges",
+              "bodylotion",
+              "bodycareother",
+              "facemasks",
+              "facialcleanser",
+              "facialcare",
+              "facialbrushes",
+              "facialsponges",
+              "creamemulsion",
+              "milkgel",
+              "serum",
+              "facelotion",
+              "oilforface",
+              "facialround",
+              "facialcareother",
+              "eyecare",
+              "lipbalms",
+              "skincareother",
+              "skincarekits",
+              "repellents",
+              "sunscreen",
+              "sunprotection",
+              "bronzers",
+              "postsun",
+              "babycare"
+            ]
+          },
+          {
+            "text": "Health",
+            "associatedTags": [
+              "prenatal",
+              "mothers",
+              "health",
+              "postnatal",
+              "covidmask",
+              "sanitisers"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Office & School",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/office_and_school.svg",
+        "list": [
+          {
+            "text": "All",
+            "associatedTags": ["officeschool"]
+          },
+          {
+            "text": "Office furniture  ",
+            "associatedTags": ["chairs", "officefurniture", "desks"]
+          },
+          {
+            "text": "Stationery",
+            "associatedTags": ["stationery"]
+          },
+          {
+            "text": "Office & school other",
+            "associatedTags": ["officeschoolother"]
+          }
+        ]
+      },
+      {
+        "text": "Outdoor & Sports",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/outdoors_and_sports.svg",
+        "list": [
+          {
+            "text": "All",
+            "associatedTags": ["outdooractivitiessports"]
+          },
+          {
+            "text": "Camping",
+            "associatedTags": [
+              "tents",
+              "camping",
+              "campingcookingitems",
+              "sleepingbags",
+              "airmattress",
+              "flashlightsandlanterns"
+            ]
+          },
+          {
+            "text": "Yoga and meditation",
+            "associatedTags": [
+              "yogamats",
+              "yogaandmeditation",
+              "yogaandmeditationother"
+            ]
+          },
+          {
+            "text": "Sporting goods",
+            "associatedTags": ["sportinggoods"]
+          },
+          {
+            "text": "Outdoor activities and sports other",
+            "associatedTags": ["outdooractivitiesandsportsother"]
+          }
+        ]
+      },
+      {
+        "text": "Food & Drinks",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/food_and_drinks.svg",
+        "list": [
+          {
+            "text": "All",
+            "associatedTags": ["fooddrinks"]
+          },
+          {
+            "text": "Drinks",
+            "associatedTags": [
+              "water",
+              "drink",
+              "tea",
+              "infusers",
+              "coffee",
+              "otherinfusions",
+              "juices",
+              "drinksother"
+            ]
+          },
+          {
+            "text": "Food",
+            "associatedTags": [
+              "cakeshop",
+              "bakery",
+              "food",
+              "flour",
+              "bakingpowders",
+              "breadcrumbs",
+              "savorypremixes",
+              "bakeryother",
+              "granola",
+              "cerealsandbars",
+              "oatmeal",
+              "instantfood",
+              "jams",
+              "jamssweetsandhoney",
+              "honey",
+              "solidsweets",
+              "hazelnutcreams",
+              "peanutbutters",
+              "butter",
+              "milksandcreams",
+              "icecream",
+              "oils",
+              "oilsandvinegars",
+              "balsamicacetos",
+              "vinegars",
+              "pasta",
+              "saltysnacks",
+              "picklespreserves",
+              "dryfruits",
+              "rice",
+              "ricelegumesandseeds",
+              "seeds",
+              "beans",
+              "lentils",
+              "corn",
+              "spices",
+              "saucesandcondiments",
+              "saucesanddressings",
+              "spreadsdips",
+              "salt",
+              "snacks",
+              "biscuits",
+              "sugar",
+              "sugarandsweeteners",
+              "sweetener",
+              "stevia",
+              "candies",
+              "sweetsandchocolates",
+              "chocolates",
+              "suplements",
+              "rootsandfungus",
+              "foodother",
+              "frozen",
+              "fruits"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Others",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/others.svg",
+        "list": [{ "text": "All", "associatedTags": ["other"] }]
+      }
+    ]
+  },
+  {
+    "text": "Special",
+    "list": [
+      {
+        "text": "Bundles",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/svg-bundle.svg",
+        "associatedTags": ["greendaybundle"]
+      },
+      {
+        "text": "Sustainable Luxury",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/sustainable_luxury.svg",
+        "associatedTags": ["sustainableluxury"]
+      },
+      {
+        "text": "Super foods",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/superfood.svg",
+        "associatedTags": ["superfoods"]
+      },
+      {
+        "text": "Vegan",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/vegan.svg",
+        "associatedTags": ["vegan"]
+      },
+      {
+        "text": "Locally Produced",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/locally-produced.svg",
+        "associatedTags": ["locallyproduced"]
+      },
+      {
+        "text": "Biodegradable",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/biodegradable.svg",
+        "associatedTags": ["biodegradable"]
+      },
+      {
+        "text": "Bamboo",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/bamboo.svg",
+        "associatedTags": ["bamboo"]
+      },
+      {
+        "text": "Upcycled/Recycled",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/recycled-upcycled.svg",
+        "associatedTags": ["upcycled"]
+      },
+      {
+        "text": "Ethically sourced",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/ethically-sourced.svg",
+        "associatedTags": ["ethicallysourced"]
+      },
+      {
+        "text": "No plastic",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/no-plastic.svg",
+        "associatedTags": ["plasticfree"]
+      },
+      {
+        "text": "Halal",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/halal.svg",
+        "associatedTags": ["halal"]
+      },
+      {
+        "text": "Reusable",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/reusable.svg",
+        "associatedTags": ["reusable"]
+      },
+      {
+        "text": "Non Toxic",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/non-toxic.svg",
+        "associatedTags": ["nontoxic, plantbased"]
+      },
+      {
+        "text": "Organic",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/organic.svg",
+        "associatedTags": ["organic"]
+      },
+      {
+        "text": "Handmade",
+        "icon": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/category-icons/new-eco-tags/handmade.svg",
+        "associatedTags": ["handmade"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button class="menu-icon">
+        <ion-menu-toggle menu="sideMenu" class="menu-button">
+          <ion-icon name="menu-outline"></ion-icon>
+        </ion-menu-toggle>
+      </ion-button>
+    </ion-buttons>
+    <ion-title fxLayout="row wrap" fxLayoutAlign="center center"
+      ><ion-icon
+        class="header__img"
+        [src]="assetService.greenDayWordSVG"
+      ></ion-icon
+    ></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  class="community"
+  #communityContent
+  (ionScrollEnd)="onPageScrollEnd()"
+  [scrollEvents]="true"
+>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="pageTopIndicator"></div>
+  <section fxLayout="column">
+    <div class="page-info">
+      <h1 class="page-info__header">{{pageConfig?.header}}</h1>
+    </div>
+    <div fxLayout="column" fxLayoutGap="20px">
+      <ng-container [ngSwitch]="articles?.length ? true: false">
+        <ng-container *ngSwitchCase="true">
+          <div
+            class="community__item"
+            *ngFor="let article of articles; trackBy: articleTrackByFn"
+          >
+            <user-portal-article-tile
+              [item]="article"
+              [showDescription]="false"
+              layoutType="rowLayout"
+            ></user-portal-article-tile>
+          </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="false">
+          <div class="community__item" *ngFor="let article of [0,0,0,0,0,0]">
+            <user-portal-tile-skeleton
+              height="150px"
+            ></user-portal-tile-skeleton>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </section>
+</ion-content>

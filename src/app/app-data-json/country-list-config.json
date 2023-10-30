@@ -1,0 +1,1358 @@
+{
+  "defaultSelection": "singapore",
+  "countryList": [
+    {
+      "countryName": "afghanistan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "af",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/af.png"
+    },
+    {
+      "countryName": "albania",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "al",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/al.png"
+    },
+    {
+      "countryName": "algeria",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "dz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/dz.png"
+    },
+    {
+      "countryName": "andorra",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ad",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ad.png"
+    },
+    {
+      "countryName": "angola",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ao",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ao.png"
+    },
+    {
+      "countryName": "antigua and barbuda",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ag",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ag.png"
+    },
+    {
+      "countryName": "argentina",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ar",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ar.png"
+    },
+    {
+      "countryName": "armenia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "am",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/am.png"
+    },
+    {
+      "countryName": "australia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "au",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/au.png"
+    },
+    {
+      "countryName": "austria",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "at",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/at.png"
+    },
+    {
+      "countryName": "azerbaijan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "az",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/az.png"
+    },
+    {
+      "countryName": "bahamas",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bs",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bs.png"
+    },
+    {
+      "countryName": "bahrain",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bh",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bh.png"
+    },
+    {
+      "countryName": "bangladesh",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bd",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bd.png"
+    },
+    {
+      "countryName": "barbados",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bb",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bb.png"
+    },
+    {
+      "countryName": "belarus",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "by",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/by.png"
+    },
+    {
+      "countryName": "belgium",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "be",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/be.png"
+    },
+    {
+      "countryName": "belize",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bz.png"
+    },
+    {
+      "countryName": "benin",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bj",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bj.png"
+    },
+    {
+      "countryName": "bhutan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bt",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bt.png"
+    },
+    {
+      "countryName": "bolivia (plurinational state of)",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bo",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bo.png"
+    },
+    {
+      "countryName": "bosnia and herzegovina",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ba",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ba.png"
+    },
+    {
+      "countryName": "botswana",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bw",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bw.png"
+    },
+    {
+      "countryName": "brazil",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "br",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/br.png"
+    },
+    {
+      "countryName": "brunei darussalam",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bn.png"
+    },
+    {
+      "countryName": "bulgaria",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bg",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bg.png"
+    },
+    {
+      "countryName": "burkina faso",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bf",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bf.png"
+    },
+    {
+      "countryName": "burundi",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "bi",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/bi.png"
+    },
+    {
+      "countryName": "cabo verde",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cv",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cv.png"
+    },
+    {
+      "countryName": "cambodia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "kh",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/kh.png"
+    },
+    {
+      "countryName": "cameroon",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cm.png"
+    },
+    {
+      "countryName": "canada",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ca",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ca.png"
+    },
+    {
+      "countryName": "central african republic",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cf",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cf.png"
+    },
+    {
+      "countryName": "chad",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "td",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/td.png"
+    },
+    {
+      "countryName": "chile",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cl",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cl.png"
+    },
+    {
+      "countryName": "china",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cn.png"
+    },
+    {
+      "countryName": "colombia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "co",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/co.png"
+    },
+    {
+      "countryName": "comoros",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "km",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/km.png"
+    },
+    {
+      "countryName": "congo",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cg",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cg.png"
+    },
+    {
+      "countryName": "congo, democratic republic of the",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cd",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cd.png"
+    },
+    {
+      "countryName": "costa rica",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cr.png"
+    },
+    {
+      "countryName": "côte d'ivoire",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ci",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ci.png"
+    },
+    {
+      "countryName": "croatia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "hr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/hr.png"
+    },
+    {
+      "countryName": "cuba",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cu",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cu.png"
+    },
+    {
+      "countryName": "cyprus",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cy",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cy.png"
+    },
+    {
+      "countryName": "czechia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "cz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/cz.png"
+    },
+    {
+      "countryName": "denmark",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "dk",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/dk.png"
+    },
+    {
+      "countryName": "djibouti",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "dj",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/dj.png"
+    },
+    {
+      "countryName": "dominica",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "dm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/dm.png"
+    },
+    {
+      "countryName": "dominican republic",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "do",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/do.png"
+    },
+    {
+      "countryName": "ecuador",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ec",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ec.png"
+    },
+    {
+      "countryName": "egypt",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "eg",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/eg.png"
+    },
+    {
+      "countryName": "el salvador",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sv",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sv.png"
+    },
+    {
+      "countryName": "equatorial guinea",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gq",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gq.png"
+    },
+    {
+      "countryName": "eritrea",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "er",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/er.png"
+    },
+    {
+      "countryName": "estonia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ee",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ee.png"
+    },
+    {
+      "countryName": "eswatini",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sz.png"
+    },
+    {
+      "countryName": "ethiopia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "et",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/et.png"
+    },
+    {
+      "countryName": "fiji",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "fj",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/fj.png"
+    },
+    {
+      "countryName": "finland",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "fi",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/fi.png"
+    },
+    {
+      "countryName": "france",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "fr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/fr.png"
+    },
+    {
+      "countryName": "gabon",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ga",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ga.png"
+    },
+    {
+      "countryName": "gambia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gm.png"
+    },
+    {
+      "countryName": "georgia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ge",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ge.png"
+    },
+    {
+      "countryName": "germany",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "de",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/de.png"
+    },
+    {
+      "countryName": "ghana",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gh",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gh.png"
+    },
+    {
+      "countryName": "greece",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gr.png"
+    },
+    {
+      "countryName": "grenada",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gd",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gd.png"
+    },
+    {
+      "countryName": "guatemala",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gt",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gt.png"
+    },
+    {
+      "countryName": "guinea",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gn.png"
+    },
+    {
+      "countryName": "guinea-bissau",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gw",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gw.png"
+    },
+    {
+      "countryName": "guyana",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gy",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gy.png"
+    },
+    {
+      "countryName": "haiti",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ht",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ht.png"
+    },
+    {
+      "countryName": "honduras",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "hn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/hn.png"
+    },
+    {
+      "countryName": "hungary",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "hu",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/hu.png"
+    },
+    {
+      "countryName": "iceland",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "is",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/is.png"
+    },
+    {
+      "countryName": "india",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "in",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/in.png"
+    },
+    {
+      "countryName": "indonesia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "id",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/id.png"
+    },
+    {
+      "countryName": "iran (islamic republic of)",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ir",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ir.png"
+    },
+    {
+      "countryName": "iraq",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "iq",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/iq.png"
+    },
+    {
+      "countryName": "ireland",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ie",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ie.png"
+    },
+    {
+      "countryName": "israel",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "il",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/il.png"
+    },
+    {
+      "countryName": "italy",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "it",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/it.png"
+    },
+    {
+      "countryName": "jamaica",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "jm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/jm.png"
+    },
+    {
+      "countryName": "japan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "jp",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/jp.png"
+    },
+    {
+      "countryName": "jordan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "jo",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/jo.png"
+    },
+    {
+      "countryName": "kazakhstan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "kz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/kz.png"
+    },
+    {
+      "countryName": "kenya",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ke",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ke.png"
+    },
+    {
+      "countryName": "kiribati",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ki",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ki.png"
+    },
+    {
+      "countryName": "korea (democratic people's republic of)",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "kp",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/kp.png"
+    },
+    {
+      "countryName": "korea, republic of",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "kr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/kr.png"
+    },
+    {
+      "countryName": "kuwait",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "kw",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/kw.png"
+    },
+    {
+      "countryName": "kyrgyzstan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "kg",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/kg.png"
+    },
+    {
+      "countryName": "lao people's democratic republic",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "la",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/la.png"
+    },
+    {
+      "countryName": "latvia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "lv",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/lv.png"
+    },
+    {
+      "countryName": "lebanon",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "lb",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/lb.png"
+    },
+    {
+      "countryName": "lesotho",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ls",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ls.png"
+    },
+    {
+      "countryName": "liberia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "lr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/lr.png"
+    },
+    {
+      "countryName": "libya",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ly",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ly.png"
+    },
+    {
+      "countryName": "liechtenstein",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "li",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/li.png"
+    },
+    {
+      "countryName": "lithuania",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "lt",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/lt.png"
+    },
+    {
+      "countryName": "luxembourg",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "lu",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/lu.png"
+    },
+    {
+      "countryName": "madagascar",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mg",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mg.png"
+    },
+    {
+      "countryName": "malawi",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mw",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mw.png"
+    },
+    {
+      "countryName": "malaysia",
+      "isoCode": "my",
+      "currencyFormat": "RM",
+      "regionalisationSupported": true,
+      "countryCode": "60",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/my.png"
+    },
+    {
+      "countryName": "maldives",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mv",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mv.png"
+    },
+    {
+      "countryName": "mali",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ml",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ml.png"
+    },
+    {
+      "countryName": "malta",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mt",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mt.png"
+    },
+    {
+      "countryName": "marshall islands",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mh",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mh.png"
+    },
+    {
+      "countryName": "mauritania",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mr.png"
+    },
+    {
+      "countryName": "mauritius",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mu",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mu.png"
+    },
+    {
+      "countryName": "mexico",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mx",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mx.png"
+    },
+    {
+      "countryName": "micronesia (federated states of)",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "fm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/fm.png"
+    },
+    {
+      "countryName": "moldova, republic of",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "md",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/md.png"
+    },
+    {
+      "countryName": "monaco",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mc",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mc.png"
+    },
+    {
+      "countryName": "mongolia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mn.png"
+    },
+    {
+      "countryName": "montenegro",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "me",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/me.png"
+    },
+    {
+      "countryName": "morocco",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ma",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ma.png"
+    },
+    {
+      "countryName": "mozambique",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mz.png"
+    },
+    {
+      "countryName": "myanmar",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mm.png"
+    },
+    {
+      "countryName": "namibia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "na",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/na.png"
+    },
+    {
+      "countryName": "nauru",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "nr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/nr.png"
+    },
+    {
+      "countryName": "nepal",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "np",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/np.png"
+    },
+    {
+      "countryName": "netherlands",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "nl",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/nl.png"
+    },
+    {
+      "countryName": "new zealand",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "nz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/nz.png"
+    },
+    {
+      "countryName": "nicaragua",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ni",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ni.png"
+    },
+    {
+      "countryName": "niger",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ne",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ne.png"
+    },
+    {
+      "countryName": "nigeria",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ng",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ng.png"
+    },
+    {
+      "countryName": "north macedonia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "mk",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/mk.png"
+    },
+    {
+      "countryName": "norway",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "no",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/no.png"
+    },
+    {
+      "countryName": "oman",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "om",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/om.png"
+    },
+    {
+      "countryName": "pakistan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "pk",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/pk.png"
+    },
+    {
+      "countryName": "palau",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "pw",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/pw.png"
+    },
+    {
+      "countryName": "panama",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "pa",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/pa.png"
+    },
+    {
+      "countryName": "papua new guinea",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "pg",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/pg.png"
+    },
+    {
+      "countryName": "paraguay",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "py",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/py.png"
+    },
+    {
+      "countryName": "peru",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "pe",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/pe.png"
+    },
+    {
+      "countryName": "philippines",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ph",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ph.png"
+    },
+    {
+      "countryName": "poland",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "pl",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/pl.png"
+    },
+    {
+      "countryName": "portugal",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "pt",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/pt.png"
+    },
+    {
+      "countryName": "qatar",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "qa",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/qa.png"
+    },
+    {
+      "countryName": "romania",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ro",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ro.png"
+    },
+    {
+      "countryName": "russian federation",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ru",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ru.png"
+    },
+    {
+      "countryName": "rwanda",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "rw",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/rw.png"
+    },
+    {
+      "countryName": "saint kitts and nevis",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "kn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/kn.png"
+    },
+    {
+      "countryName": "saint lucia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "lc",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/lc.png"
+    },
+    {
+      "countryName": "saint vincent and the grenadines",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "vc",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/vc.png"
+    },
+    {
+      "countryName": "samoa",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ws",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ws.png"
+    },
+    {
+      "countryName": "san marino",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sm.png"
+    },
+    {
+      "countryName": "sao tome and principe",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "st",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/st.png"
+    },
+    {
+      "countryName": "saudi arabia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sa",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sa.png"
+    },
+    {
+      "countryName": "senegal",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sn.png"
+    },
+    {
+      "countryName": "serbia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "rs",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/rs.png"
+    },
+    {
+      "countryName": "seychelles",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sc",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sc.png"
+    },
+    {
+      "countryName": "sierra leone",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sl",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sl.png"
+    },
+    {
+      "countryName": "singapore",
+      "isoCode": "sg",
+      "currencyFormat": "S$",
+      "regionalisationSupported": true,
+      "countryCode": "65",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sg.png"
+    },
+    {
+      "countryName": "slovakia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sk",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sk.png"
+    },
+    {
+      "countryName": "slovenia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "si",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/si.png"
+    },
+    {
+      "countryName": "solomon islands",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sb",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sb.png"
+    },
+    {
+      "countryName": "somalia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "so",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/so.png"
+    },
+    {
+      "countryName": "south africa",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "za",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/za.png"
+    },
+    {
+      "countryName": "south sudan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ss",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ss.png"
+    },
+    {
+      "countryName": "spain",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "es",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/es.png"
+    },
+    {
+      "countryName": "sri lanka",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "lk",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/lk.png"
+    },
+    {
+      "countryName": "sudan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sd",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sd.png"
+    },
+    {
+      "countryName": "suricountryname",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sr.png"
+    },
+    {
+      "countryName": "sweden",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "se",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/se.png"
+    },
+    {
+      "countryName": "switzerland",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ch",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ch.png"
+    },
+    {
+      "countryName": "syrian arab republic",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "sy",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/sy.png"
+    },
+    {
+      "countryName": "tajikistan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tj",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tj.png"
+    },
+    {
+      "countryName": "tanzania, united republic of",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tz.png"
+    },
+    {
+      "countryName": "thailand",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "th",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/th.png"
+    },
+    {
+      "countryName": "timor-leste",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tl",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tl.png"
+    },
+    {
+      "countryName": "togo",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tg",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tg.png"
+    },
+    {
+      "countryName": "tonga",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "to",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/to.png"
+    },
+    {
+      "countryName": "trinidad and tobago",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tt",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tt.png"
+    },
+    {
+      "countryName": "tunisia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tn.png"
+    },
+    {
+      "countryName": "turkey",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tr",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tr.png"
+    },
+    {
+      "countryName": "turkmenistan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tm.png"
+    },
+    {
+      "countryName": "tuvalu",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "tv",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/tv.png"
+    },
+    {
+      "countryName": "uganda",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ug",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ug.png"
+    },
+    {
+      "countryName": "ukraine",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ua",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ua.png"
+    },
+    {
+      "countryName": "united arab emirates",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ae",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ae.png"
+    },
+    {
+      "countryName": "united kingdom of great britain and northern ireland",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "gb",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/gb.png"
+    },
+    {
+      "countryName": "united states of america",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "us",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/us.png"
+    },
+    {
+      "countryName": "uruguay",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "uy",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/uy.png"
+    },
+    {
+      "countryName": "uzbekistan",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "uz",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/uz.png"
+    },
+    {
+      "countryName": "vanuatu",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "vu",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/vu.png"
+    },
+    {
+      "countryName": "venezuela (bolivarian republic of)",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ve",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ve.png"
+    },
+    {
+      "countryName": "viet nam",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "vn",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/vn.png"
+    },
+    {
+      "countryName": "yemen",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "ye",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/ye.png"
+    },
+    {
+      "countryName": "zambia",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "zm",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/zm.png"
+    },
+    {
+      "countryName": "zimbabwe",
+      "regionalisationSupported": false,
+      "countryCode": "",
+      "isoCode": "zw",
+      "flagUrl": "https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/assets/country-flag/zw.png"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<ion-header class="header search-page__header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{searchTerm}} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goBackToSearchPage()">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToCartPage()">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  #productsContainer
+  class="search-page__content"
+  (ionScrollEnd)="onPageScrollEvent()"
+  [scrollEvents]="true"
+>
+  <div class="pageTopIndicator"></div>
+
+  <section fxLayout="column" [ngSwitch]="productFetchStatus">
+    <ng-container *ngSwitchCase="'empty'">
+      <div
+        class="search-page__empty-result-container"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="20px"
+      >
+        <img
+          class="search-page__empty-list-image"
+          [src]="assetService.merchantShopIcon"
+          alt="shop icon"
+        />
+        <div class="search-page__empty-result-label">
+          {{pageConfig.emptyResultText}}
+        </div>
+        <ion-button
+          expand="block"
+          fill="outline"
+          size="medium"
+          color="warning"
+          (click)="goBack()"
+          >{{pageConfig.makeAnotherSearchButtonText}}</ion-button
+        >
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'completed'">
+      <div
+        class="search-page__products-container"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between start"
+        fxLayoutGap="10px"
+      >
+        <user-portal-product-tile
+          fxFlex="46"
+          class="search-page__item"
+          layoutType="boxLayout"
+          *ngFor="let product of (products | async); trackBy: trackByFn"
+          [product]="product"
+          showPrice="true"
+          (click)="onProductClick(product)"
+        >
+        </user-portal-product-tile>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'inProgress'">
+      <div
+        class="search-page__empty-content"
+        *ngIf="productFetchStatus === 'inProgress'"
+        fxLayout="row wrap"
+        fxLayoutGap="10px"
+        fxLayoutAlign="space-between center"
+      >
+        <div
+          class="search-page__empty-skeleton"
+          *ngFor="let i of [0,0,0,0,0,0,0,0,0,0]"
+          fxFlex="45"
+        >
+          <ion-skeleton-text animated="true"></ion-skeleton-text>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+</ion-content>

@@ -1,0 +1,70 @@
+.bartering section {
+  padding-top: 0;
+}
+
+.bartering__tiles-container-message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(163, 159, 159);
+}
+.bartering__tiles-container-header {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.bartering__view-more--btn {
+  color: var(--ion-color-primary);
+  font-size: 20px;
+}
+
+.bartering__add-product-icon {
+  width: 60px;
+}
+
+ion-input,
+ion-textarea {
+  --padding-start: 10px;
+
+  border: 1px solid var(--ion-color-step-200);
+  border-radius: 8px;
+}
+
+.bartering__input-container {
+  width: 100%;
+}
+
+.bartering__add-product-image {
+  width: 300px;
+  height: 300px;
+}
+
+.bartering__page-title {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bartering__image-container {
+  position: relative;
+}
+
+.bartering__image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.bartering__remove-image-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 26px;
+
+  ion-icon {
+    --color: var(--ion-color-light);
+  }
+}

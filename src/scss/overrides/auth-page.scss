@@ -1,0 +1,48 @@
+user-portal-login.ion-page,
+user-portal-register.ion-page {
+  background: url("https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/miscellaneous/registration-page-background.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.header.header--auth ion-toolbar {
+  --background: none;
+  --border-width: 0 !important;
+}
+
+.auth {
+  --background: none;
+
+  height: 100vh;
+
+  .page-info {
+    color: white;
+    background: none;
+  }
+
+  .login__form-button--skip {
+    margin-top: 7vh;
+  }
+
+  .login__form-button-containers {
+    margin-top: 4vh;
+  }
+
+  .login__form-create-account-container {
+    margin-top: 5vh;
+  }
+}
+
+.header__skip-button {
+  font-size: 12px;
+}

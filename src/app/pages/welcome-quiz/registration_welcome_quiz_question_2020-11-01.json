@@ -1,0 +1,129 @@
+{
+  "q1": {
+    "question": "Pick three areas that are close to your heart",
+    "options": [
+      {
+        "text": "Climate change",
+        "value": "climate_change",
+        "selected": false
+      },
+      {
+        "text": "Plastic pollution",
+        "value": "plastic_pollution",
+        "selected": false
+      },
+      {
+        "text": "Animal welfare",
+        "value": "animal_welfare",
+        "selected": false
+      },
+      {
+        "text": "Ethically sourced",
+        "value": "ethically_sourced",
+        "selected": false
+      },
+      {
+        "text": "Veganism",
+        "value": "veganism",
+        "selected": false
+      },
+      {
+        "text": "Food wastage",
+        "value": "food_wastage",
+        "selected": false
+      },
+      {
+        "text": "Renewable energy",
+        "value": "renewable_energy",
+        "selected": false
+      },
+      {
+        "text": "Slow fashion",
+        "value": "slow_fashion",
+        "selected": false
+      },
+      {
+        "text": "Health & fitness",
+        "value": "health_and_fitness",
+        "selected": false
+      },
+      {
+        "text": "Water pollution",
+        "value": "water_pollution",
+        "selected": false
+      },
+      {
+        "text": "Ocean sustainability",
+        "value": "ocean_sustainability",
+        "selected": false
+      },
+      { "text": "Superfoods", "value": "superfoods", "selected": false },
+      {
+        "text": "Equity & fair trade",
+        "value": "equity_fair_trade",
+        "selected": false
+      },
+      {
+        "text": "Zero waste living",
+        "value": "zero_waste_living",
+        "selected": false
+      },
+      { "text": "Biodiversity", "value": "biodiversity", "selected": false },
+      {
+        "text": "Culture & heritage",
+        "value": "culture_heritage",
+        "selected": false
+      },
+      {
+        "text": "Halal sustainability",
+        "value": "halal_sustainability",
+        "selected": false
+      },
+      {
+        "text": "Reusable packaging",
+        "value": "reusable_packaging",
+        "selected": false
+      },
+      {
+        "text": "Shopping & deals",
+        "value": "shopping_deals",
+        "selected": false
+      },
+      {
+        "text": "Recycling & Upcycling",
+        "value": "recycling_and_upcycling",
+        "selected": false
+      }
+    ]
+  },
+  "q2": {
+    "question": "Please rate your level of experience in sustainability",
+    "options": [
+      {
+        "text": "None of the statements describes me adequately.",
+        "value": "none_of_the_above",
+        "selected": false
+      },
+      {
+        "text": "I am new to sustainability & curious to find out more about eco-friendly shopping.",
+        "value": "new_to_sustainability",
+        "selected": false
+      },
+      {
+        "text": "I am experienced in sustainable/ zero-waste living & am curious to find out how GreenDay can contribute.",
+        "value": "experienced_in_sustainable_zero_waste",
+        "selected": false
+      },
+      {
+        "text": "I am regarded as an environmental activist and/or sustainability advocate within my community.",
+        "value": "environmental_activist",
+        "selected": false
+      },
+      {
+        "text": "I am an avid shopper who appreciates high quality products & am looking for good deals.",
+        "value": "avid_shopper",
+        "selected": false
+      }
+    ]
+  }
+}

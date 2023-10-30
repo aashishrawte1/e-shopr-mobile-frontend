@@ -1,0 +1,130 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" [color]="'primary'">
+        <ion-icon name="arrow-back"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="orders">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <section fxLayout="column">
+    <div class="pageTopIndicator"></div>
+    <div class="page-info">
+      <h1 class="page-info__header">
+        {{pageConfig?.orderPageSection?.header}}
+      </h1>
+    </div>
+    <div class="orders__content" *ngFor="let order of orderList">
+      <div class="orders__content-item">
+        <div class="orders__content-order-info">
+          <span class="orders__content-order"
+            ><b
+              >{{pageConfig?.orderPageSection?.orderInfo?.orderReference}}
+              #{{order?.referenceId.toUpperCase()}}</b
+            ></span
+          ><br />
+          <span class="orders__content-data">
+            {{pageConfig?.orderPageSection?.orderInfo?.orderedAt}}
+            {{getTime(order?.ordered_at)}}</span
+          ><br />
+          <span class="orders__content-data">
+            {{pageConfig?.orderPageSection?.orderInfo?.paymentMode}}
+            {{order?.payment.mode}}</span
+          >
+        </div>
+        <div class="shopping-cart">
+          <user-portal-cart-items-summary
+            [shoppingCart]="order.products"
+            [options]="{'showShippingCost': true, 'allowCountEdit': false, 'editableNote': false, 'showNoteToSellerInput': true}"
+          ></user-portal-cart-items-summary>
+          <div class="shopping-cart__price-info" fxLayout="row wrap">
+            <div fxFlex="100" fxLayoutAlign="space-between center">
+              <span>
+                {{pageConfig?.orderPageSection?.productInfo?.totalShippingCost}}
+              </span>
+              <strong>
+                {{storeService.appCurrencyFormat}}{{ order.finalCost?.shipping |
+                number: '1.2-2' }}
+              </strong>
+            </div>
+            <div fxFlex="100" fxLayoutAlign="space-between center">
+              <span>
+                {{pageConfig?.orderPageSection?.productInfo?.subTotal}}
+              </span>
+              <strong>
+                {{storeService.appCurrencyFormat}}{{ order.finalCost?.subtotal |
+                number: '1.2-2' }}
+              </strong>
+            </div>
+            <div fxFlex="100" fxLayoutAlign="space-between center">
+              <span>
+                {{pageConfig?.orderPageSection?.productInfo?.discount}}
+              </span>
+              <strong>
+                -{{storeService.appCurrencyFormat}}{{order.discount | number:
+                '1.2-2'}}
+              </strong>
+            </div>
+            <div fxFlex="100" fxLayoutAlign="space-between center">
+              <span>
+                {{pageConfig?.orderPageSection?.productInfo?.totalPayment}}
+              </span>
+              <strong>
+                {{storeService.appCurrencyFormat}} {{order.payment.amount |
+                number: '1.2-2'}}
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="horizontal-line"></div>
+    </div>
+    <div class="has-no-item" *ngIf="orderList?.length == 0" fxLayout="row wrap">
+      <div fxFlex="100" class="has-no-item__img-container">
+        <img class="has-no-item__image" [src]="asset.merchantShopIcon" />
+      </div>
+      <div
+        class="has-no-item__title"
+        fxFlex="100"
+        [innerHTML]="pageConfig?.orderPageSection?.noOrderPlacedSection.title"
+      ></div>
+
+      <div fxFlex="100" class="has-no-item__shop-btn">
+        <ion-button fill="outline" class="has-no-item__btn" (click)="shopNow()"
+          >{{pageConfig?.orderPageSection?.noOrderPlacedSection?.shopNowButton}}</ion-button
+        >
+      </div>
+      <div class="cart-items-summary__items-container">
+        <div class="item-description-section__title">
+          {{pageConfig?.orderPageSection?.noOrderPlacedSection?.separatorText}}
+        </div>
+        <ion-row wrap="true">
+          <user-portal-product-tile
+            layoutType="boxLayout"
+            class="has-no-item__item"
+            *ngFor="let product of popularProducts"
+            [product]="product"
+            [showPrice]="true"
+          >
+          </user-portal-product-tile>
+        </ion-row>
+      </div>
+      <div
+        class="order-list__empty-skeleton"
+        fxLayout="row wrap"
+        fxLayoutAlign="start start"
+        fxFlex="100"
+        fxLayoutGap="10px"
+        *ngIf="!popularProducts?.length"
+      >
+        <div *ngFor="let i of [0,0,0,0]" fxFlex="46">
+          <ion-skeleton-text animated="true"></ion-skeleton-text>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

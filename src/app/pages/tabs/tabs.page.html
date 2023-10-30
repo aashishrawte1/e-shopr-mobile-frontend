@@ -1,0 +1,53 @@
+<ion-tabs class="tabs" #mainTab (ionTabsWillChange)="onTabDidChange()">
+  <ion-tab-bar class="main-tab-bar" slot="bottom">
+    <ion-tab-button tab="home" (click)="onTabItemClick('home')">
+      <ion-icon
+        [src]="selectedTab === 'home' ? assetService.tabIcons.homeFilled: assetService.tabIcons.homeOutline"
+        [color]="selectedTab === 'home' ? 'primary': 'grey'"
+        class="tabs__icon"
+      ></ion-icon>
+      <ion-label class="tab-label">{{pageConfig?.tabsIconHomeText}}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="community" (click)="onTabItemClick('community')">
+      <ion-icon
+        [src]="selectedTab === 'community' ? assetService.tabIcons.communityFilled: assetService.tabIcons.communityOutline"
+        [color]="selectedTab === 'community' ? 'primary': 'grey'"
+        class="tabs__icon tabs__icon-community"
+      ></ion-icon>
+      <ion-label class="tab-label"
+        >{{pageConfig?.tabsIconCommunityText}}</ion-label
+      >
+    </ion-tab-button>
+
+    <ion-tab-button tab="bartering" (click)="onTabItemClick('bartering')">
+      <ion-icon
+        [src]="selectedTab === 'bartering' ?  assetService.tabIcons.barterFilled : assetService.tabIcons.barterOutline"
+        [color]="selectedTab === 'bartering' ? 'primary': 'grey'"
+        class="tabs__icon tabs__icon-bartering"
+      ></ion-icon>
+      <ion-label class="tab-label"
+        >{{pageConfig?.barteringIconBottomText}}</ion-label
+      >
+    </ion-tab-button>
+
+    <ion-tab-button tab="cart" (click)="onTabItemClick('cart')">
+      <ion-icon
+        [src]="selectedTab === 'cart' ? assetService.tabIcons.shoppingCartFilled: assetService.tabIcons.shoppingCartOutline"
+        [color]="selectedTab === 'cart' ? 'primary': 'grey'"
+        class="tabs__icon"
+      ></ion-icon>
+      <ion-label class="tab-label">{{pageConfig?.tabsIconCartText}}</ion-label>
+      <ion-badge *ngIf="cartItemCount > 0">{{cartItemCount}}</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="openChat()">
+      <ion-icon
+        [src]="selectedTab === 'chat' ? assetService.tabIcons.chatIconFilled: assetService.tabIcons.chatIconOutline"
+        [color]="selectedTab === 'chat' ? 'primary': 'grey'"
+        class="tabs__icon"
+      ></ion-icon>
+      <ion-label class="tab-label">{{pageConfig?.tabsIconChat}}</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,594 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button class="menu-icon" (click)="onMenuClick()">
+        <ion-menu-toggle menu="sideMenu" class="menu-button">
+          <div fxFlex="100" name="menu-outline">
+            <img
+              class="profile__image"
+              *ngIf="(storeService.loggedInUser | async)?.avatarUrl; else defaultAvatar"
+              [src]="(storeService.loggedInUser | async)?.avatarUrl"
+              alt="profile icon"
+            />
+            <ng-template #defaultAvatar>
+              <img
+                [src]="assetService.defaultAvatarIcon"
+                class="profile__image"
+                alt="default avatar"
+              />
+            </ng-template>
+          </div>
+        </ion-menu-toggle>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar
+      (click)="goToProductSearchPage('searchButtonClick')"
+      #searchBar
+      class="search-bar"
+      autocomplete="on"
+      enterkeyhint="search"
+      placeholder="Search Products"
+    >
+    </ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToProfilePage()">
+        <img alt class="header__gem-image" [src]="assetService.greenGemsIcon" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  #homePageScrollContainer
+  class="home"
+  [scrollEvents]="true"
+  (ionScrollEnd)="onScrollEnd()"
+>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="pageTopIndicator"></div>
+  <section>
+    <div
+      fxLayout="row wrap"
+      fxLayoutAlign="space-between center"
+      class="page-info"
+    >
+      <div class="page-info__message home__tiles-container-header">
+        <!-- <span class="title">{{pageConfig?.marketSection?.categorySection?.header}}</span> -->
+      </div>
+      <button
+        fill="clear"
+        class="home__view-more--btn"
+        (click)="goToProductSearchPage('viewMoreCategoryLinkClick')"
+        fxLayout="row"
+        fxLayoutAlign="end center"
+      >
+        {{pageConfig?.marketSection?.viewMoreText}}
+        <span class="home__view-more-arrow-container"> &nbsp;></span>
+      </button>
+    </div>
+    <div class="horizontal-slider">
+      <div
+        class="home__popular-marketplace-container horizontal-slider__item"
+        fxLayout="column"
+      >
+        <div
+          class="home__popular-category-container"
+          fxLayout="row"
+          fxLayoutAlign="space-between start"
+        >
+          <div
+            *ngFor="let item of splitCategoryList[0]; trackBy: productTrackByFn; let i=index;"
+            class="home__popular-category-item"
+            (click)="getFilterByTag(item, 'categoryItemClick')"
+            fxLayout="row"
+            fxFlex="20"
+            fxLayoutAlign="center start"
+          >
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <ion-icon
+                class="home__popular-category-item-icon"
+                slot="start"
+                [src]="item.icon"
+              >
+              </ion-icon>
+              <span class="home__popular-category-item-text">
+                {{ item?.text }}
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="home__category-empty-skeleton"
+            fxLayout="row"
+            fxLayoutAlign="start start"
+            fxFlex="100"
+            fxLayoutGap="10px"
+            *ngIf="!splitCategoryList?.length"
+          >
+            <div *ngFor="let i of [0,0,0,0]" fxFlex="30">
+              <ion-skeleton-text animated="true"></ion-skeleton-text>
+            </div>
+          </div>
+        </div>
+        <div
+          class="home__popular-category-container"
+          fxLayout="row"
+          fxLayoutAlign="space-between start"
+        >
+          <div
+            *ngFor="let item of splitCategoryList[1];trackBy: productTrackByFn; let i=index;"
+            class="home__popular-category-item"
+            fxLayout="row"
+            fxFlex="20"
+            fxLayoutAlign="center start"
+            (click)="getFilterByTag(item, 'categoryItemClick')"
+          >
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <ion-icon
+                class="home__popular-category-item-icon"
+                slot="start"
+                [src]="item.icon"
+              >
+              </ion-icon>
+              <span class="home__popular-category-item-text">
+                {{ item?.text }}
+              </span>
+            </div>
+          </div>
+          <div
+            class="home__category-empty-skeleton"
+            fxLayout="row"
+            fxLayoutAlign="start start"
+            fxFlex="100"
+            fxLayoutGap="10px"
+            *ngIf="!splitCategoryList?.length"
+          >
+            <div *ngFor="let i of [0,0,0,0]" fxFlex="30">
+              <ion-skeleton-text animated="true"></ion-skeleton-text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home__slider">
+      <ion-slides
+        [options]="featuredSliderConfig"
+        [pager]="true"
+        class="home__featured-slides"
+        fxLayout="row"
+      >
+        <ion-slide
+          class="home__featured-slides-item"
+          *ngFor="let banner of appBanners"
+          (click)="onTopBannerClick(banner)"
+        >
+          <img [src]="banner.media[0].link" alt="banner_link" />
+          <div
+            *ngIf="banner.action === 'dailyLoginReward'"
+            class="home__featured-slides-item-message"
+          >
+            <ng-container
+              *ngIf="(storeService.loggedInUser | async); else showLoginMessageForDailyLoginReward"
+            >
+              {{(dailyLoginRewardConditions | async
+              )?.conditions?.bannerMessageWhenLoggedIn}}
+            </ng-container>
+            <ng-template #showLoginMessageForDailyLoginReward>
+              {{(dailyLoginRewardConditions | async
+              )?.conditions?.bannerMessageWhenNotLoggedIn}}
+            </ng-template>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <div class="home__tiles-container">
+      <!-- MarketPlace items -->
+      <div
+        class="home__tiles-container-market"
+        fxLayout="column"
+        fxLayoutGap="10px"
+      >
+        <div
+          class="trending_section_margin page-info__message gap"
+          fxLayout="row"
+          fxLayoutAlign="space-between center"
+        >
+          <div>
+            <!-- <ion-icon
+              class="product-footer__icon"
+              [src]="storeService.json.pageConfig.value.icons.trendingUnSelectedImage"
+            ></ion-icon> -->
+            <span class="title"
+              >{{appConfigService.constants.marketPopularProductsTagText}}</span
+            >
+          </div>
+          <button
+            fill="clear"
+            class="home__view-more--btn"
+            (click)="gotoMarketPage()"
+            fxLayout="row"
+            fxLayoutAlign="end center"
+          >
+            {{pageConfig?.marketSection?.viewMoreText}}
+            <span class="home__view-more-arrow-container"> &nbsp;></span>
+          </button>
+        </div>
+        <div
+          class="home__popular-marketplace-container horizontal-slider"
+          fxLayout="row"
+          fxLayoutAlign="start start"
+          fxLayoutGap="10px"
+        >
+          <div
+            class="home__popular-item horizontal-slider__item"
+            *ngFor="let product of popularProducts; trackBy: productTrackByFn"
+          >
+            <div>
+              <img
+                (click)="gotoProductDetail(product, 'trendingSection')"
+                *ngIf="(product?.media)[0]?.type === 'image'; else defaultImage"
+                [src]="assetService.placeholderImage"
+                [attr.srcset]="product.media[0].link"
+                class="home__popular-item-image"
+                alt="user image"
+              />
+
+              <ng-template #defaultImage>
+                <img
+                  [src]="assetService.placeholderImage"
+                  class="home__popular-item-image"
+                  alt="user image"
+                />
+              </ng-template>
+              <p class="home__popular-item-title">{{product.title}}</p>
+            </div>
+          </div>
+        </div>
+        <div
+          *ngIf="justForYouProducts?.length"
+          class="trending_section_margin page-info__message gap"
+          fxLayout="row"
+          fxLayoutAlign="space-between center"
+        >
+          <div>
+            <!-- <ion-icon
+              class="product-footer__icon"
+              [src]="storeService.json.pageConfig.value.icons.trendingUnSelectedImage"
+            ></ion-icon> -->
+            <span class="title"
+              >{{appConfigService.constants.marketJustForYouTagText}}</span
+            >
+          </div>
+          <button
+            fill="clear"
+            class="home__view-more--btn"
+            (click)="gotoMarketPage()"
+            fxLayout="row"
+            fxLayoutAlign="end center"
+          >
+            {{pageConfig?.marketSection?.viewMoreText}}
+            <span class="home__view-more-arrow-container"> &nbsp;></span>
+          </button>
+        </div>
+        <div
+          class="home__popular-marketplace-container horizontal-slider"
+          fxLayout="row"
+          fxLayoutAlign="start start"
+          fxLayoutGap="10px"
+        >
+          <div
+            class="home__popular-item horizontal-slider__item"
+            *ngFor="let product of justForYouProducts; trackBy: productTrackByFn"
+          >
+            <div>
+              <img
+                (click)="gotoProductDetail(product, 'dynamicTagProductItemClick')"
+                *ngIf="(product?.media)[0]?.type === 'image'; else defaultImage"
+                [src]="assetService.placeholderImage"
+                [attr.srcset]="product.media[0].link"
+                class="home__popular-item-image"
+                alt="user image"
+              />
+
+              <ng-template #defaultImage>
+                <img
+                  [src]="assetService.placeholderImage"
+                  class="home__popular-item-image"
+                  alt="user image"
+                />
+              </ng-template>
+              <p class="home__popular-item-title">{{product.title}}</p>
+            </div>
+          </div>
+        </div>
+        <div
+          fxLayout="column"
+          *ngFor="let featuredCategory of homePageFeaturedCategories; let idx = index;"
+        >
+          <div
+            class="section page-info__message"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <div>
+              <ion-icon
+                class="product-footer__icon"
+                *ngIf="featuredCategory.type === 'svg'; else defaultImage"
+                [src]="featuredCategory.icon"
+              ></ion-icon>
+              <ng-template #defaultImage>
+                <img
+                  [src]="featuredCategory.icon"
+                  class="home__dynamic-item-image"
+                  alt="footer icons"
+                />
+              </ng-template>
+              <span class="title">{{featuredCategory.headerText}}</span>
+            </div>
+
+            <div>
+              <button
+                fill="clear"
+                class="home__view-more--btn"
+                (click)="getFilterByTag(featuredCategory.data.activeFilter, 'dynamicTagViewMoreClick')"
+                fxLayout="row"
+                fxLayoutAlign="end center"
+              >
+                {{pageConfig?.marketSection?.viewMoreText}}
+                <span class="home__view-more-arrow-container"> &nbsp;></span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="home__popular-marketplace-container horizontal-slider"
+            fxLayout="row"
+            fxLayoutAlign="start start"
+            fxLayoutGap="10px"
+          >
+            <div
+              class="home__featured-item horizontal-slider__item"
+              *ngFor="let product of featuredCategoriesProducts[idx]; "
+            >
+              <div>
+                <img
+                  (click)="gotoProductDetail(product, 'dynamicTagProductItemClick')"
+                  *ngIf="(product?.media)[0]?.type === 'image'; else defaultImage"
+                  [src]="assetService.placeholderImage"
+                  [attr.srcset]="product.media[0].link"
+                  class="home__featured-item-image"
+                  alt="featured image"
+                />
+
+                <ng-template #defaultImage>
+                  <img
+                    [src]="assetService.placeholderImage"
+                    class="home__popular-item-image"
+                    alt="featured default image"
+                  />
+                </ng-template>
+                <p class="home__popular-item-title">{{product.title}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="section page-info__message gap">
+            <!-- <ion-icon
+              class="product-footer__icon"
+              [src]="pageConfig?.turtlePicks?.icon"
+            ></ion-icon> -->
+            <span class="title">{{pageConfig?.turtlePicks?.header}}</span>
+          </div>
+          <div
+            class="home__popular-marketplace-container horizontal-slider"
+            fxLayout="row"
+            fxLayoutAlign="start start"
+            fxLayoutGap="10px"
+          >
+            <div
+              class="home__featured-item horizontal-slider__item"
+              *ngFor="let product of turtlePicks; trackBy: turtlePicksTrackByFn"
+            >
+              <div>
+                <img
+                  (click)="gotoProductDetail(product, 'turtlePick')"
+                  *ngIf="(product?.media)[0]?.type === 'image'; else defaultImage"
+                  [src]="assetService.placeholderImage"
+                  [attr.srcset]="product.media[0].link"
+                  class="home__turtle-picks-item-image"
+                  alt="turtle pick"
+                />
+
+                <ng-template #defaultImage>
+                  <img
+                    [src]="assetService.placeholderImage"
+                    class="home__popular-item-image"
+                    alt="featured image"
+                  />
+                </ng-template>
+                <p class="home__turtle-picks-item-title">
+                  {{product.numberOfLikes+ " "}}<span style="color: red"
+                    >❤</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section page-info__message">
+          <span class="title"
+            >{{pageConfig?.marketSection?.merchantSection?.header}}</span
+          >
+        </div>
+        <div
+          class="home__popular-marketplace-container horizontal-slider"
+          fxLayout="row"
+          fxLayoutAlign="start start"
+          fxLayoutGap="10px"
+        >
+          <user-portal-merchant-tile
+            class="home__market-merchant-item horizontal-slider__item"
+            *ngFor="let merchant of merchants; trackBy: merchantTrackByFn"
+            [merchant]="merchant"
+            layoutType="boxLayout"
+            [mediaContainerHeight]="60"
+            (click)="onMerchantClick(merchant)"
+            fontSize="12"
+          >
+          </user-portal-merchant-tile>
+          <div
+            class="home__merchant-empty-skeleton"
+            fxLayout="row"
+            fxLayoutAlign="start start"
+            fxFlex="100"
+            fxLayoutGap="10px"
+            *ngIf="!merchants?.length"
+          >
+            <div *ngFor="let i of [0,0,0,0,0]" fxFlex="20">
+              <ion-skeleton-text animated="true"></ion-skeleton-text>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p
+        class="home__tiles-container-market-message"
+        fxLayoutAlign="center center"
+      ></p>
+      <!-- Community Section -->
+      <div class="section home__tiles-container-community">
+        <div
+          fxLayout="row wrap"
+          fxLayoutAlign="space-between center"
+          class="page-info home__content-title"
+        >
+          <div
+            fxFlex="100"
+            fxLayout="row"
+            fxLayoutAlign="start center"
+            class="section page-info__header-container"
+          >
+            <h1 class="page-info__header">
+              <span class="title"
+                >{{pageConfig?.communitySection?.header}}</span
+              >
+            </h1>
+          </div>
+        </div>
+
+        <div
+          class="home__popular-articles-container"
+          fxLayout="row"
+          fxLayoutAlign="start start"
+          fxLayoutGap="10px"
+        >
+          <user-portal-article-tile
+            class="home__article-item"
+            *ngFor="let article of popularArticles; trackBy: articlesTrackByFn"
+            [item]="article"
+            layoutType="boxLayout"
+            [showDescription]="false"
+            [mediaContainerHeight]="150"
+            (click)="onArticleClick(article)"
+            fontSize="12"
+          >
+          </user-portal-article-tile>
+
+          <div
+            class="home__market-empty-skeleton"
+            fxLayout="row"
+            fxLayoutAlign="start start"
+            fxFlex="100"
+            *ngIf="!popularArticles?.length"
+          >
+            <div *ngFor="let i of [0,0]" fxFlex="50">
+              <ion-skeleton-text animated="true"></ion-skeleton-text>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="play_section home__tiles-container-playground">
+        <div
+          fxLayout="row wrap"
+          fxLayoutAlign="space-between center"
+          class="page-info home__content-title"
+        >
+          <div fxFlex="100" class="section page-info__header-container">
+            <h1 fxFlex="80" class="page-info__header">
+              <span class="title"
+                >{{pageConfig?.playGroundSection?.header}}</span
+              >
+            </h1>
+          </div>
+          <div
+            fxFlex="100"
+            fxLayout="row wrap"
+            class="home-playground-container"
+          >
+            <div
+              *ngFor="let playgroundItem of playgroundSectionItems; "
+              fxFlex="33"
+              (click)="openPlaygroundItem(playgroundItem)"
+              class="home-playground-item"
+            >
+              <ion-img
+                class="home-playground-container-image"
+                [src]="playgroundItem.itemTileImageUrl"
+              ></ion-img>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home__tiles-container-forage forage-container">
+        <div
+          fxLayout="row wrap"
+          fxLayoutAlign="space-between center"
+          class="page-info home__content-title"
+        >
+          <div fxFlex="100" class="section page-info__title-container">
+            <h1 fxFlex="80" class="page-info__header">
+              <span class="title"> {{pageConfig?.todayForage?.header}} </span>
+            </h1>
+          </div>
+        </div>
+
+        <div
+          class="market__products-container"
+          fxLayout="row wrap"
+          fxLayoutAlign="space-between start"
+          fxLayoutGap="10px"
+        >
+          <user-portal-product-tile
+            fxFlex="46"
+            class="market__item"
+            layoutType="boxLayout"
+            *ngFor="let product of todaysForageItems;  trackBy: productTrackByFn"
+            [product]="product"
+            (click)="onTodayForageItemClick(product)"
+            showPrice="true"
+          >
+          </user-portal-product-tile>
+
+          <div
+            class="home__market-empty-skeleton"
+            fxLayout="row"
+            fxLayoutAlign="start start"
+            fxFlex="100"
+            fxLayoutGap="10px"
+            *ngIf="!popularProducts?.length"
+          >
+            <div *ngFor="let i of [0,0]" fxFlex="46">
+              <ion-skeleton-text animated="true"></ion-skeleton-text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "GreenDay: Live Sustainably",
+  "short_name": "GreenDay",
+  "start_url": "/app/tabs/home",
+  "display": "standalone",
+  "background_color": "#387ef5",
+  "theme_color": "#387ef5"
+}

@@ -1,0 +1,175 @@
+<ion-header class="header header--auth" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="end">
+      <ion-button (click)="skipToHomePage()" color="light">
+        <span class="header__skip-button"> skip </span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="auth">
+  <div class="pageTopIndicator"></div>
+  <section fxLayout="column" class="login">
+    <div class="page-info">
+      <h1 class="page-info__header">
+        {{pageConfig?.registrationPageSection?.header}}
+      </h1>
+    </div>
+    <ng-container *ngIf="emailForm">
+      <form [formGroup]="emailForm" class="login__form">
+        <div>
+          <ion-label class="login__form__label"
+            >{{pageConfig?.registrationPageSection?.registerForm?.labelEmail}}</ion-label
+          >
+          <ion-input
+            formControlName="email"
+            class="login__form__input"
+            id="email"
+            type="email"
+            autocomplete="on"
+          ></ion-input>
+
+          <div
+            class="login__form__error"
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+          >
+            <span *ngIf="email.errors?.required">You must enter an email</span>
+            <span *ngIf="email.errors?.pattern"
+              >{{pageConfig?.registrationPageSection?.registerForm?.emailPatternError}}</span
+            >
+          </div>
+        </div>
+
+        <div>
+          <ion-label class="login__form__label"
+            >{{pageConfig?.registrationPageSection?.registerForm?.labelPassword}}</ion-label
+          >
+          <ion-input
+            formControlName="password"
+            class="login__form__input"
+            id="password"
+            type="password"
+            autocomplete="off"
+          ></ion-input>
+
+          <div
+            class="login__form__error"
+            *ngIf="password.invalid && (password.dirty || password.touched)"
+          >
+            <span *ngIf="password.errors.required"
+              >You must enter a password</span
+            >
+            <span *ngIf="password.errors.minlength"
+              >Password must contain at least {{passwordMinLength}}
+              characters.</span
+            >
+          </div>
+        </div>
+        <div>
+          <ion-label class="login__form__label">Country</ion-label>
+          <div class="country-dropdown">
+            <select
+              formControlName="country"
+              (ionChange)="onCountrySelected($event.target)"
+            >
+              <option
+                *ngFor="let country of regionalisationSupportedCountries"
+                [value]="country.countryName"
+                [selected]="country.countryName ==defaultCountrySelection"
+              >
+                {{ country.countryName | uppercase }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="register__form__user_agreement">
+          <span
+            >By using this application, you agree to
+            <a (click)="onAgreementLinkClick()"
+              ><strong>Terms & Conditions</strong></a
+            >
+            of GreenDay.</span
+          >
+        </div>
+        <div
+          class="login__form-create-account-container"
+          fxLayout="row wrap"
+          fxLayoutAlign="center center"
+        >
+          <ion-button
+            type="submit"
+            class="login__form__button"
+            (click)="loginWithEmail($event)"
+            expand="block"
+            fill="solid"
+            color="primary"
+            shape="round"
+            fxFlex="100"
+          >
+            {{pageConfig?.registrationPageSection.registerForm.button.loginWithEmail}}
+          </ion-button>
+        </div>
+        <div class="login__form__footer">
+          <span>{{pageConfig?.registrationPageSection.haveAccountText}} </span>
+          <a (click)="onLoginClick($event)">
+            {{pageConfig?.registrationPageSection.haveAccountLoginButtonText}}
+          </a>
+        </div>
+      </form>
+    </ng-container>
+
+    <div
+      class="login__form-button-containers"
+      fxLayout="row wrap"
+      fxLayoutAlign="center center"
+    >
+      <!-- <ion-button
+        type="submit"
+        class="login__form__button login__form__button--facebook"
+        (click)="doFbLogin()"
+        color="medium"
+        expand="block"
+        shape="round"
+        fxFlex="100"
+      >
+        <ion-icon
+          class="login__form__button__icon"
+          name="logo-facebook"
+        ></ion-icon
+        >{{pageConfig?.registrationPageSection?.socialLoginButtonText?.facebook}}
+      </ion-button> -->
+      <ion-button
+        type="submit"
+        (click)="doGoogleLogin()"
+        class="login__form__button"
+        color="cornflower_blue"
+        expand="block"
+        fxFlex="100"
+        shape="round"
+      >
+        <ion-icon
+          class="login__form__button__icon"
+          name="logo-google"
+        ></ion-icon>
+        {{pageConfig?.registrationPageSection?.socialLoginButtonText?.google}}
+      </ion-button>
+      <ion-button
+        type="submit"
+        (click)="doAppleLogin()"
+        class="login__form__button login__form__button--apple"
+        expand="block"
+        color="black"
+        shape="round"
+        fxFlex="100"
+        *ngIf="platform.is('ios')"
+      >
+        <ion-icon
+          slot="start"
+          class="login__form__button__icon"
+          name="logo-apple"
+        ></ion-icon
+        >{{pageConfig?.registrationPageSection?.socialLoginButtonText?.apple}}
+      </ion-button>
+    </div>
+  </section>
+</ion-content>

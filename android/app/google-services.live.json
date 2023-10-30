@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "653229316177",
+    "firebase_url": "https://greenday-landing-page.firebaseio.com",
+    "project_id": "greenday-landing-page",
+    "storage_bucket": "greenday-landing-page.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653229316177:android:5dd571f55a520d5f658070",
+        "android_client_info": {
+          "package_name": "com.greendayapp.userportal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653229316177-h4kujp42vp7afspihr4j6ntnd4n2k0qc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.greendayapp.userportal",
+            "certificate_hash": "e623a163686edbf6a4ec009677b4809e2f13474b"
+          }
+        },
+        {
+          "client_id": "653229316177-ko70iluc45tbou4049lvs4sm6sm66gpl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.greendayapp.userportal",
+            "certificate_hash": "dcbf9d0be9caedcc50b0b9a2aaab2c6caf9eb610"
+          }
+        },
+        {
+          "client_id": "653229316177-5muqkotcvu95odsqaqbq6lta9s69ntd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7EvbYZjhTOiaaucNL_YBG92-dzCOm3ik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653229316177-5muqkotcvu95odsqaqbq6lta9s69ntd8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "653229316177-p0lpdhl2t22ctjuk4cij45ent96fbs5k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.greendayapp.userportal",
+                "app_store_id": "1491641729"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

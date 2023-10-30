@@ -1,0 +1,32 @@
+.header {
+  &__img {
+    font-size: 7em;
+    margin-top: 8px;
+  }
+}
+
+.content {
+  h1 {
+    font-size: 50px;
+  }
+  article {
+    margin: 0 auto;
+  }
+  a {
+    color: #dc8100;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+section {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 100%;
+  padding: 0;
+}

@@ -1,0 +1,188 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar
+    class="header__toolbar"
+    mode="ios"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar
+      #searchBar
+      class="search-bar"
+      (keydown.enter)="onSearchTermEnterPressed(searchBar.value)"
+      (keyup)="searchTerm$.next(searchBar.value)"
+      autocomplete="on"
+      enterkeyhint="search"
+      placeholder="Search eco-friendly products"
+    >
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content
+  #content
+  [scrollEvents]="true"
+  (ionScrollStart)="onScrollStart()"
+  class="product-search"
+>
+  <div class="pageTopIndicator"></div>
+  <section
+    fxLayout="column"
+    *ngIf="!searchBar?.value?.trim(); else searchResultTemplate;"
+  >
+    <div [fxShow]="filtersData">
+      <div fxLayout="row">
+        <ion-segment
+          color="primary"
+          mode="md"
+          class="product-search__sections-segment"
+          (ionChange)="segmentChanged($event.detail.value)"
+          [value]="segmentList[0]"
+        >
+          <ion-segment-button
+            color="primary"
+            [value]="key"
+            *ngFor="let key of segmentList"
+          >
+            <ion-label>{{key | uppercase}}</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      <div
+        fxLayout="row"
+        [ngSwitch]="activeSegment"
+        class="product-search__section-container"
+      >
+        <ng-container *ngSwitchCase="segmentList[0]">
+          <div
+            fxFlex="25"
+            fxLayout="column"
+            fxLayoutGap="20px"
+            class="product-search__category-sidebar-container"
+          >
+            <ng-container
+              *ngFor="let item of mainCategoryList; let idx = index"
+            >
+              <div
+                class="product-search__category-sidebar"
+                fxLayout="column"
+                fxLayoutAlign="center center"
+                (click)="subCategories = filtersData[0].list[idx].list; selectedCategory = item.text"
+              >
+                <ion-icon
+                  [color]="selectedCategory === item.text ? 'primary': 'grey'"
+                  [src]="item.icon"
+                  class="product-search__sidebar-icon"
+                  [class.product-search__sidebar-icon--selected]="selectedCategory === item.text"
+                >
+                </ion-icon>
+                <ion-label
+                  class="product-search__category-label"
+                  [color]="selectedCategory === item.text ? 'primary': 'grey'"
+                  [ngStyle]="{'font-weight': selectedCategory === item.text ? 'bold': 'normal'}"
+                  >{{item.text}}</ion-label
+                >
+              </div>
+            </ng-container>
+          </div>
+          <div
+            fxFlex="70"
+            fxLayout="column"
+            class="product-search__subcategories-container"
+          >
+            <ion-item
+              class="product-search__subcategory-item"
+              button
+              detail="false"
+              *ngFor="let item of subCategories"
+              (click)="fetchProductsFor({type: 'tag', query: item})"
+            >
+              {{item.text}}
+            </ion-item>
+          </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="segmentList[1]">
+          <div fxFlex="100" fxLayout="row wrap">
+            <div
+              fxFlex="32"
+              fxLayout="column"
+              fxLayoutAlign="center center"
+              *ngFor="let item of filtersData[1].list"
+              class="product-search__merchant-item"
+              (click)="fetchProductsFor({type: 'merchant', query: item})"
+            >
+              <ion-avatar
+                class="product-search__merchant-item-avatar-container"
+              >
+                <ion-img [src]="item.avatar"></ion-img>
+              </ion-avatar>
+              <span class="product-search__merchant-label">{{item.text}}</span>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="segmentList[2]">
+          <div
+            fxFlex="100"
+            fxLayout="column"
+            class="product-search__eco-tags-container"
+          >
+            <ion-item
+              detail="false"
+              class="product-search__special-tag-item"
+              button
+              *ngFor="let item of filtersData[2].list"
+              (click)="fetchProductsFor({type: 'specialTag', query: item})"
+            >
+              <ion-icon slot="start" [src]="item.icon"></ion-icon>
+              {{item.text}}
+            </ion-item>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+</ion-content>
+
+<ng-template #searchResultTemplate>
+  <div
+    fxLayout="column"
+    fxLayoutGap="5px"
+    class="search-result-page__result-conatiner"
+  >
+    <div
+      fxLayout="column"
+      fxLayoutGap="5px"
+      class="product-search-page__search-result-item"
+      (click)="goToProductDetailPage(item)"
+      *ngFor="let item of searchResults; trackBy: searchResultTrackByFn"
+    >
+      <div fxLayout="row" fxLayoutGap="5px">
+        <div fxFlex="30">
+          <img
+            class="lozad product-search-page__search-result-item-image"
+            [src]="item.image"
+          />
+        </div>
+        <div
+          class="product-search-page__search-result-row-detail"
+          fxFlex="70"
+          fxLayout="column"
+          fxLayoutGap="3px"
+        >
+          <div
+            class="product-search-page__merchant-name"
+            [innerHTML]="item.merchant_name"
+          ></div>
+          <div
+            class="product-search-page__title"
+            [innerHTML]="item.title"
+          ></div>
+        </div>
+      </div>
+      <div class="horizontal-line"></div>
+    </div>
+  </div>
+</ng-template>

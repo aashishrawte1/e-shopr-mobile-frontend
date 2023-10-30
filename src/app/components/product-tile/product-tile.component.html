@@ -1,0 +1,146 @@
+<div class="tile product-tile">
+  <div class="box-layout" *ngIf="layoutType === 'boxLayout'">
+    <ion-card mode="ios" class="box-layout__container-card">
+      <div
+        *ngIf="product?.media"
+        class="box-layout__media-container"
+        [ngStyle]="{ height: mediaContainerHeight + 'px' }"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        (click)="gotoProductDetail()"
+      >
+        <img
+          *ngIf="(product?.media)[0]?.type === 'image'; else defaultImage"
+          [src]="asset.placeholderImage"
+          [attr.srcset]="product.media[0].link"
+          alt="user profile image"
+          class="lozad box-layout__image"
+        />
+
+        <ng-template #defaultImage>
+          <img
+            [src]="asset.placeholderImage"
+            class="box-layout__image"
+            alt="blurred profile image"
+          />
+        </ng-template>
+      </div>
+
+      <ion-card-header class="box-layout__card-header">
+        <ion-chip>
+          <ion-avatar>
+            <ion-img
+              class="box-layout__avatar-img"
+              *ngIf="product?.avatarUrl; else defaultAvatar"
+              [src]="product.avatarUrl"
+            ></ion-img>
+          </ion-avatar>
+          <ng-template #defaultAvatar>
+            <ion-img
+              class="box-layout__avatar-img"
+              [src]="asset.defaultAvatarIcon"
+            ></ion-img>
+          </ng-template>
+          <ion-label [ngStyle]="{ 'font-size': '12px' }">{{
+            product?.ownerName
+          }}</ion-label>
+        </ion-chip>
+        <ion-card-title
+          class="box-layout__title"
+          [ngStyle]="{ 'font-size': fontSize + 'px' }"
+          (click)="gotoProductDetail()"
+          >{{ _productTitle }}</ion-card-title
+        >
+        <div
+          class="box-layout__tags clamp-line-1"
+          *ngIf="showTags"
+          [ngStyle]="{ 'font-size': fontSize + 'px' }"
+          (click)="gotoProductDetail()"
+        >
+          {{ _tags }}
+        </div>
+        <div
+          *ngIf="showPrice"
+          class="box-layout__price"
+          [ngStyle]="{ 'font-size': fontSize + 'px' }"
+        >
+          <label
+            >{{ storeService.appCurrencyFormat
+            }}{{ product.price | number: '1.2-2' }}</label
+          >
+          <label
+            class="box-layout__price-discount"
+            *ngIf="product?.originalPrice"
+            >{{ storeService.appCurrencyFormat
+            }}{{ product.originalPrice | number: '1.2-2' }}</label
+          >
+        </div>
+      </ion-card-header>
+
+      <ion-card-content class="box-layout__content" *ngIf="showDescription">
+        <div
+          class="box-layout__description clamp-line-3"
+          [ngStyle]="{ 'font-size': fontSize + 'px' }"
+        >
+          {{ _productDescription }}...
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="row-layout" *ngIf="layoutType === 'rowLayout'">
+    <div
+      class="row-layout__container"
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+      fxLayoutGap="10px"
+      (click)="gotoProductDetail()"
+    >
+      <div class="row-layout__media-container" fxFlex="50">
+        <img
+          class="lozad row-layout__image"
+          *ngIf="(product?.media)[0]?.type === 'image'; else defaultImage"
+          [src]="asset.placeholderImage"
+          [attr.srcset]="product.media[0].link"
+          alt="tiles image"
+        />
+        <!-- An image that is shown if JavaScript is turned off -->
+        <ng-template #defaultImage>
+          <img [src]="asset.placeholderImage" />
+        </ng-template>
+      </div>
+      <div class="row-layout__details" fxFlex="50">
+        <p class="row-layout__title">{{ _productTitle }}</p>
+        <div
+          *ngIf="showPrice"
+          class="row-layout__price"
+          [ngStyle]="{ 'font-size': fontSize + 'px' }"
+        >
+          <label
+            >{{ storeService.appCurrencyFormat
+            }}{{ product.price | number: '1.2-2' }}</label
+          >
+          <label
+            class="row-layout__price-discount"
+            *ngIf="product?.originalPrice"
+            >{{ storeService.appCurrencyFormat
+            }}{{ product.originalPrice | number: '1.2-2' }}</label
+          >
+        </div>
+        <ion-chip class="row-layout__merchant-info">
+          <ion-avatar>
+            <ion-img
+              *ngIf="product?.avatarUrl; else defaultAvatar"
+              [src]="product.avatarUrl"
+            ></ion-img>
+          </ion-avatar>
+          <ng-template #defaultAvatar>
+            <ion-img [src]="asset.defaultAvatarIcon"></ion-img>
+          </ng-template>
+          <ion-label class="row-layout__merchant-name">{{
+            product?.ownerName
+          }}</ion-label>
+        </ion-chip>
+      </div>
+    </div>
+  </div>
+</div>

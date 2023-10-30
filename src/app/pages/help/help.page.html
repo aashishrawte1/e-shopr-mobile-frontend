@@ -1,0 +1,68 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="pageTopIndicator"></div>
+  <section fxLayout="column">
+    <div class="page-info">
+      <h1 class="page-info__header">{{pageConfig?.helpPageSection?.header}}</h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="tabs">
+          <div class="tab">
+            <input type="checkbox" id="Q1" />
+            <label class="tab-label" for="Q1"
+              >{{pageConfig?.helpPageSection?.question1}}</label
+            >
+            <div class="tab-content">
+              {{pageConfig?.helpPageSection?.answer1}}
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" id="Q2" />
+            <label class="tab-label" for="Q2"
+              >{{pageConfig?.helpPageSection?.question2}}</label
+            >
+            <div class="tab-content">
+              {{pageConfig?.helpPageSection?.answer2}}
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" id="Q3" />
+            <label class="tab-label" for="Q3"
+              >{{pageConfig?.helpPageSection?.question3}}</label
+            >
+            <div class="tab-content">
+              {{pageConfig?.helpPageSection?.answer3}}
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" id="Q4" />
+            <label class="tab-label" for="Q4"
+              >{{pageConfig?.helpPageSection?.question4}}</label
+            >
+            <div class="tab-content">
+              {{pageConfig?.helpPageSection?.answer4}}
+            </div>
+          </div>
+          <div class="tab">
+            <input type="checkbox" id="Q5" />
+            <label class="tab-label" for="Q5"
+              >{{pageConfig?.helpPageSection?.question5}}</label
+            >
+            <div class="tab-content">
+              {{pageConfig?.helpPageSection?.answer5}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

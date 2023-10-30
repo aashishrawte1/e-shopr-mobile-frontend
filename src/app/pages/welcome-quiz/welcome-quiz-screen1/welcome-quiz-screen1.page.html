@@ -1,0 +1,47 @@
+<ion-content class="welcome-quiz">
+  <div fxLayout="column" class="welcome-quiz__container">
+    <div fxFlex="10"></div>
+    <div fxFlex="70" fxLayout="column" class="welcome-quiz__intro-container">
+      <div class="welcome-quiz__subheader-image">
+        <img
+          [src]="assetService.greenDayLogoPNG"
+          alt="GreenDay logo"
+          width="80px"
+          height="80px"
+        />
+      </div>
+      <div
+        class="welcome-quiz__heder-text"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        fxLayoutGap="5px"
+      >
+        <span> Hi there :) </span>
+      </div>
+      <div
+        class="welcome-quiz__subheader-text"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+      >
+        Let us get to know you better
+      </div>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        class="welcome-quiz__button-container"
+      >
+        <ion-button
+          class="welcome-quiz__button"
+          color="primary"
+          size="large"
+          shape="round"
+          fill="solid"
+          (click)="goToNextPage()"
+        >
+          Let's go!
+        </ion-button>
+      </div>
+    </div>
+    <div class="welcome-quiz__footer" fxFlex="10"></div>
+  </div>
+</ion-content>

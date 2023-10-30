@@ -1,0 +1,9 @@
+<div class="article-viewer" fxFlex="100" fxLayout="column" *ngIf="siteUrl">
+  <iframe
+    fxFlex="100"
+    [src]="siteUrl"
+    (load)="hideLoadingIndicator()"
+    frameborder="0"
+  >
+  </iframe>
+</div>

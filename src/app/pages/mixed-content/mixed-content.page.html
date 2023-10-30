@@ -1,0 +1,44 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="mixed-content">
+  <div class="pageTopIndicator"></div>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <section fxLayout="column">
+    <div class="page-info">
+      <h1 class="page-info__header">
+        {{_spinTitle !== undefined?_spinTitle:_title}}
+      </h1>
+    </div>
+
+    <div *ngFor="let item of itemsToShow">
+      <user-portal-article-tile
+        class="community__item"
+        *ngIf="item.type === 'link'"
+        [item]="item"
+        layoutType="boxLayout"
+        [showDescription]="false"
+      >
+      </user-portal-article-tile>
+
+      <user-portal-product-tile
+        class="market__item"
+        layoutType="boxLayout"
+        *ngIf="item.type === 'product'"
+        [product]="item"
+        [showDescription]="true"
+        [showTags]="true"
+        [mediaContainerHeight]="350"
+      >
+      </user-portal-product-tile>
+    </div>
+  </section>
+</ion-content>

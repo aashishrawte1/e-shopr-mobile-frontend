@@ -1,0 +1,35 @@
+{
+  "appId": "com.greendayapp.userportal",
+  "appName": "GreenDay",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "Keyboard": {
+      "resize": "ionic"
+    },
+    "PushNotifications": {
+      "presentationOptions": [
+        "badge",
+        "sound",
+        "alert"
+      ]
+    }
+  },
+  "cordova": {
+    "preferences": {
+      "ScrollEnabled": "true",
+      "android-minSdkVersion": "19",
+      "BackupWebStorage": "none",
+      "SplashMaintainAspectRatio": "true",
+      "FadeSplashScreenDuration": "300",
+      "SplashShowOnlyFirstTime": "true",
+      "SplashScreen": "screen",
+      "SplashScreenDelay": "2000",
+      "orientation": "portrait"
+    }
+  },
+  "server": {
+    "url": "hhttps://f17d890e6cf1.ap.ngrok.io"
+  }
+}

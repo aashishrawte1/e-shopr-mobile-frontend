@@ -1,0 +1,17 @@
+<ion-header mode="ios">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="arrow-back"></ion-icon>Back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="host-container">
+  <section>
+    <ng-template
+      class="host-container__component"
+      appDynamicComponentHost
+    ></ng-template>
+  </section>
+</ion-content>

@@ -1,0 +1,171 @@
+.checkout {
+  section {
+    padding-top: 0;
+  }
+
+  h5,
+  h6,
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__price-info > div {
+    padding: 5px 0;
+    margin: 0;
+  }
+
+  &__horizontal-line {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  &__item {
+    padding: 10px 0;
+  }
+
+  &__item > div {
+    overflow-wrap: break-word;
+  }
+
+  &__image {
+    max-width: 35px;
+  }
+
+  &__item-title {
+    font-size: 12px;
+    overflow-wrap: break-word;
+  }
+
+  &__item-merchant-name {
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+  &__card-details {
+    &-info {
+      font-size: 13px;
+      padding: 3px 6px 10px 0;
+    }
+  }
+
+  &__order-summary {
+    margin-top: 5px;
+  }
+
+  &__note {
+    margin-top: 0;
+    h5 {
+      font-size: 14px;
+    }
+  }
+
+  &__payment-info {
+    margin-top: 5px;
+  }
+
+  &__delivery-note {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &__shipping-note {
+    margin-top: 10px;
+  }
+}
+
+fieldset {
+  margin: 15px 20px;
+}
+
+.card-number,
+.card-expiry,
+.card-cvc {
+  height: 45px;
+  border: 1px solid var(--ion-color-step-200);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.card-expiry,
+.card-cvc {
+  margin-top: 10px;
+}
+
+.error svg {
+  margin-top: 0;
+}
+
+.error svg .base {
+  fill: #e25950;
+}
+
+.error svg .glyph {
+  fill: #fff;
+}
+
+.error .message {
+  color: #e25950;
+  font-size: 13px;
+}
+
+.success .icon .border {
+  stroke: #abe9d2;
+}
+
+.success .icon .checkmark {
+  stroke: #24b47e;
+}
+
+.success .title {
+  color: #32325d;
+  font-size: 16px;
+}
+
+.success .message {
+  color: #8898aa;
+  font-size: 13px;
+}
+
+.success .reset path {
+  fill: #24b47e;
+}
+
+.checkout__section-title {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+ion-input,
+ion-textarea {
+  --padding-start: 10px;
+
+  border: 1px solid var(--ion-color-step-200);
+  border-radius: 8px;
+}
+
+.checkout__deliver-to {
+  margin-top: 10px;
+}
+.checkout__contact-details {
+  margin-top: 4vh;
+}
+
+.checkout__input {
+  width: 100%;
+}
+
+.shopping-cart__price-info {
+  font-size: 12px;
+}
+
+.checkout__coupon {
+  background: white;
+}
+
+.checkout__coupon-input {
+  border-radius: 8px;
+  text-transform: uppercase;
+}

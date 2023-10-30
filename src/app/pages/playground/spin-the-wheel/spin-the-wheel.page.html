@@ -1,0 +1,41 @@
+<ion-content class="spin-game">
+  <div class="spin-game__container">
+    <section fxLayout="column">
+      <div class="back-button" fxLayoutAlign="start center" (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </div>
+      <div class="pageTopIndicator"></div>
+      <div>
+        <h1 class="spin-game__header">{{pageConfig?.header}}</h1>
+      </div>
+
+      <div fxFlex="100">
+        <p>&nbsp;</p>
+      </div>
+      <div class="spin-game__wheel" fxFlex="100" fxLayout="column">
+        <div
+          class="spin-game__wheel-container"
+          fxFlex="100"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div class="spin-game__wheel-pointer"></div>
+          <div
+            class="spin-game__canvas-container"
+            fxLayout="row"
+            fxLayoutAlign="center"
+          >
+            <canvas
+              id="spinWheel"
+              width="400"
+              height="400"
+              (click)="spinTheWheel()"
+            >
+            </canvas>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </section>
+  </div>
+</ion-content>

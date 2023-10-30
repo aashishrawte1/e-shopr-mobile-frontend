@@ -1,0 +1,64 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bartering">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="pageTopIndicator"></div>
+  <section>
+    <div class="bartering__container">
+      <div
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between center"
+        class="page-info"
+      >
+        <div class="bartering__tiles-container-header">Product Uploads</div>
+      </div>
+      <div
+        class="row-layout bartering__product-item"
+        (click)="editSelectedUserProduct(data.productId)"
+        *ngFor="let data of productsByUser"
+      >
+        <div
+          class="row-layout__container"
+          fxLayout="row"
+          fxLayoutAlign="start"
+          fxLayoutGap="10px"
+        >
+          <div class="row-layout__media-container" fxFlex="40">
+            <img
+              class="row-layout__image"
+              [src]="data.images[0]"
+              alt="placeholder image"
+            />
+          </div>
+          <div
+            class="row-layout__details"
+            fxFlex="60"
+            fxLayout="column"
+            fxLayoutAlign="start"
+            fxLayoutGap="10px"
+          >
+            <div class="row-layout__title clamp-line-1">{{data.title}}</div>
+            <div>
+              <strong>Range:</strong> {{data.priceMin}} - {{data.priceMax}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onAddProductClick()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

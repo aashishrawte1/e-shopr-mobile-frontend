@@ -1,0 +1,28 @@
+@import "./../welcome-quiz-screen.common.scss";
+
+.welcome-quiz__option {
+  height: 70px;
+}
+.welcome-quiz__intro-container {
+  overflow-y: scroll;
+}
+
+.welcome-quiz__options-container {
+  padding: 0 26px;
+}
+
+.welcome-quiz__star {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  padding: 0 25px;
+}
+
+.welcome-quiz__description {
+  margin: 70px auto;
+  width: 300px;
+  border: 2px solid #bfe0d6;
+  padding: 20px;
+  color: #bfe0d6;
+  border-radius: 10px;
+}

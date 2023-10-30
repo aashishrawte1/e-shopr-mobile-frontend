@@ -1,0 +1,12 @@
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+// apps specific
+@import "./scss/root.scss";
+@import "./scss/colors.scss";
+@import "./scss/overrides/index.scss";
+@import "./scss/utilities/index.scss";
+@import "./scss/zoho.scss";

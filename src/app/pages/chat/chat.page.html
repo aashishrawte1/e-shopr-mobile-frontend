@@ -1,0 +1,47 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="chat" #content>
+  <div slot="fixed" class="chat__page-header-container">
+    <div class="page-info">
+      <h1 class="page-info__header">{{pageConfig?.header}}</h1>
+    </div>
+    <ion-searchbar (ionInput)="onSearchTermChange($event)"> </ion-searchbar>
+  </div>
+  <div class="pageTopIndicator"></div>
+  <section>
+    <div class="chat__messages-container" fxLayout="row wrap">
+      <div
+        *ngFor="let message of (isSearchEmpty ? storeService.greenConciergeChatMessageStream: messagesToSearchFrom) | async"
+        fxFlex="100"
+        [fxLayoutAlign]="message.senderUid === (storeService.loggedInUser | async).uid ? 'end center': 'start center'"
+      >
+        <div
+          fxFlex="50"
+          fxLayout="column"
+          [ngClass]="'chat__' + (message.senderUid === (storeService.loggedInUser | async).uid ? 'sent' : 'reply')"
+        >
+          <div
+            class="chat__message chat-message"
+            [innerHTML]="message.description"
+          ></div>
+          <ion-note fxFlexAlign="end" class="chat__time"
+            >{{message.displayTime}}</ion-note
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>
+<ion-footer class="chat-footer">
+  <user-portal-add-comment
+    (comment)="onComment($event)"
+  ></user-portal-add-comment>
+</ion-footer>

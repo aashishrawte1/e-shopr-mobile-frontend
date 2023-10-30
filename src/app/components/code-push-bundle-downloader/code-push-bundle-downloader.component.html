@@ -1,0 +1,46 @@
+<ion-header class="header">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-title fxLayout="row wrap" fxLayoutAlign="center center"
+      ><ion-icon class="header__img" [src]="asset.greenDayWordSVG"></ion-icon
+    ></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fxLayout="column" fxLayoutAlign="center">
+  <section>
+    <article class="bundle-updater">
+      <div
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between center"
+        class="page-info"
+      >
+        <div fxFlex="100" class="page-info__title-container">
+          <h1 fxFlex="80" class="page-info__header">Update in progress</h1>
+        </div>
+        <p class="page-info__message" fxFlex="100"></p>
+      </div>
+      <div *ngIf="_data" class="progress-container">
+        <div
+          *ngIf="_data.syncStatus === 'DOWNLOADING_PACKAGE'"
+          fxLayout="column"
+        >
+          <h2>Downloading update from server...</h2>
+          <div fxFlex="100" fxLayoutAlign="start center">
+            {{ percentDownloaded }}%
+          </div>
+          <ion-progress-bar
+            value="{{ downloadProgressBarValue }}"
+          ></ion-progress-bar>
+        </div>
+        <div *ngIf="_data.syncStatus === 'INSTALLING_UPDATE'">
+          <h2>Installing update...</h2>
+          <ion-progress-bar type="indeterminate"></ion-progress-bar>
+        </div>
+
+        <div *ngIf="_data.syncStatus === 'INSTALLATION_COMPLETE'">
+          <h2>Update Installed. Reloading application...</h2>
+          <ion-progress-bar type="indeterminate"></ion-progress-bar>
+        </div>
+      </div>
+    </article>
+  </section>
+</ion-content>

@@ -1,0 +1,65 @@
+.bartering__chat-item-user-profile-image-container {
+  margin: 10px 4px 0 0;
+  img {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+  }
+}
+.bartering__chat-item-product-image-container {
+  img {
+    border-radius: 8px;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+  }
+}
+ion-list {
+  outline: 10px solid var(--ion-color-warning);
+  padding: 5px;
+}
+
+.bartering__last-message-text {
+  font-size: 12px;
+}
+
+.bartering__chat-time {
+  font-size: 10px;
+  text-align: end;
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--ion-color-step-300);
+}
+
+.bartering__chat-image-container {
+  position: relative;
+}
+
+.bartering__chat-image-container-current-user-product-image {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border: 1px solid white;
+}
+
+.bartering__chat-image-container-other-user-product-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.bartering__user-info {
+  font-size: 10px;
+}
+
+.bartering__chat-title {
+  font-weight: bold;
+}
+
+.bartering__chat-message {
+  font-size: 12px;
+}

@@ -1,0 +1,100 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button size="small" (click)="goToLikesListPage()">
+        <ion-icon
+          slot="icon-only"
+          class="shopping-cart__header-toolbar-item-icon"
+          [src]="storeService.json.pageConfig.value.icons.heartIconFilled"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="shopping-cart">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="pageTopIndicator"></div>
+
+  <section>
+    <div class="page-info shopping-cart__page-info">
+      <h1 class="page-info__header">
+        {{pageConfig?.shoppingCartPageSection?.header}}
+      </h1>
+    </div>
+    <div class="shopping-cart" *ngIf="shoppingCart">
+      <user-portal-cart-items-summary
+        [shoppingCart]="shoppingCart"
+        [options]="{'showShippingCost': false, 'allowCountEdit': true}"
+      ></user-portal-cart-items-summary>
+      <div
+        class="shopping-cart__price-info"
+        fxLayoutAlign="space-between center"
+      >
+        <span>
+          {{pageConfig?.shoppingCartPageSection?.priceInfo?.subtotal}}
+          <strong>
+            {{storeService.appCurrencyFormat}}{{ subtotal | number: '1.2-2' }}
+          </strong>
+        </span>
+        <ion-button
+          fxFlex="40"
+          class="shopping-cart__checkout-button"
+          (click)="checkout()"
+        >
+          {{pageConfig?.shoppingCartPageSection?.priceInfo?.checkoutButton}}
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+
+    <div class="has-no-item" fxLayout="row wrap">
+      <div
+        fxFlex="100"
+        *ngIf="!shoppingCart"
+        class="has-no-item__img-container"
+      >
+        <img
+          class="has-no-item__image"
+          [src]="assetService.emptyCartIcon"
+          alt="empty cart icon"
+        />
+      </div>
+      <div
+        *ngIf="!shoppingCart"
+        class="has-no-item__title"
+        fxFlex="100"
+        [innerHTML]="pageConfig?.shoppingCartPageSection?.hasNoItem?.title"
+      ></div>
+
+      <div *ngIf="!shoppingCart" fxFlex="100" class="has-no-item__shop-btn">
+        <ion-button fill="outline" class="has-no-item__btn" (click)="shopNow()"
+          >{{pageConfig?.shoppingCartPageSection?.hasNoItem?.hasNoItemBtn}}</ion-button
+        >
+      </div>
+      <br />
+      <div class="has-no-item__items-container">
+        <div class="item-description-section__title">
+          {{pageConfig?.shoppingCartPageSection?.hasNoItem?.separator}}
+        </div>
+        <ion-row wrap="true">
+          <user-portal-product-tile
+            layoutType="boxLayout"
+            class="has-no-item__item"
+            *ngFor="let product of popularProducts"
+            [product]="product"
+            [showPrice]="true"
+            (click)="onYouMayAlsoLikeItemClick(product)"
+          >
+          </user-portal-product-tile>
+        </ion-row>
+      </div>
+    </div>
+  </section>
+</ion-content>

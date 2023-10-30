@@ -1,0 +1,195 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bartering">
+  <div class="pageTopIndicator"></div>
+  <section>
+    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="start">
+      <div class="bartering__page-title">Item Detail</div>
+      <div fxLayout="row" class="page-info" fxLayoutAlign="start"></div>
+      <div
+        class="bartering__add-image-container"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+          <div
+            *ngFor="let imgCount of [0,1,2,3,4,5]"
+            fxFlex="30"
+            class="bartering__image-container"
+            fxLayout="row"
+            fxLayoutAlign="center center"
+          >
+            <ng-container
+              *ngIf="(product?.images || [])[imgCount]; else placeholderImageTemplate"
+            >
+              <span
+                class="bartering__remove-image-icon"
+                (click)="removeProductImage(imgCount)"
+              >
+                <ion-icon name="close-outline"></ion-icon>
+              </span>
+              <img
+                (click)="addProductImage(imgCount)"
+                class="bartering__image"
+                [src]="(product?.images || [])[imgCount]"
+              />
+            </ng-container>
+            <ng-template #placeholderImageTemplate>
+              <img
+                (click)="addProductImage(imgCount)"
+                class="bartering__image"
+                [src]="placeholderImage"
+              />
+            </ng-template>
+          </div>
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="start"
+          *ngIf="showNoProductImageError"
+        >
+          Add upto 6 images
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="start"
+          class="error"
+          *ngIf="showNoProductImageError"
+        >
+          Please add an image.
+        </div>
+      </div>
+
+      <div
+        class="bartering__add-product-contact-details"
+        fxLayout="column"
+        fxLayoutGap="10px"
+        *ngIf="barteringProductForm"
+        [formGroup]="barteringProductForm"
+      >
+        <div
+          class="bartering__input-container"
+          fxLayout="column"
+          fxLayoutAlign="start start"
+          fxLayoutGap="10px"
+        >
+          <ion-input
+            formControlName="title"
+            type="text"
+            required="true"
+            placeholder="Enter product name"
+          ></ion-input>
+          <div
+            class="error"
+            *ngIf="title.invalid && (title.touched && title.dirty)"
+          >
+            <div *ngIf="title.errors.required">Give it a title</div>
+            <div *ngIf="title.errors.minlength">
+              {{minTitleLength}} characters required.
+            </div>
+          </div>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayoutAlign="start start"
+          fxLayoutGap="10px"
+          class="bartering__input-container"
+        >
+          <ion-textarea
+            formControlName="description"
+            type="text"
+            [rows]="3"
+            required="true"
+            autocomplete="description"
+            placeholder="Enter product description"
+          ></ion-textarea>
+
+          <div
+            class="error"
+            *ngIf="description.invalid && (description.touched && description.dirty)"
+          >
+            <div *ngIf="description.errors.required">
+              Write some description
+            </div>
+            <div *ngIf="description.errors.minlength">
+              {{minDescriptionLength}} characters required.
+            </div>
+          </div>
+        </div>
+
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <ion-input
+              fxFlex="48"
+              type="number"
+              formControlName="priceMin"
+              placeholder="min value"
+              required="true"
+            >
+            </ion-input>
+
+            <ion-input
+              fxFlex="48"
+              type="number"
+              formControlName="priceMax"
+              required="true"
+              placeholder="max value"
+            ></ion-input>
+          </div>
+          <div fxLayout="row">
+            <div
+              fxFlex="50"
+              class="error"
+              *ngIf="priceMin.invalid && (priceMin.touched && priceMin.dirty)"
+            >
+              <div *ngIf="priceMin.errors.required">Specify a min price</div>
+              <div *ngIf="priceMin.errors.minPriceShouldBeLesserThanMaxPrice">
+                Min price should be lesser than max price
+              </div>
+            </div>
+
+            <div
+              class="error"
+              *ngIf="priceMax.invalid && (priceMax.touched && priceMax.dirty)"
+            >
+              <div *ngIf="priceMax.errors.required">Specify a max price</div>
+              <div *ngIf="priceMax.errors.maxPriceShouldBeGreaterThanMinPrice">
+                Max price should be greater than min price
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="space-around center"
+          class="bartering__input-container"
+        >
+          <ion-button
+            *ngIf="product?.productId"
+            color="danger"
+            shape="round"
+            class="bartering__view-matches"
+            (click)="onRemoveButtonClick()"
+          >
+            Delete
+          </ion-button>
+          <ion-button
+            color="primary"
+            shape="round"
+            class="bartering__view-matches"
+            (click)="modifyProduct()"
+          >
+            Save
+          </ion-button>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

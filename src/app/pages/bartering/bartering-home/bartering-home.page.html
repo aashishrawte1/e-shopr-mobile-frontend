@@ -1,0 +1,141 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button class="menu-icon">
+        <ion-menu-toggle menu="sideMenu" class="menu-button">
+          <ion-icon class="header__icon" name="menu-outline"></ion-icon>
+        </ion-menu-toggle>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <span class="bartering__header-greenday-text"> Social Bartering </span>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="viewChatList()">
+        <ion-icon
+          class="header__icon gap"
+          slot="icon-only"
+          name="chatbox-ellipses-outline"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bartering">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="pageTopIndicator"></div>
+  <section>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="bartering__page-title"> Add/Select Item To Swap </span>
+      <span class="bartering__edit-product" (click)="viewMyProductList()">
+        Edit
+      </span>
+    </div>
+
+    <div
+      fxLayout="row"
+      fxLayoutGap="10px"
+      class="horizontal-slider bartering__user-products-slider"
+    >
+      <div
+        class="horizontal-slider__item"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <img
+          [src]="assetService.addProductIconBarteringType1"
+          fill="clear"
+          class="bartering__add-product-icon"
+          (click)="gotoToAddProductPage()"
+          fxLayout="row"
+          fxLayoutAlign="end center"
+        />
+        <span class="bartering__user-product-title">Add item</span>
+      </div>
+
+      <div
+        *ngFor="let data of productsByUser;let idx = index;"
+        class="horizontal-slider__item"
+        (click)="selectProductByUser(data)"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <img
+          [src]="data.images[0]"
+          [id]="data.images[0]+idx"
+          class="bartering__user-product-image"
+          [class.bartering__user-product-selected]="userSelectedProductId === data.productId"
+        />
+        <span class="bartering__user-product-title clamp-line-1">
+          {{data.title | slice:0:10}}
+        </span>
+      </div>
+    </div>
+
+    <div class="bartering__page-title">Browse Items To Swap</div>
+
+    <ng-container *ngIf="!productsByUser?.length; else whenProductsAreThere">
+      <div class="bartering__when-no-products-are-added-by-user">
+        Add your first item to view products in the community
+      </div>
+    </ng-container>
+
+    <ng-template #whenProductsAreThere>
+      <div
+        class="relevant__products-container"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between start"
+        *ngIf="relevantProducts?.length"
+      >
+        <div
+          class="box-layout"
+          fxFlex="48"
+          *ngFor="let data of relevantProducts"
+        >
+          <div
+            mode="ios"
+            class="box-layout__container-card"
+            (click)="viewDetailForRelevantProduct(data)"
+          >
+            <div
+              *ngIf="data.images[0]"
+              class="box-layout__media-container"
+              fxLayout="row"
+              fxLayoutAlign="center"
+            >
+              <img
+                [src]="data.images[0]"
+                alt="user profile image"
+                class="lozad box-layout__image"
+              />
+            </div>
+
+            <div
+              class="box-layout__title bartering__matched-product-title clamp-line-1"
+            >
+              {{ data.title}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </section>
+</ion-content>
+<ion-footer mode="ios">
+  <div fxLayout="row" fxFlex="100" fxLayoutAlign="center">
+    <ion-button
+      [color]="!matchesProductsForUser?.length ? 'grey': 'primary'"
+      (click)="gotoToMatchesPage()"
+      class="match-button"
+      size="medium"
+      shape="round"
+      fill="solid"
+      [disabled]="!matchesProductsForUser?.length"
+    >
+      See Matches ({{matchesProductsForUser?.length || 0}})
+    </ion-button>
+  </div>
+</ion-footer>

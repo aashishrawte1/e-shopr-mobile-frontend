@@ -1,0 +1,46 @@
+<ion-content class="welcome-quiz">
+  <div fxLayout="column" class="welcome-quiz__container">
+    <div fxFlex="100" fxLayout="column" class="welcome-quiz__intro-container">
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <span class="welcome-quiz__header-text"> {{question}} </span>
+      </div>
+      <div
+        class="welcome-quiz__options-container"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between center"
+        fxLayoutGap="3px"
+      >
+        <div
+          fxFlex="100%"
+          *ngFor="let option of options;"
+          class="welcome-quiz__option"
+          [ngClass]="{
+            'welcome-quiz__option--unselected': !option.selected,
+            'welcome-quiz__option--selected': option.selected
+          }"
+          (click)="onOptionClick(option)"
+        >
+          {{option.text}}
+        </div>
+      </div>
+      <div class="dummy-margin-bottom"></div>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        class="welcome-quiz__button-container"
+      >
+        <ion-button
+          class="welcome-quiz__button"
+          [color]="isButtonDisabled ? 'grey': 'primary'"
+          size="large"
+          shape="round"
+          fill="solid"
+          [disabled]="isButtonDisabled"
+          (click)="goToNextPage()"
+        >
+          {{nextButtonMessage}}
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,66 @@
+/* Small fix for the winwheel as when displayed in the site the canvas sits a few pixles higher than wanted */
+
+td.the_wheel canvas.the_canvas {
+  margin-top: 10px;
+}
+
+.spin-game__canvas-container {
+  background-image: url("https://eshopr1in.blr1.digitaloceanspaces.com/cdn/user-portal/playground/win-wheel-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  margin-top: 20px;
+}
+
+.spin-game {
+  &__container {
+    background-image: url("../../../../assets/images/spin-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+  }
+
+  &__header {
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 4%;
+  }
+
+  &__wheel {
+    position: relative;
+    &-pointer {
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 40px solid #ec3c37;
+      position: absolute;
+      top: 30px;
+    }
+  }
+  &__btn {
+    width: 180px;
+    height: 55px;
+    font-size: 17px;
+    border-radius: 40px;
+    font-weight: bold;
+    background-color: #ec3c37;
+    color: #fff;
+  }
+
+  &__text {
+    font-weight: 800;
+    line-height: 25px;
+    margin-top: -18px;
+    height: 50px;
+  }
+}
+.back-button {
+  margin: 0;
+  padding: 7px;
+  margin-top: 15px;
+  font-size: 18px;
+  color: var(--ion-color-primary);
+}

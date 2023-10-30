@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>653229316177-p0lpdhl2t22ctjuk4cij45ent96fbs5k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.653229316177-p0lpdhl2t22ctjuk4cij45ent96fbs5k</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>653229316177-h4kujp42vp7afspihr4j6ntnd4n2k0qc.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAtvZg5b6vTlrqNhcottBsMkImWjVVoTAk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>653229316177</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.greendayapp.userportal</string>
+	<key>PROJECT_ID</key>
+	<string>greenday-landing-page</string>
+	<key>STORAGE_BUCKET</key>
+	<string>greenday-landing-page.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:653229316177:ios:242340298a863ec3658070</string>
+	<key>DATABASE_URL</key>
+	<string>https://greenday-landing-page.firebaseio.com</string>
+</dict>
+</plist>

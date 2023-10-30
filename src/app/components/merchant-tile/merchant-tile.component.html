@@ -1,0 +1,31 @@
+<div class="tile merchant-tile" (click)="goToMarketPage()">
+  <div class="box-layout" *ngIf="layoutType === 'boxLayout'">
+    <ion-card mode="ios" class="box-layout__container-card">
+      <div
+        class="box-layout__media-container"
+        [ngStyle]="{ height: mediaContainerHeight + 'px' }"
+        fxLayout="row"
+        fxLayoutAlign="center"
+      >
+        <img
+          *ngIf="merchant?.avatar; else defaultImage"
+          [src]="asset.placeholderImage"
+          [attr.srcset]="merchant?.avatar"
+          class="lozad box-layout__image"
+        />
+
+        <ng-template #defaultImage>
+          <img class="box-layout__image" />
+        </ng-template>
+      </div>
+
+      <ion-card-header class="box-layout__card-header">
+        <ion-card-title
+          class="box-layout__title"
+          [ngStyle]="{ 'font-size': fontSize + 'px' }"
+          >{{ merchant?.text }}</ion-card-title
+        >
+      </ion-card-header>
+    </ion-card>
+  </div>
+</div>

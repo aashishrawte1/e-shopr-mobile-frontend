@@ -1,0 +1,451 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar
+    [ngClass]="headerHasBackground ? 'header--has-background': 'header--transparent'"
+    class="header__toolbar"
+  >
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="header__back-button"
+        ><ion-icon name="arrow-back"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="header__home-button" (click)="goToHome()">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  class="product-detail-page product-detail"
+  fullscreen
+  (ionScrollStart)="onScrollStart()"
+  (ionScroll)="onScroll()"
+  [scrollEvents]="true"
+>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="none"></ion-refresher-content>
+  </ion-refresher>
+  <div class="pageTopIndicator"></div>
+
+  <!-- <div class="product-detail-page__media">
+    <ng-container *ngIf="product?.media; else emptySkeletonMedia">
+      <div
+        *ngFor="let item of product?.media"
+        class="product-detail-page__media-item"
+        [fxHide]="!item['show']"
+        (click)="openViewer(item)"
+      >
+        <ion-img *ngIf="item.type === 'image'" [src]="item.link"></ion-img>
+        <youtube-player
+          *ngIf="item.type === 'video'"
+          class="product-detail-page__media-video"
+          [videoId]="getYouTubeVideoId(item.link)"
+          suggestedQuality="highres"
+        >
+        </youtube-player>
+      </div>
+    </ng-container>
+    <ng-template #emptySkeletonMedia>
+      <ion-skeleton-text
+        class="product-detail-page__empty-skeleton-media-section"
+        animated="true"
+      ></ion-skeleton-text>
+    </ng-template>
+  </div> -->
+
+  <!-- <div
+    fxLayout="row"
+    class="product-detail-page__media-preview"
+    fxLayoutGap="2px"
+    fxLayoutAlign="start center"
+  >
+    <ng-container *ngIf="product?.media; else mediaPreviewSkeleton">
+      <div
+        *ngFor="let item of product?.media; let idx = index"
+        class="product-detail-page__media-preview-item"
+        (click)="goToSlide(idx)"
+      >
+        <img
+          *ngIf="item.type === 'image'"
+          [src]="item.link"
+          alt="product image"
+        />
+        <img
+          *ngIf="item.type === 'video'"
+          [src]="asset.youtubeIcon"
+          alt="you-tube icon"
+        />
+      </div>
+    </ng-container>
+    <ng-template #mediaPreviewSkeleton>
+      <ion-skeleton-text
+        *ngFor="let i of [0,1,2,3,4,5]"
+        class="product-detail-page__media-preview-item"
+        animated="true"
+      >
+      </ion-skeleton-text>
+    </ng-template>
+  </div> -->
+  <div class="product-detail-page__info" fxLayout="column" fxLayoutGap="10px">
+    <ng-container *ngIf="product; else emptySkeletonDescription">
+      <div class="product-detail-page__title">{{ product.title }}</div>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <img
+          alt="product-image"
+          [src]="merchantOriginCountryDetails.flagUrl"
+          class="product-detail-page_country-image"
+        />
+        <ion-chip
+          class="product-detail-page__chip"
+          (click)="openMarketPageWithMerchantSelected()"
+        >
+          <ion-avatar>
+            <img
+              *ngIf="product?.avatarUrl; else defaultAvatar"
+              [src]="product.avatarUrl"
+              alt="default avatar"
+            />
+          </ion-avatar>
+          <ng-template #defaultAvatar>
+            <ion-img [src]="asset.defaultAvatarIcon"></ion-img>
+          </ng-template>
+          <ion-label>{{ product?.ownerName }}</ion-label>
+        </ion-chip>
+      </div>
+
+      <div class="product-detail-page__media">
+        <ng-container *ngIf="product?.media; else emptySkeletonMedia">
+          <div
+            *ngFor="let item of product?.media"
+            class="product-detail-page__media-item"
+            [fxHide]="!item['show']"
+            (click)="openViewer(item)"
+          >
+            <ion-img *ngIf="item.type === 'image'" [src]="item.link"></ion-img>
+            <youtube-player
+              *ngIf="item.type === 'video'"
+              class="product-detail-page__media-video"
+              [videoId]="getYouTubeVideoId(item.link)"
+              suggestedQuality="highres"
+            >
+            </youtube-player>
+          </div>
+        </ng-container>
+        <ng-template #emptySkeletonMedia>
+          <ion-skeleton-text
+            class="product-detail-page__empty-skeleton-media-section"
+            animated="true"
+          ></ion-skeleton-text>
+        </ng-template>
+      </div>
+      <div
+        fxLayout="row"
+        class="product-detail-page__media-preview"
+        fxLayoutGap="2px"
+        fxLayoutAlign="start center"
+      >
+        <ng-container *ngIf="product?.media; else mediaPreviewSkeleton">
+          <div
+            *ngFor="let item of product?.media; let idx = index"
+            class="product-detail-page__media-preview-item"
+            (click)="goToSlide(idx)"
+          >
+            <img
+              *ngIf="item.type === 'image'"
+              [src]="item.link"
+              alt="product image"
+            />
+            <img
+              *ngIf="item.type === 'video'"
+              [src]="asset.youtubeIcon"
+              alt="you-tube icon"
+            />
+          </div>
+        </ng-container>
+        <ng-template #mediaPreviewSkeleton>
+          <ion-skeleton-text
+            *ngFor="let i of [0,1,2,3,4,5]"
+            class="product-detail-page__media-preview-item"
+            animated="true"
+          >
+          </ion-skeleton-text>
+        </ng-template>
+      </div>
+      <!-- <div class="product-detail-page__tags"> -->
+      <!-- <span
+          (click)="goToMarketPageWithTag(tag)"
+          class="product-detail-page__tag"
+          *ngFor="let tag of _tags;"
+        >
+          {{tag}}
+        </span> -->
+      <!-- </div> -->
+      <div
+        class="product-detail-page__info-price"
+        fxFlex="65"
+        fxLayoutAlign="end center"
+      >
+        {{storeService.appCurrencyFormat}}{{ product?.price | number: '1.2-2' }}
+        <span
+          class="product-detail-page__info-discount"
+          *ngIf="product?.originalPrice"
+          >{{storeService.appCurrencyFormat}}{{ product.originalPrice | number:
+          '1.2-2' }}</span
+        >
+      </div>
+      <div fxLayoutAlign="end center">
+        <div
+          class="product-detail-page__user-action-items-container"
+          fxFlex="35"
+          fxLayoutAlign="end center"
+          fxLayoutGap="5px"
+          (click)="toggleLike(product.uniqueId)"
+        >
+          <ng-container
+            *ngIf="product.statistics.currentUser.liked; else productNotLiked"
+          >
+            <span class="product-detail-page__like-option-hint"
+              >{{pageConfig?.likeOptions.hintForUnLikeText}}</span
+            >
+            <ion-icon
+              [src]="storeService.json.pageConfig.value.icons.heartIconFilled"
+            ></ion-icon>
+          </ng-container>
+          <ng-template #productNotLiked>
+            <span class="product-detail-page__like-option-hint"
+              >{{pageConfig?.likeOptions.hintForLikeText}}</span
+            >
+            <ion-icon
+              [src]="storeService.json.pageConfig.value.icons.heartIconOutline"
+            ></ion-icon>
+          </ng-template>
+        </div>
+        <div
+          class="product-detail-page__info-price"
+          fxFlex="10"
+          (click)="shareProduct()"
+        >
+          <img [src]="icons.share" class="share-image" alt="share icon" /><span
+            class="like_count"
+          ></span>
+        </div>
+      </div>
+
+      <div class="horizontal-line"></div>
+      <div class="product-detail-page__content">
+        <div
+          *ngFor="let item of product?.description; let idx = index"
+          class="product-detail-page__item-description-section"
+        >
+          <div
+            *ngIf="item.type === 'header'"
+            class="product-detail-page__item-description-section-title"
+          >
+            {{item.text.toUpperCase()}}
+            <button
+              class="product-detail-page__show-details-button"
+              (click)="toggleDetail(idx + 1)"
+            >
+              {{display[idx + 1] ? "-" : "+"}}
+            </button>
+          </div>
+
+          <div
+            *ngIf="display[idx] && item.type === 'content'"
+            class="product-detail-page__item-description-section-description"
+          >
+            <div
+              *ngIf="item.text?.length <= descriptionCharCountInLessShowMode; else showMoreShowLess"
+              [innerHTML]="item.text"
+            ></div>
+
+            <ng-template #showMoreShowLess>
+              <ng-container *ngIf="contentDescriptionShowStatusMap[idx]">
+                <div
+                  *ngIf="contentDescriptionShowStatusMap[idx].show === 'less'"
+                >
+                  <div
+                    [innerHTML]="item.text.substring(0,descriptionCharCountInLessShowMode)"
+                  ></div>
+                  <button
+                    (click)="onShowClick(idx, 'more')"
+                    class="product-detail__show"
+                  >
+                    {{pageConfig?.productDetailSection?.showMore}}
+                  </button>
+                </div>
+                <div
+                  *ngIf="contentDescriptionShowStatusMap[idx].show === 'more'"
+                >
+                  {{item.text}}<button
+                    (click)="onShowClick(idx, 'less')"
+                    class="product-detail__show"
+                  >
+                    {{pageConfig?.productDetailSection?.showLess}}
+                  </button>
+                </div>
+              </ng-container>
+            </ng-template>
+          </div>
+          <div *ngIf="idx%2===1" class="horizontal-line"></div>
+        </div>
+        <div
+          *ngIf="product?.delivery"
+          class="product-detail-page__item-description-section"
+        >
+          <div class="product-detail-page__item-description-section-title">
+            {{'delivery details' | uppercase}}
+            <button
+              class="product-detail-page__show-details-button"
+              (click)="toggleDeliveryDetail()"
+            >
+              {{displayDelivery ? "-" : "+"}}
+            </button>
+          </div>
+        </div>
+        <div
+          *ngIf="displayDelivery && product.delivery.description"
+          class="product-detail-page__item-description-section"
+        >
+          <div
+            class="product-detail-page__item-description-section__description"
+            *ngIf="product.delivery.description?.length <= descriptionCharCountInLessShowMode; else showMoreShowLess"
+            [innerHTML]="product.delivery.description"
+          ></div>
+
+          <ng-template #showMoreShowLess>
+            <div *ngIf="!showMoreDelivery">
+              <div
+                [innerHTML]="product.delivery.description.substring(0,descriptionCharCountInLessShowMode)"
+              ></div>
+              <button
+                (click)="toggleDelivery('more')"
+                class="product-detail__show"
+              >
+                {{pageConfig?.productDetailSection?.showMore}}
+              </button>
+            </div>
+            <div *ngIf="showMoreDelivery">
+              {{product.delivery.description}}<button
+                (click)="toggleDelivery('less')"
+                class="product-detail__show"
+              >
+                {{pageConfig?.productDetailSection?.showLess}}
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <div class="horizontal-line"></div>
+    </ng-container>
+    <ng-template #emptySkeletonDescription>
+      <ion-skeleton-text
+        animated="true"
+        class="product-detail-page__empty-skeleton-description-item"
+      ></ion-skeleton-text>
+      <ion-skeleton-text
+        animated="true"
+        class="product-detail-page__empty-skeleton-description-item"
+      ></ion-skeleton-text>
+      <ion-skeleton-text
+        animated="true"
+        class="product-detail-page__empty-skeleton-description-item"
+      ></ion-skeleton-text>
+    </ng-template>
+  </div>
+  <div class="product-detail-page__product-recommendations">
+    <div class="item-description-section__title">
+      {{pageConfig?.productDetailSection.separatorText | uppercase}}
+    </div>
+    <ion-row wrap>
+      <ng-container *ngIf="relatedProducts.length; else emptySkeletonContainer">
+        <user-portal-product-tile
+          layoutType="boxLayout"
+          class="product-detail__item"
+          *ngFor="let product of relatedProducts"
+          [product]="product"
+          [showPrice]="true"
+          (click)="onYouMayAlsoLikeItemClick(product)"
+        >
+        </user-portal-product-tile>
+      </ng-container>
+      <ng-template #emptySkeletonContainer>
+        <div
+          fxFlex="100"
+          fxLayout="row wrap"
+          fxLayoutGap="10px"
+          fxLayoutAlign="space-around start"
+        >
+          <div
+            class="product-detail-page__empty-skeleton-recommendation-section"
+            *ngFor="let i of [0,0,0,0,0,0,0,0,0,0]"
+            fxFlex="45"
+          >
+            <ion-skeleton-text animated="true"></ion-skeleton-text>
+          </div>
+        </div>
+      </ng-template>
+    </ion-row>
+  </div>
+</ion-content>
+<div
+  class="product-detail__progress-bar"
+  (click)="onGemCircleClick()"
+  [style.bottom]="(storeService.tabHeight + 60) + 'px'"
+>
+  <ng-container *ngIf="progressBarData | async ">
+    <user-portal-circular-progress-bar
+      [progressBarColor]="(progressBarData | async).progressBarColor"
+      [fillBar]="(progressBarData | async).fillBar"
+      [duration]="(progressBarData | async).duration"
+      [requiredTriggerCount]="(progressBarData | async).requiredTriggerCount"
+      [triggeredAt]="progressTriggerTimestamp"
+      [imageSrc]="asset.greenGemsIcon"
+      [progressBarHint]="progressBarHint"
+      (barFilled)="onBarFilled()"
+      (currentProgress)="onProgressBarUpdate($event)"
+    ></user-portal-circular-progress-bar>
+  </ng-container>
+</div>
+<ion-footer class="product-footer">
+  <ion-toolbar [style.height]="storeService.tabHeight + 'px'">
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+      <div fxLayout="row">
+        <div class="product-footer__shopping-cart" (click)="openCartModal()">
+          <ion-icon
+            class="product-footer__icon"
+            [src]="asset.tabIcons.shoppingCartOutline"
+          ></ion-icon>
+          <ion-badge *ngIf="cartItemCount > 0" class="product-footer__badge"
+            >{{cartItemCount}}</ion-badge
+          >
+          <div class="product-footer__text">
+            {{pageConfig?.productDetailSection?.footer?.shoppingCartText}}
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxFlex="auto" fxLayoutGap="10px">
+        <ion-button
+          fxFlex="auto"
+          color="dark"
+          [disabled]="product?.inStock === false"
+          class="product-footer__btn product-footer__btn--cart"
+          (click)="addToCart()"
+        >
+          {{pageConfig?.productDetailSection?.footer?.footerBtnCart}}
+        </ion-button>
+        <ion-button
+          fxFlex="auto"
+          color="primary"
+          [disabled]="product?.inStock === false"
+          class="product-footer__btn product-footer__btn--buy"
+          (click)="buyNow()"
+        >
+          {{product?.inStock === false ? 'Out Of Stock':
+          pageConfig?.productDetailSection?.footer?.footerBtnBuy}}
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

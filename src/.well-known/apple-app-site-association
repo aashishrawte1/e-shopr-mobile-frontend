@@ -1,0 +1,37 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "F6Q7CJ5Z2H.com.greendayapp.userportal",
+        "components": [
+          {
+            "#": "no_universal_links",
+            "exclude": true,
+            "comment": "Matches any URL whose fragment equals no_universal_links and instructs the system not to open it as a universal link"
+          },
+          {
+            "/": "*",
+            "comment": "for all types of url in userportal"
+          },
+          {
+            "/": "/app/tabs/home/*",
+            "comment": "Matches any URL whose path starts with /app/tabs/home/"
+          },
+          {
+            "/": "/app/*",
+            "comment": "Matches any URL whose path starts with /app/"
+          },
+          {
+            "/": "/pages/*",
+            "comment": "Matches any URL whose path starts with /pages/"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "F6Q7CJ5Z2H.com.greendayapp.userportal"
+    ]
+  }
+}

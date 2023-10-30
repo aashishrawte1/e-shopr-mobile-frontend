@@ -1,0 +1,18 @@
+[class*='clamp-line-'] {
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+}
+
+.clamp-line-1 {
+  -webkit-line-clamp: 1;
+}
+
+.clamp-line-2 {
+  -webkit-line-clamp: 2;
+}
+
+.clamp-line-3 {
+  -webkit-line-clamp: 3;
+}

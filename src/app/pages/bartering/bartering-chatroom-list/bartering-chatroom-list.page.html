@@ -1,0 +1,89 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="bartering">
+  <div class="pageTopIndicator"></div>
+  <section>
+    <div slot="fixed" class="chat__page-header-container">
+      <div class="page-info">
+        <h1 class="page-info__header">All Chats</h1>
+      </div>
+    </div>
+
+    <div
+      class="bartering__chatroom-list-container"
+      fxLayout="column"
+      fxLayoutGap="10px"
+    >
+      <ng-container *ngIf="chatRoomList | async">
+        <div
+          *ngFor="let room of chatRoomList | async"
+          fxLayout="row"
+          fxLayoutGap="10px"
+          (click)="openChatroom(room.allProductIds)"
+        >
+          <ng-container *ngIf="room.barteringLevel === 2">
+            <div class="bartering__chat-image-container" fxFlex="100px">
+              <img
+                class="bartering__chat-image-container-current-user-product-image"
+                [src]="room.partiesInvolved[0].productImage"
+              />
+              <img
+                class="bartering__chat-image-container-other-user-product-image"
+                [src]="room.partiesInvolved[1].productImage"
+              />
+            </div>
+            <div fxFlex="auto">
+              <div class="bartering__chat-title clamp-line-1">
+                {{room.partiesInvolved[1].productTitle}}
+              </div>
+              <ng-container
+                *ngTemplateOutlet="userProfilePicture; context: {data: room.partiesInvolved[1]}"
+              >
+              </ng-container>
+
+              <div class="bartering__chat-message clamp-line-1">
+                {{room.lastMessage}}
+              </div>
+              <div class="bartering__chat-time">{{room.lastMessageTime}}</div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="room.barteringLevel === 3">
+            You have a level 3 match, and we are working to facilitate those
+            deals.
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </section>
+</ion-content>
+
+<ng-template #userProfilePicture let-data="data">
+  <div
+    fxLayout="row"
+    class="bartering__user-info"
+    fxLayoutAlign="start center"
+    fxLayoutGap="10px"
+  >
+    <ion-chip class="row-layout__chip">
+      <ion-avatar>
+        <ion-img
+          *ngIf="data?.profilePicture; else defaultAvatar"
+          [src]="assetService.placeholderImage"
+          [attr.srcset]="data.profilePicture"
+          alt="default avatar"
+        ></ion-img>
+      </ion-avatar>
+      <ng-template #defaultAvatar>
+        <ion-img [src]="assetService.defaultAvatarIcon"></ion-img>
+      </ng-template>
+      <ion-label>{{data.memberName}}</ion-label>
+    </ion-chip>
+  </div>
+</ng-template>

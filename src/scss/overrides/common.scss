@@ -1,0 +1,212 @@
+@import "./../utilities/page-padding.scss";
+ion-modal {
+  height: 100%;
+}
+
+.error {
+  color: var(--ion-color-danger);
+}
+
+.error-alert {
+  .alert-4-msg {
+    color: var(--ion-color-danger);
+  }
+}
+
+.speakUp {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  padding: 1px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  img {
+    border-radius: 50%;
+  }
+}
+
+.custom-modal {
+  --max-width: 90vw;
+
+  .modal-wrapper {
+    border-radius: 10px;
+  }
+
+  .popup {
+    height: 100%;
+    text-align: center;
+    &__description {
+      padding: 0 10px;
+      color: var(--ion-color-grey);
+    }
+
+    &__container {
+      height: 100%;
+      object-fit: cover;
+      margin-top: -1px;
+      position: relative;
+      border-radius: 10px;
+      img {
+        border-radius: 12px;
+      }
+    }
+
+    &__info {
+      position: absolute;
+      bottom: 2vh;
+    }
+
+    &__title {
+      color: var(--ion-color-dark);
+      font-weight: bold;
+    }
+
+    &__btn {
+      width: 58vw;
+      &-reward {
+        width: 58vw;
+        margin-left: 55px;
+      }
+    }
+  }
+}
+
+.in-app-announcement-modal,
+.added-to-cart-modal,
+.payment-successful-modal,
+.added-points-modal,
+.game-promise-modal {
+  div.modal-wrapper {
+    --max-height: 51vh;
+    .popup {
+      &__info {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px 20px;
+      }
+
+      &__container-image {
+        position: relative;
+        height: 14vh;
+        top: 7vh;
+      }
+      &__title {
+        position: relative;
+        top: 7vh;
+      }
+
+      &__description {
+        position: relative;
+        top: 7vh;
+        line-height: 1.9em;
+        font-size: 12px;
+      }
+      &__btn {
+        position: relative;
+        top: 9vh;
+      }
+    }
+  }
+}
+
+.horizontal-line {
+  background-color: var(--ion-color-step-200);
+  width: 100%;
+  height: 1px;
+}
+
+.page-info {
+  top: 0;
+  background: white;
+  z-index: 999;
+  margin-bottom: 20px;
+  &__header {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+.page-info__message {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ion-color-dark);
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.pageTopIndicator {
+  visibility: hidden;
+  height: 0;
+  &::after {
+    content: " ";
+  }
+}
+
+.custom-toast {
+  --end: 0;
+  --start: 0;
+  --border: 0;
+  --height: 44px;
+  --color: var(--ion-color-black);
+  --background: var(--ion-color-warning);
+
+  border-bottom: 0;
+  border: none;
+  outline: none;
+  user-select: none;
+
+  font-weight: normal;
+  text-align: left;
+}
+
+.custom-loader__without-background {
+  --background: none;
+}
+
+.type-1-toast {
+  --width: 95vw;
+  --border-radius: 20px;
+  --border-radius: 20px;
+}
+
+.type-1-toast-action-button {
+  color: var(--ion-color-black);
+  font-weight: bold;
+}
+
+.like-toast {
+  --end: 0;
+  --start: 0;
+  --width: 100vw;
+  --border: 0;
+  --border-radius: 0;
+  --background: rgb(0 0 0 / 60%);
+}
+
+ion-footer {
+  z-index: 60002;
+}
+
+.header__search input.searchbar-input {
+  font-size: 14px;
+}
+
+.app-review-btn {
+  width: 100%;
+  font-size: 10px;
+}
+
+div.product-search-page__search-result-item em {
+  font-weight: bold;
+  font-style: normal;
+  background-color: rgb(255 255 0 / 35%);
+}
+
+ion-alert.registration-alert-inputs div.alert-message {
+  color: red;
+  font-size: 12px;
+}

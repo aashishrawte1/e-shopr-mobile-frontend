@@ -1,0 +1,40 @@
+.bundle-updater {
+  height: 100%;
+  padding: 20px;
+
+  .progress-container {
+    height: 100%;
+    font-size: 12px;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+  article {
+    display: block;
+    text-align: left;
+    width: 650px;
+    margin: 0 auto;
+  }
+
+  .page-info {
+    font-weight: bold;
+  }
+}
+
+.header {
+  &__img {
+    font-size: 7em;
+    margin-top: 8px;
+  }
+}
+
+section {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 100%;
+  padding: 0;
+}

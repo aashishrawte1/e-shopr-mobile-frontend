@@ -1,0 +1,10 @@
+<div *ngIf="imageUrl">
+  <div class="full-screen-image-viewer">
+    <img
+      [src]="imageUrl"
+      class="full-screen-image-viewer__image"
+      (load)="hideLoadingIndicator()"
+      frameborder="0"
+    />
+  </div>
+</div>

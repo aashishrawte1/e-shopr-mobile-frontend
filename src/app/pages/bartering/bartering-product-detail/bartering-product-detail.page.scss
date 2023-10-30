@@ -1,0 +1,59 @@
+.bartering__icons {
+  height: 50px;
+  width: 50px;
+}
+
+ion-card {
+  margin: 0;
+}
+
+.bartering__relevancy-score {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.bartering-product-detail-page__footer-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+}
+
+.bartering-product-detail-page__content {
+  padding: 0 10px;
+}
+
+div.bartering__relevancy-score {
+  font-size: 40px;
+  border-radius: 50%;
+  color: var(--ion-color-warning);
+  height: 100px;
+  width: 100px;
+}
+
+span.bartering__relevancy-score-percent {
+  font-size: 32px;
+}
+
+.bartering-product-detail-page__title {
+  padding: 15px 10px;
+}
+.bartering-product-detail-page__description-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.bartering-product-detail-page__source-product-image {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 99999;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.product-detail-page__product-info-container {
+  padding: 0 10px;
+}

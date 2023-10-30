@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+  <ion-img
+    (click)="onImageClick()"
+    *ngFor="let im of images"
+    [src]="url"
+  ></ion-img>
+</div>

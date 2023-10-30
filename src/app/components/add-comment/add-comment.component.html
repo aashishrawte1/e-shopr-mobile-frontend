@@ -1,0 +1,18 @@
+<div fxLayout="row" class="add-comment">
+  <ion-input
+    fxFlex="80"
+    type="text"
+    class="add-comment__input"
+    placeholder="Write your comment"
+    #userInput
+    enterkeyhint="send"
+    (keydown.enter)="onEnterPressed(userInput.value); userInput.value = ''"
+  ></ion-input>
+  <ion-button
+    fxFlex
+    fill="clear"
+    (click)="addComment(userInput.value); userInput.value = ''"
+  >
+    <ion-icon slot="icon-only" name="send"></ion-icon>
+  </ion-button>
+</div>

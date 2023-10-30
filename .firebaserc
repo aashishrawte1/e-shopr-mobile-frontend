@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "uat": "grn-storage",
+    "live": "greenday-landing-page"
+  },
+  "targets": {
+    "grn-storage": {
+      "hosting": {
+        "uat_site": [
+          "userportal-uat"
+        ]
+      }
+    },
+    "greenday-landing-page": {
+      "hosting": {
+        "prod_site": [
+          "userportal-prod"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GreenDay</string>
+    <string name="title_activity_main">GreenDay</string>
+    <string name="package_name">com.greendayapp.userportal</string>
+    <string name="custom_url_scheme">com.greendayapp.userportal</string>
+  <string name="fb_app_name">GreenDay: Live Sustainably</string>
+  <string name="fb_app_id">559621404880393</string>
+</resources>

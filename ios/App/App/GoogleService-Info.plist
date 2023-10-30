@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>358691377575-s3kl0okcp80m7tkuavv74tc2ived94qk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.358691377575-s3kl0okcp80m7tkuavv74tc2ived94qk</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>358691377575-enhug73ufco58o03uvj888adphfjcfsi.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDFSUvpUTYu_o9UtquVf6mt-ZYl6ZbxZ8I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>358691377575</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.greendayapp.userportal</string>
+	<key>PROJECT_ID</key>
+	<string>grn-storage</string>
+	<key>STORAGE_BUCKET</key>
+	<string>grn-storage.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:358691377575:ios:e6aae50154ac5bb5d12682</string>
+	<key>DATABASE_URL</key>
+	<string>https://grn-storage.firebaseio.com</string>
+</dict>
+</plist>

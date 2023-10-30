@@ -1,0 +1,23 @@
+.tabs {
+  &__icon {
+    font-size: 22px;
+
+    &--selected {
+      color: (--ion-color-primary);
+    }
+
+    &-community {
+      height: 22px;
+      font-size: 46px;
+    }
+  }
+
+  [aria-selected="true"] {
+    box-sizing: border-box;
+    border-top: 2px solid var(--ion-color-primary);
+  }
+}
+
+.tab-label {
+  font-size: 10px;
+}

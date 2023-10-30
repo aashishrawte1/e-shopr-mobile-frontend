@@ -1,0 +1,71 @@
+<ion-content class="registration-modal">
+  <section>
+    <h2>Last Step - Fill in your details</h2>
+    <form [formGroup]="form">
+      <div *ngIf="fullName" class="registration-modal__input-container">
+        <ion-item>
+          <ion-label position="floating">Full Name</ion-label>
+          <ion-input
+            formControlName="fullName"
+            autocomplete
+            ngDefaultControl
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <div *ngIf="email" class="registration-modal__input-container">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            formControlName="email"
+            autocomplete
+            ngDefaultControl
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <ion-label class="registration-modal__label"
+        >Contact Number (optional)</ion-label
+      >
+
+      <div
+        *ngIf="number"
+        class="registration-modal__input-container"
+        formGroupName="phoneWithCountryCode"
+        fxLayout="row"
+        fxLayoutGap="5px"
+      >
+        <div fxFlex="30">
+          <ion-item class="ccode">
+            <ion-label position="floating">Code</ion-label>
+            <ion-input
+              formControlName="code"
+              placeholder="65"
+              [value]="65"
+              ngDefaultControl
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div fxFlex="auto">
+          <ion-item class="pphone">
+            <ion-label position="floating">Number</ion-label>
+
+            <ion-input formControlName="number" ngDefaultControl></ion-input>
+          </ion-item>
+        </div>
+      </div>
+      <div class="registration-modal__submit-button">
+        <ion-button
+          [disabled]="!checkIfFormIsValid()"
+          type="submit"
+          expand="block"
+          (click)="onSubmit()"
+          expand="block"
+          fill="solid"
+          color="primary"
+          >Submit<ion-icon slot="end" name="create"> </ion-icon
+        ></ion-button>
+      </div>
+    </form>
+  </section>
+</ion-content>

@@ -1,0 +1,331 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="!editEnabled" (click)="onEditClick()">
+        <ion-icon [src]="assetService.pencilIcon"></ion-icon>
+      </ion-button>
+      <ion-button
+        *ngIf="editEnabled && editModeOn"
+        (click)="save(fullNameInput.value, emailInput.value, codeInput.value, phoneInput.value)"
+        shape="round"
+        color="primary"
+        >{{pageConfig?.profilePageSection?.profileDetail?.saveButton}}</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <section fxLayout="column">
+    <div class="pageTopIndicator"></div>
+    <div class="profile" fxLayout="row wrap">
+      <div fxFlex="100" class="profile__img-container">
+        <img
+          class="profile__image"
+          *ngIf="(storeService.loggedInUser | async)?.avatarUrl; else defaultAvatar"
+          [src]="(storeService.loggedInUser | async)?.avatarUrl"
+          (click)="addProfilePicture()"
+          alt="profile icon"
+        />
+        <ng-template #defaultAvatar>
+          <img
+            [src]="assetService.defaultAvatarIcon"
+            class="profile__image"
+            (click)="addProfilePicture()"
+            alt="default avatar"
+          />
+        </ng-template>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="100">
+        <ion-input
+          fxFlex="100"
+          type="text"
+          #fullNameInput
+          name="fullName"
+          placeholder="Full Name"
+          [disabled]="!editEnabled"
+          class="profile__detail-value"
+          [value]="(storeService.loggedInUser | async)?.fullName !== null ? (storeService.loggedInUser | async)?.fullName : 'GreenDay User'"
+        ></ion-input>
+        <ion-input
+          fxFlex="100"
+          class="profile__detail-value"
+          #emailInput
+          [disabled]="!editEnabled"
+          [value]="(storeService.loggedInUser | async)?.email"
+          (keyup)="checkEmailFormat(emailInput.value)"
+        ></ion-input>
+
+        <ion-label class="profile__detail-value" [hidden]="editModeOn"
+          >+{{((storeService.loggedInUser |
+          async)?.phone.code)}}-{{((storeService.loggedInUser |
+          async)?.phone.number)}}
+        </ion-label>
+
+        <div
+          fxLayout="row"
+          class="phoneProfile"
+          fxLayoutAlign="center center"
+          fxFlex="100"
+        >
+          <ion-item [hidden]="!editModeOn">
+            <ion-item class="ccode">
+              <ion-input
+                fxFlex="100"
+                class="profile__detail-value"
+                placeholder="65"
+                #codeInput
+                [value]="((storeService.loggedInUser |
+          async)?.phone.code)"
+                [disabled]="!editEnabled"
+                required
+                (keyup)="checkCodeFormat(codeInput.value)"
+              ></ion-input
+            ></ion-item>
+            <ion-item class="pphone">
+              <ion-input
+                fxFlex="100"
+                class="profile__detail-value"
+                placeholder="XXXXXXXXXX"
+                #phoneInput
+                [value]="((storeService.loggedInUser |
+          async)?.phone.number)"
+                [disabled]="!editEnabled"
+                required
+                (keyup)="checkPhoneFormat(phoneInput.value)"
+              ></ion-input
+            ></ion-item>
+          </ion-item>
+        </div>
+
+        <ng-container *ngIf="!emailFormatIsValid">
+          <div class="error">
+            <span
+              >{{pageConfig?.profilePageSection?.profileDetail?.emailPatternError}}</span
+            >
+          </div>
+        </ng-container>
+        <ng-container *ngIf="emailUpdateSuccessful">
+          <div class="email_update_successful">
+            <span
+              >{{pageConfig?.profilePageSection?.profileDetail?.emailUpdateSuccessful}}</span
+            >
+          </div>
+        </ng-container>
+        <ng-container *ngIf="emailChangeError">
+          <div class="error">
+            <span *ngIf="loginRequiredError"
+              >{{pageConfig?.profilePageSection?.profileDetail?.loginRequiredErrorMessage}}</span
+            >
+            <span *ngIf="emailInUsedError"
+              >{{pageConfig?.profilePageSection?.profileDetail?.emailInUsedErrorMessage}}</span
+            >
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="!codeFormateIsValid">
+          <div class="error">
+            <span
+              >{{pageConfig?.profilePageSection?.profileDetail?.codePatternError}}</span
+            >
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="!phoneFormateIsValid">
+          <div class="error">
+            <span
+              >{{pageConfig?.profilePageSection?.profileDetail?.phonePatternError}}</span
+            >
+          </div>
+        </ng-container>
+
+        <div
+          class="profile__coins"
+          fxLayout="row"
+          fxFlex="100"
+          fxLayoutAlign="center"
+          fxLayoutGap="10px"
+        >
+          <img
+            class="profile__coins-image"
+            fxLayoutAlign="center"
+            [src]="assetService.greenGemsIcon"
+            alt="gems image"
+          />
+          <label
+            fxLayout="row"
+            fxLayoutAlign="center"
+            class="profile__coin-count"
+          >
+            {{(storeService.coinCounterStream | async)?.formattedCoinCount || 0
+            }} {{pageConfig?.profilePageSection?.coinWallet?.gems}}
+            ({{selectedCountry.currencyFormat}} {{
+            ((storeService.coinCounterStream | async)?.value | number: '1.4-4')
+            || 0}})
+          </label>
+        </div>
+      </div>
+
+      <div fxLayout="column" class="profile__wallet-container">
+        <div class="divider">&nbsp;</div>
+        <div fxLayout="column">
+          <div class="profile__country-selection-section-header">
+            Additional Info
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <img
+              class="profile__country-image"
+              fxFlex="10"
+              fxLayoutAlign="center"
+              [src]="selectedCountry.flagUrl"
+              alt="user image"
+            />
+            <ion-select
+              fxFlex="90"
+              fxLayoutAlign="start"
+              class="profile__country-selection"
+              (ionChange)="onCountrySelected($event.target.value)"
+              [(ngModel)]="selectedCountryName"
+            >
+              <ion-select-option
+                *ngFor="let country of regionalisationSupportedCountries"
+                [value]="country.countryName"
+              >
+                {{ country.countryName | uppercase }}
+              </ion-select-option>
+            </ion-select>
+          </div>
+          <div class="profile__how-to-earn-coin">
+            {{pageConfig?.profilePageSection?.coinWallet?.howToEarnCoin}}
+            <ion-icon
+              name="help-circle-outline"
+              color="grey"
+              (click)="goToHelpPage()"
+            ></ion-icon>
+          </div>
+          <div
+            fxLayout="column"
+            class="profile__coin-missions-container"
+            fxLayoutGap="10px"
+          >
+            <div
+              fxLayout="row"
+              class="profile__coin-mission-container"
+              fxLayoutAlign="space-between center"
+            >
+              <div
+                fxFlex="80"
+                fxLayoutAlign="start"
+                class="profile__coin-mission-description"
+              >
+                {{pageConfig?.profilePageSection?.coinWallet?.earnCoinMission}}
+              </div>
+              <ion-button
+                fxFlex="20"
+                size="small"
+                color="warning"
+                class="profile__coin-action-button"
+                (click)="goToMarketPage()"
+                ><span class="mission_btn_text"
+                  >{{pageConfig?.profilePageSection?.coinWallet?.earnCoinMissionBtn}}</span
+                ></ion-button
+              >
+            </div>
+            <div
+              fxLayout="row"
+              class="profile__coin-mission-container"
+              fxLayoutAlign="space-between center"
+            >
+              <div
+                fxFlex="80"
+                fxLayoutAlign="start"
+                class="profile__coin-mission-description"
+              >
+                {{pageConfig?.profilePageSection?.coinWallet?.claimDailyReward}}
+              </div>
+              <ion-button
+                fxFlex="20"
+                size="small"
+                color="warning"
+                class="profile__coin-action-button"
+                (click)="claimDailyReward()"
+                ><span class="mission_btn_text"
+                  >{{pageConfig?.profilePageSection?.coinWallet?.claimDailyRewardBtn}}</span
+                ></ion-button
+              >
+            </div>
+            <!-- <div
+              fxLayout="row"
+              class="profile__coin-mission-container"
+              fxLayoutAlign="space-between center"
+            >
+              <div
+                fxFlex="80"
+                fxLayoutAlign="start"
+                class="profile__coin-mission-description"
+              >
+                {{pageConfig?.profilePageSection?.coinWallet?.shareWithFriends}}
+              </div>
+              <ion-button
+                fxFlex="20"
+                size="small"
+                color="warning"
+                text="primary"
+                class="profile__coin-action-button"
+                (click)="shareReferralCode()"
+              >
+                <span class="mission_btn_text"
+                  >{{pageConfig?.profilePageSection?.coinWallet?.shareWithFriendsBtn}}</span
+                ></ion-button
+              >
+            </div>
+            <div
+              fxLayout="row"
+              class="profile__coin-mission-container"
+              fxLayoutAlign="space-between center"
+              *ngIf="!referralCodeClaimed"
+            >
+              <div
+                fxFlex="80"
+                fxLayoutAlign="start"
+                class="profile__coin-mission-description"
+              >
+                {{pageConfig?.profilePageSection?.coinWallet?.refersAndWin}}
+              </div>
+              <ion-button
+                fxFlex="20"
+                size="small"
+                color="warning"
+                fxLayout="row wrap"
+                class="profile__coin-action-button"
+                (click)="showInputPopupForReferralCode()"
+              >
+                <span
+                  class="mission_btn_text"
+                  [innerHTML]="pageConfig?.profilePageSection?.coinWallet?.refersAndWinBtn"
+                ></span
+              ></ion-button>
+            </div> -->
+            <div class="profile__form__user_agreement">
+              <span
+                >By using this application, you agree to
+                <a (click)="onAgreementLinkClick()"
+                  ><strong>Terms & Conditions</strong></a
+                >
+                of GreenDay.</span
+              >
+            </div>
+            <div class="clear_space"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

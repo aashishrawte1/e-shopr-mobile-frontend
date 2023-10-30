@@ -1,0 +1,19 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="pageTopIndicator"></div>
+  <section class="container">
+    <div class="page-info">
+      <h1 class="page-info__header">{{pageConfig?.header}}</h1>
+    </div>
+    <p [innerHTML]="pageConfig?.privacyPolicyInfo"></p>
+  </section>
+  <ion-footer> </ion-footer>
+</ion-content>

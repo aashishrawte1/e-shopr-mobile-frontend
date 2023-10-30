@@ -1,0 +1,230 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="dark"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content
+  #ionContent
+  [scrollEvents]="true"
+  class="main-content"
+  contentId="main-content"
+>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- individual section start -->
+
+  <section fxLayout="column">
+    <div class="pageTopIndicator"></div>
+
+    <div class="eclipse">
+      <div class="eclipase1">
+        <img alt="" src="./assets/images/Ellipse2.png" />
+      </div>
+      <div class="eclipase2">
+        <img alt="" src="./assets/images/Ellipse1.png" />
+      </div>
+    </div>
+
+    <div class="profile" fxLayout="row wrap">
+      <div class="profile__my-score">My Score</div>
+      <div fxFlex="100" class="profile__img-container">
+        <img
+          class="profile__image"
+          *ngIf="(storeService.loggedInUser | async)?.avatarUrl; else defaultAvatar"
+          [src]="(storeService.loggedInUser | async)?.avatarUrl"
+          alt="profile icon"
+          (click)="addProfilePicture()"
+        />
+
+        <ng-template #defaultAvatar>
+          <img
+            [src]="assetService.defaultAvatarIcon"
+            class="profile__image"
+            alt="default avatar"
+            (click)="addProfilePicture()"
+          />
+        </ng-template>
+        <div class="edit-profile-div">
+          <img
+            class="edit-profile-image"
+            alt=""
+            src="./assets/images/Image 6.png"
+            (click)="addProfilePicture()"
+          />
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="100">
+        <ion-input
+          fxFlex="100"
+          type="text"
+          #fullNameInput
+          name="fullName"
+          placeholder="Full Name"
+          class="profile__detail-value"
+          [value]="(storeService.loggedInUser | async)?.fullName !== null ? (storeService.loggedInUser | async)?.fullName : 'GreenDay User'"
+        ></ion-input>
+      </div>
+      <div
+        *ngIf="myStats"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxFlex="100"
+      >
+        <ion-input
+          fxFlex="100"
+          type="text"
+          name="totalPoints"
+          #totalScoreInput
+          placeholder="|| total"
+          class="profile__event-total-score"
+          value="{{myStats.totalPoints}} points "
+          readonly
+        ></ion-input>
+      </div>
+    </div>
+
+    <div
+      fxLayout="row"
+      fxLayoutAlign="space-around start"
+      class="events"
+      fxFlex="100"
+    >
+      <div class="events__details-images">
+        <img
+          src="./assets/images/Image_11.png"
+          alt="kayak"
+          class="events__details-round"
+        />
+      </div>
+      <div class="events__details-images">
+        <img
+          src="./assets/images/Image_13.png"
+          alt="trash"
+          class="events__details-round"
+        />
+      </div>
+      <div class="events__details-images">
+        <img
+          src="./assets/images/Image_12.png"
+          alt="sup"
+          class="events__details-round"
+        />
+      </div>
+    </div>
+
+    <!-- {{myTeamStats.kykdistance}}
+    {{myTeamStats.weight}}
+    {{myTeamStats.supdistance}} -->
+    <!-- myStats -->
+    <div
+      fxLayout="row"
+      fxLayoutAlign="space-around start"
+      class="events-description"
+      fxFlex="100"
+      *ngIf="myStats"
+    >
+      <div class="events__details-description" fxFlex="column">
+        <div><span>Kayak Distance</span></div>
+        <div>{{myStats.kykdistance}} Km</div>
+      </div>
+      <div class="events__details-description" fxFlex="column">
+        <div><span>Trash Weight</span></div>
+        <div>{{myStats.weight}} Kg</div>
+      </div>
+      <div class="events__details-description" fxFlex="column">
+        <div><span>SUP Distance</span></div>
+        <div>{{myStats.supdistance}} Km</div>
+      </div>
+    </div>
+
+    <!-- individual section end -->
+
+    <!-- team section start -->
+
+    <div class="horizontal-line first"></div>
+    <!-- myTeamStats -->
+    <div fxLayout="column">
+      <ion-label class="team__heading">Team Stats</ion-label>
+      <div *ngIf="myTeamStats">
+        <div class="team__information">
+          <span></span>{{myTeamStats.teamName}}
+        </div>
+        <div class="team__information total-points">
+          <span></span>{{myTeamStats.totalPoints}} points
+        </div>
+        <div class="team__information">
+          <span>Trash Weight = </span>{{myTeamStats.weight}} Kg
+        </div>
+        <div class="team__information">
+          <span>SUP Distance = </span>{{myTeamStats.supdistance}} Km
+        </div>
+        <div class="team__information">
+          <span>Kayak Distance = </span>{{myTeamStats.kykdistance}} Km
+        </div>
+      </div>
+    </div>
+
+    <div class="horizontal-line"></div>
+
+    <!-- team section end -->
+
+    <div class="event__details-banner" fxLayout="column">
+      <div class="logo_passion">
+        <img alt="" src="./assets/images/Image3.png" />
+      </div>
+      <div class="logo_banner">
+        <img alt="" src="./assets/images/Group75.png" />
+      </div>
+      <div class="logo_banner-wing">
+        <img alt="" src="./assets/images/Group76.png" />
+      </div>
+    </div>
+
+    <!-- bar chart start -->
+
+    <div class="control-section" fxLayout="column">
+      <div align="left" height="200px">
+        <iframe
+          width="373"
+          height="490"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOoN6euG3JJHI_daQfYFAT1EJZWOV_2t6HBxcejcffCdFt7pAIEdiRXuWEvT8jdRCFVxW5WHDVafGy/pubchart?oid=1327396749&amp;format=interactive"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- bar chart end -->
+
+    <div class="event__last-banner" fxLayout="column">
+      <div class="last_banner_passion1">
+        <img alt="" src="./assets/images/Group72.png" />
+      </div>
+    </div>
+    <div>
+      <div class="last_banner_passion2"></div>
+    </div>
+    <div class="pageEndIndicator"></div>
+
+    <!-- team section end -->
+
+    <div class="pa__next_move_section">
+      <ion-button
+        (click)="openSignUpForm()"
+        target="_blank"
+        class="next-move-button round"
+        expand="block"
+        shape="round"
+        color="warning"
+        >Sign up for upcoming events</ion-button
+      >
+    </div>
+  </section>
+</ion-content>

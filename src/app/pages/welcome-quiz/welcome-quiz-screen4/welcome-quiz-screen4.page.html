@@ -1,0 +1,82 @@
+<ion-content class="welcome-quiz">
+  <div fxLayout="column" class="welcome-quiz__container">
+    <div fxFlex="100" fxLayout="column" class="welcome-quiz__intro-container">
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <span class="welcome-quiz__header-text"> {{question}} </span>
+      </div>
+      <div class="welcome-quiz__star">
+        <img
+          (click)="toggleStarZero()"
+          [src]="isSelected[0] ? green_star : green_star_outline"
+          width="48px"
+          height="48px"
+        />
+        <img
+          (click)="toggleStarOne()"
+          [src]="isSelected[1] ? green_star : green_star_outline"
+          width="48px"
+          height="48px"
+        />
+        <img
+          (click)="toggleStarTwo()"
+          [src]="isSelected[2] ? green_star : green_star_outline"
+          width="48px"
+          height="48px"
+        />
+        <img
+          (click)="toggleStarThree()"
+          [src]="isSelected[3] ? green_star : green_star_outline"
+          width="48px"
+          height="48px"
+        />
+        <img
+          (click)="toggleStarFour()"
+          [src]="isSelected[4] ? green_star : green_star_outline"
+          width="48px"
+          height="48px"
+        />
+      </div>
+      <div class="welcome-quiz__description" *ngIf="buttonSelected !== -1">
+        {{options[buttonSelected].text}}
+      </div>
+      <!-- <div
+        class="welcome-quiz__options-container"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between center"
+      >
+        <div
+          fxFlex="100"
+          *ngFor="let option of options;"
+          shape="round"
+          expand="block"
+          class="welcome-quiz__option"
+          [ngClass]="{
+            'welcome-quiz__option--unselected': !option.selected,
+            'welcome-quiz__option--selected': option.selected
+          }"
+          (click)="onOptionClick(option)"
+        >
+          {{option.text}}
+        </div>
+      </div> -->
+
+      <div
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        class="welcome-quiz__button-container"
+      >
+        <ion-button
+          class="welcome-quiz__button"
+          [color]="isButtonDisabled ? 'grey': 'primary'"
+          size="large"
+          shape="round"
+          fill="solid"
+          [disabled]="isButtonDisabled"
+          (click)="goToNextPage()"
+        >
+          {{nextButtonMessage}}
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

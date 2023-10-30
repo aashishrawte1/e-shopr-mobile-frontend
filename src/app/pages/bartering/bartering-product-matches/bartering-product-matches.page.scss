@@ -1,0 +1,90 @@
+.bartering {
+  section {
+    padding-top: 0;
+  }
+}
+.bartering__tiles-container-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.bartering__user-product-image {
+  margin-top: 8px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 0 1px 6px -1px;
+}
+
+.bartering__view-more--btn {
+  color: var(--ion-color-primary);
+  font-size: 20px;
+}
+
+.bartering__product-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.bartering__view-matches {
+  background-color: #7bf2c4;
+  padding: 12px;
+  margin-left: 30%;
+  border-radius: 20px;
+}
+
+.bartering__add-product-icon {
+  width: 60px;
+}
+
+.page-info {
+  margin-bottom: 0;
+}
+.product-slider {
+  margin-right: -10px;
+  margin-left: -10px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin-top: 0;
+  -ms-overflow-style: none;
+  padding: 3px;
+}
+.product-slider-item {
+  min-width: 70px;
+}
+.row-layout__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  box-shadow: 0 1px 7px -2px;
+  object-fit: cover;
+}
+
+.row-layout {
+  margin-top: 15px;
+}
+
+.bartering__user-product-selected {
+  border: 4px solid var(--ion-color-primary);
+  padding: 2px;
+}
+
+.barter-image-not-found {
+  margin-top: 90px;
+  width: 70%;
+}
+
+.bartering__user-product-title {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.horizontal-slider__item {
+  min-width: 70px;
+}
+
+.horizontal-slider__item:last-child {
+  min-width: 80px;
+}

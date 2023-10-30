@@ -1,0 +1,63 @@
+.primary-menu {
+  --ion-background-color: var(--ion-menu-background);
+}
+
+.primary-menu__profile-close {
+  font-size: 20px;
+}
+.primary-menu__profile-points {
+  margin-left: -15px;
+}
+
+.primary-menu__item {
+  padding: 2px;
+  margin-top: 5px;
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 12px;
+}
+.primary-menu__item img,
+.primary-menu__item ion-img {
+  width: 40px;
+}
+
+.primary-menu__item-green-concierge {
+  color: var(--ion-color-primary);
+}
+.primary-menu__item-green-concierge .concierge-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.primary-menu__item-egg-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.primary-menu .app-version-container {
+  font-size: 0.7em;
+  padding: 0 10%;
+  color: var(--ion-color-light);
+}
+
+.loading__image-container {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+.loading__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.eggs-icon {
+  font-size: 20px;
+}

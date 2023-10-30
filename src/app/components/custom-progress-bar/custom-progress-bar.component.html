@@ -1,0 +1,7 @@
+<div class="custom-progress-outer-div" #outerProgressBarWidth>
+  <div
+    class="custom-progress-inner-div"
+    [style.width.%]="progressBarValue | async"
+    [style.background-color]="progressIndicatorColor"
+  ></div>
+</div>

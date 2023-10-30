@@ -1,0 +1,165 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="contact">
+  <div class="pageTopIndicator"></div>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <section class="contact-content__container">
+    <div class="pageTopIndicator"></div>
+    <div class="page-info">
+      <h1 class="page-info__header">{{pageConfig?.contactSection?.header}}</h1>
+    </div>
+    <form
+      *ngIf="contactForm"
+      [formGroup]="contactForm"
+      class="contact__container-form"
+    >
+      <ion-item>
+        <ion-label position="stacked" for="email"
+          >{{pageConfig?.contactSection?.contactForm?.labelEmail}}</ion-label
+        >
+        <ion-input
+          class="input empty"
+          formControlName="email"
+          type="text"
+          id="email"
+          name="email"
+          placeholder="ex.john@gmail.com"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <div
+          fxFlex="100"
+          class="error"
+          *ngIf="email && email.invalid && (email.dirty || email.touched)"
+        >
+          <span *ngIf="email?.errors.required"
+            >{{pageConfig?.contactSection?.contactForm?.emailRequiredError}}</span
+          >
+          <span *ngIf="email?.errors.pattern"
+            >{{pageConfig?.contactSection?.contactForm?.emailValidationError}}</span
+          >
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" for="name"
+          >{{pageConfig?.contactSection?.contactForm?.labelName}}</ion-label
+        >
+        <ion-input
+          class="input empty"
+          formControlName="name"
+          type="text"
+          id="name"
+          name="name"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <div
+          fxFlex="100"
+          class="error"
+          *ngIf="name && name.invalid && (name.dirty || name.touched)"
+        >
+          <span *ngIf="name?.errors.required"
+            >{{pageConfig?.contactSection?.contactForm?.nameRequiredError}}</span
+          >
+          <span *ngIf="name?.errors.pattern"
+            >{{pageConfig?.contactSection?.contactForm?.nameRequiredError}}</span
+          >
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" for="code"
+          >{{pageConfig?.contactSection?.contactForm?.labelCountryCode}}</ion-label
+        >
+        <ion-input
+          class="input empty"
+          type="tel"
+          formControlName="code"
+          placeholder="(Optional) eg. 65"
+          autocomplete="tel"
+          maxlength="2"
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" for="number"
+          >{{pageConfig?.contactSection?.contactForm?.labelNumber}}</ion-label
+        >
+        <ion-input
+          class="input empty"
+          type="tel"
+          formControlName="number"
+          placeholder="(Optional) eg. your phone number"
+          autocomplete="tel"
+          maxlength="8"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <div
+          class="error"
+          *ngIf="number && number.invalid && (number.dirty || number.touched)"
+        >
+          <span *ngIf="number?.errors?.required || code?.errors?.required"
+            >{{pageConfig?.contactSection?.contactForm?.countryCodeRequiredError}}</span
+          >
+          <span *ngIf="number?.errors?.minlength"
+            >Min {{numberMinLength}} char is required.</span
+          >
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" for="message"
+          >{{pageConfig?.contactSection?.contactForm?.labelMessage}}</ion-label
+        >
+        <ion-textarea
+          class="input empty contact__message"
+          formControlName="message"
+          spellcheck="true"
+          auto-grow="true"
+          id="message"
+          name="message"
+          placeholder="Please provide some info so we can help you better."
+          [maxlength]="contactMessageMaxLength"
+          [minlength]="contactMessageMinLength"
+        ></ion-textarea>
+      </ion-item>
+
+      <ion-item lines="none">
+        <div
+          class="error"
+          *ngIf="message && message.invalid && (message.dirty || message.touched)"
+        >
+          <span *ngIf="message?.errors.required"
+            >{{pageConfig?.contactSection?.contactForm?.messageRequiredError}}</span
+          ><br />
+          <span *ngIf="message?.errors.minlength"
+            >Min {{contactMessageMinLength}} char is required.</span
+          ><br />
+          <span *ngIf="message?.errors.maxlength"
+            >Max {{contactMessageMaxLength}} char is required.</span
+          ><br />
+        </div>
+      </ion-item>
+
+      <ion-button
+        [disabled]="this.contactForm.invalid"
+        fill="outline"
+        class="contact__btn"
+        expand="block"
+        (click)="sendMessage()"
+      >
+        {{pageConfig?.contactSection?.contactForm?.contactFormButton}}
+      </ion-button>
+    </form>
+  </section>
+</ion-content>

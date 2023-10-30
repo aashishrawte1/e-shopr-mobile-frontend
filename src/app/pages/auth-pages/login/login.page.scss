@@ -1,0 +1,85 @@
+.header ion-toolbar {
+  --background: none;
+}
+
+.login {
+  padding: 20px 20px 30px 20px;
+  line-height: 20px;
+  .page-info__header {
+    font-weight: bold;
+  }
+  &__heading {
+    color: var(--ion-color-black-contrast);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 100px;
+  }
+  &__form {
+    &__input {
+      height: 40px;
+      border: 1px solid var(--ion-color-step-200);
+      margin: 10px 0;
+      color: var(--ion-color-black-contrast);
+
+      --padding-start: 10px;
+    }
+    &__error {
+      color: var(--ion-color-warning-tint);
+      font-size: 12px;
+      text-align: start;
+      height: 20px;
+      width: 100;
+      word-wrap: break-word;
+    }
+    &__label {
+      color: var(--ion-color-black-contrast);
+      font-size: 14px;
+    }
+    &__button {
+      text-transform: none;
+      height: 44px;
+      font-size: 1em;
+      margin-top: 20px;
+      justify-content: flex-start;
+      position: relative;
+      :host(button) {
+        padding: 0;
+      }
+      &__icon {
+        position: absolute;
+      }
+      [name="logo-google"] {
+        height: 27px;
+        border-radius: 50%;
+        left: 18px;
+      }
+      [name="logo-facebook"] {
+        left: 10px;
+      }
+
+      [name="logo-apple"] {
+        left: 29px;
+      }
+    }
+    &__text {
+      color: var(--ion-color-black-contrast);
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    &__footer {
+      color: var(--ion-color-black-contrast);
+      font-size: 16px;
+      text-align: center;
+      padding: 20px 0 0;
+    }
+  }
+}
+
+.login-form__forgot-password-container {
+  clear: both;
+}
+.login__form__user_agreement {
+  color: var(--ion-color-black-contrast);
+  font-size: 12px;
+  margin-top: 10px;
+}

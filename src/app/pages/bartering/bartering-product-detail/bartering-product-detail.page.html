@@ -1,0 +1,132 @@
+<ion-header class="header" mode="ios">
+  <ion-toolbar class="header__toolbar header--transparent" mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" color="primary"
+        ><ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="none"></ion-refresher-content>
+  </ion-refresher>
+  <div class="pageTopIndicator"></div>
+
+  <ng-container *ngIf="product?.images">
+    <div class="product-detail-page__media">
+      <img
+        class="bartering-product-detail-page__source-product-image lozad"
+        alt="product detail image"
+        [src]="sourceProductImage"
+      />
+      <ng-container *ngIf="product?.images; else emptySkeletonMedia">
+        <div
+          *ngFor="let link of product?.images"
+          class="product-detail-page__media-item"
+          (click)="openViewer(link)"
+          [fxHide]="!displayedImageTracker?.imagesShowStatus[link]"
+        >
+          <ion-img [src]="link"></ion-img>
+        </div>
+      </ng-container>
+      <ng-template #emptySkeletonMedia>
+        <ion-skeleton-text
+          class="product-detail-page__empty-skeleton-media-section"
+          animated="true"
+        ></ion-skeleton-text>
+      </ng-template>
+    </div>
+    <div
+      fxLayout="row"
+      class="product-detail-page__media-preview"
+      fxLayoutGap="2px"
+      fxLayoutAlign="start center"
+    >
+      <ng-container *ngIf="product?.images; else mediaPreviewSkeleton">
+        <div
+          *ngFor="let link of product?.images; trackBy: trackImagesByFn"
+          class="product-detail-page__media-preview-item"
+          (click)="goToSlide(link)"
+        >
+          <img [src]="link" alt="product image" />
+        </div>
+      </ng-container>
+      <ng-template #mediaPreviewSkeleton>
+        <ion-skeleton-text
+          *ngFor="let i of [0,1,2,3,4,5]"
+          class="product-detail-page__media-preview-item"
+          animated="true"
+        >
+        </ion-skeleton-text>
+      </ng-template>
+    </div>
+
+    <div
+      class="product-detail-page__product-info-container"
+      fxLayout="column"
+      fxLayoutGap="10px"
+    >
+      <div class="product-detail-page__title">{{ product.title }}</div>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <ion-chip class="product-detail-page__chip">
+          <ion-avatar>
+            <img
+              *ngIf="product?.userImage; else defaultAvatar"
+              [src]="product.userImage"
+              alt="default avatar"
+            />
+          </ion-avatar>
+          <ng-template #defaultAvatar>
+            <ion-img [src]="assetService.defaultAvatarIcon"></ion-img>
+          </ng-template>
+          <ion-label>{{ product?.userName }}</ion-label>
+        </ion-chip>
+      </div>
+      <hr class="product-detail-page__horizontal-line" />
+      <div
+        class="bartering-bartering-prodct-detail-page__content"
+        fxLayout="column"
+        fxLayoutGap="10px"
+      >
+        <div class="bartering-bartering-prodct-detail-page__description-title">
+          Item description
+        </div>
+        <div>{{ product?.description }}</div>
+      </div>
+    </div>
+  </ng-container>
+</ion-content>
+<ion-footer class="bartering-product-detail-page__footer" mode="ios">
+  <ion-toolbar class="bartering-product-detail-page__footer-toolbar">
+    <div fxLayout="row" fxLayoutAlign="center" *ngIf="product?.statistics">
+      <div
+        fxFlex="70"
+        fxFlexAlign="center"
+        fxLayoutAlign="space-between center"
+      >
+        <img
+          class="bartering__icons"
+          [src]="product.statistics.currentUser.liked ? icons.heartIcon.filled : icons.heartIcon.unFilled"
+          alt="like-icon"
+          (click)="onLikeButtonClick()"
+        />
+
+        <div
+          fxLayout="row"
+          fxLayoutAlign="center center"
+          class="bartering__relevancy-score"
+        >
+          {{product.relevancyScore}}
+
+          <span class="bartering__relevancy-score-percent">%</span>
+        </div>
+        <img
+          class="bartering__icons"
+          [src]="assetService.rightArrowBarteringType1"
+          (click)="onNextProductButtonClick()"
+        />
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
