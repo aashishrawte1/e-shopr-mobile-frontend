@@ -1,8 +1,8 @@
 {
-  "name": "greenday-mobile-app",
+  "name": "e-shopr-mobile-app",
   "version": "0.0.1",
   "description": "Frontend Bit",
-  "author": "admin@greendayapp.com",
+  "author": "Aashish Rawte",
   "license": "Closed",
   "scripts": {
     "ng": "ng",
